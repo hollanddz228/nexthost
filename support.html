@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Поддержка — NextHost</title>
+
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/support.css" />
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="main-header">
+    <div class="logo">
+      <img src="images/nh.jpg" alt="NextHost Logo" />
+      <span>NextHost</span>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">Главная</a>
+      <a href="about.html">О нас</a>
+      <a href="hosting.html">Хостинг</a>
+      <a href="support.html" class="active">Поддержка</a>
+      <a href="reviews.html">Отзывы</a>
+      <a href="partners.html">Партнёры</a>
+      <a href="blog.html">Блог</a>
+      <a href="profile.html" class="profile-link">Профиль</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="support-hero">
+    <div class="container">
+      <h1>Поддержка NextHost — 24/7</h1>
+      <p class="lead">
+        Наши инженеры на связи круглосуточно. Оставь вопрос в чате или создай тикет — ответим в кратчайшие сроки.
+      </p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="#create-ticket">Создать обращение</a>
+        <a class="btn-outline" href="#faq">Частые вопросы</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN GRID -->
+  <main class="container support-grid">
+
+    <!-- LEFT -->
+    <section class="support-left">
+
+      <!-- === ФОРМА СОЗДАНИЯ ТИКЕТА === -->
+      <div id="create-ticket" class="card ticket-card">
+        <h2>Создать обращение</h2>
+
+        <form id="ticket-form" class="ticket-form" enctype="multipart/form-data" autocomplete="off">
+          <div class="row">
+            <label>Имя
+              <input type="text" name="name" placeholder="Ваше имя" required />
+            </label>
+            <label>Email
+              <input type="email" name="email" placeholder="you@domain.com" required />
+            </label>
+          </div>
+
+          <label>Тема
+            <input type="text" name="subject" placeholder="Коротко о проблеме" required />
+          </label>
+
+          <label>Сообщение
+            <textarea name="message" rows="6" placeholder="Опишите проблему подробно" required></textarea>
+          </label>
+
+          <div class="form-footer">
+            <label class="small">
+              Прикрепить файл
+              <input type="file" name="screenshot" accept=".png,.jpg,.jpeg,.log,.txt" />
+            </label>
+
+            <div class="actions">
+              <button type="submit" class="btn-primary">Отправить тикет</button>
+              <button type="button" id="btn-reset" class="btn-ghost">Очистить</button>
+            </div>
+          </div>
+
+          <div id="ticket-feedback" class="feedback" aria-live="polite"></div>
+        </form>
+      </div>
+
+      <!-- === ИСТОРИЯ ТИКЕТОВ === -->
+      <div class="card tickets-history">
+        <h2>История обращений</h2>
+        <div id="tickets-list" class="tickets-list"></div>
+        <div id="no-tickets" class="muted">Пока нет обращений — создайте первый тикет.</div>
+      </div>
+
+      <!-- === FAQ === -->
+      <div id="faq" class="card faq-card">
+        <h2>Частые вопросы</h2>
+        <div class="accordion">
+          <button class="accordion-item">
+            <span class="q">Как перенести домен на NextHost?</span>
+            <span class="toggle">+</span>
+            <div class="a">Откройте тикет с темой "Перенос домена" и приложите код EPP / Auth code. Мы поможем.</div>
+          </button>
+
+          <button class="accordion-item">
+            <span class="q">Как восстановить сайт из бэкапа?</span>
+            <span class="toggle">+</span>
+            <div class="a">В личном кабинете выберите услугу → Резервные копии → Восстановить. Или напишите в чат.</div>
+          </button>
+
+          <button class="accordion-item">
+            <span class="q">Почему сайт медленно открывается?</span>
+            <span class="toggle">+</span>
+            <div class="a">Проверьте оптимизацию изображений, кеширование и геолокацию сервера. Пришлите URL — мы проверим.</div>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- RIGHT -->
+    <aside class="support-right">
+
+      <!-- === ЧАТ === -->
+      <div class="card chat-card">
+        <h3>Чат поддержки</h3>
+        <p class="muted small">Моментальная связь с оператором. Открой окно чата в правом нижнем углу.</p>
+        <button id="open-chat" class="btn-primary">Открыть чат</button>
+      </div>
+
+      <!-- === КОНТАКТЫ === -->
+      <div class="card contacts-card">
+        <h3>Контакты</h3>
+        <p><strong>Email:</strong> <a href="mailto:support@nexthost.kz">support@nexthost.kz</a></p>
+        <p><strong>Телефон:</strong> <a href="tel:+77778145056">+7 (777) 814-5056</a></p>
+        <p><strong>Время работы:</strong> 24/7</p>
+      </div>
+
+      <!-- === СТАТУС === -->
+      <div class="card status-card">
+        <h3>Статус сервисов</h3>
+        <div class="status-line"><span class="dot green"></span> Веб-сервера: <strong>Работают</strong></div>
+        <div class="status-line"><span class="dot green"></span> База данных: <strong>Работает</strong></div>
+        <div class="status-line"><span class="dot green"></span> Почта: <strong>Работает</strong></div>
+        <small class="muted">Обновлено: <span id="status-updated">сейчас</span></small>
+      </div>
+
+      <!-- === КОМАНДА === -->
+      <div class="card team-card">
+        <h3>Наша команда</h3>
+        <div class="team-grid">
+          <div class="agent">
+            <img src="images/tech1.jpg" alt="Нурбек" />
+            <div>
+              <div class="name">Нурбек</div>
+              <div class="role muted">Инженер поддержки</div>
+            </div>
+          </div>
+          <div class="agent">
+            <img src="images/tech2.jpg" alt="Нурдаулет" />
+            <div>
+              <div class="name">Нурдаулет</div>
+              <div class="role muted">Системный админ</div>
+            </div>
+          </div>
+          <div class="agent">
+            <img src="images/tech3.jpg" alt="Ануар" />
+            <div>
+              <div class="name">Ануар</div>
+              <div class="role muted">Серверный админ</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="main-footer">
+    <div class="footer-left">
+      <p>© 2025 NextHost. Все права защищены.</p>
+    </div>
+    <div class="footer-right">
+      <p>Контакты: <a href="mailto:support@nexthost.kz">support@nexthost.kz</a></p>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="js/support.js"></script>
+
+  <!-- === Tawk.to === -->
+  <script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/69025075b22c021953b66bef/1j8ogkjik';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+  })();
+  </script>
+</body>
+</html>

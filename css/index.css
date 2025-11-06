@@ -1,0 +1,46 @@
+.hero {
+    background: url("../images/hero-bg.jpg") no-repeat center/cover;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .hero-content {
+    background: rgba(15, 23, 42, 0.7);
+    padding: 40px;
+    border-radius: 12px;
+  }
+  
+  .hero h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+  }
+  
+  .primary-btn {
+    padding: 12px 28px;
+    background: #38bdf8;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .primary-btn:hover {
+    background: #0ea5e9;
+  }
+  
+  .feature, .hero-content {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.6s ease;
+  }
+  
+  .visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  

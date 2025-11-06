@@ -1,0 +1,120 @@
+/* support.css — стиль для страницы поддержки */
+:root {
+    --bg: #0f172a;
+    --card: #111827;
+    --muted: #9aa4b2;
+    --accent: #38bdf8;
+    --glass: rgba(255,255,255,0.03);
+    --radius: 12px;
+  }
+  
+  body {
+    background: var(--bg);
+    color: #e6eef8;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  /* контейнер */
+  .container {
+    width: 92%;
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+  
+  /* HERO */
+  .support-hero {
+    padding: 48px 0;
+    background: linear-gradient(180deg, rgba(56,189,248,0.06), transparent 60%);
+    text-align: center;
+  }
+  
+  .support-hero h1 { color: var(--accent); font-size: 36px; margin-bottom: 8px; }
+  .support-hero .lead { color: var(--muted); margin-bottom: 18px; }
+  .hero-actions .btn-primary { margin-right: 12px; }
+  
+  /* GRID */
+  .support-grid {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 28px;
+    margin: 32px auto;
+    align-items: start;
+  }
+  
+  /* карточки */
+  .card {
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border-radius: var(--radius);
+    padding: 18px;
+    box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+    border: 1px solid rgba(255,255,255,0.03);
+  }
+  
+  /* форма тикета */
+  .ticket-card h2 { margin-top: 0; color: var(--accent); }
+  .ticket-form label { display: block; margin-bottom: 12px; font-size: 14px; color: var(--muted); }
+  .ticket-form input[type="text"],
+  .ticket-form input[type="email"],
+  .ticket-form input[type="file"],
+  .ticket-form textarea {
+    width: 100%;
+    background: var(--glass);
+    border: 1px solid rgba(255,255,255,0.03);
+    padding: 10px 12px;
+    border-radius: 8px;
+    color: #eaf6ff;
+    margin-top: 6px;
+    box-sizing: border-box;
+  }
+  .ticket-form .row {
+    display: flex;
+    gap: 12px;
+  }
+  .ticket-form .row label { flex: 1; }
+  
+  .form-footer { display:flex; justify-content:space-between; align-items:center; gap: 12px; margin-top: 12px; }
+  .form-footer .actions { display:flex; gap:8px; align-items:center; }
+  .btn-primary { background: var(--accent); color: #071226; padding:10px 16px; border-radius:8px; border:none; cursor:pointer; font-weight:600; }
+  .btn-outline { background: transparent; color: var(--accent); padding:8px 14px; border-radius:8px; border:1px solid rgba(56,189,248,0.12); cursor:pointer; }
+  .btn-ghost { background: transparent; color: var(--muted); border:1px solid rgba(255,255,255,0.03); padding:8px 12px; border-radius:8px; cursor:pointer; }
+  
+  .feedback { margin-top:12px; font-size:14px; color: var(--muted); }
+  
+  /* история тикетов */
+  .tickets-history h2 { color: var(--accent); margin-top:0; }
+  .tickets-list { display:flex; flex-direction:column; gap:10px; max-height:360px; overflow:auto; padding-right:6px; }
+  .ticket-item { background: rgba(255,255,255,0.02); padding:10px; border-radius:10px; display:flex; justify-content:space-between; gap:10px; align-items:flex-start; }
+  .ticket-item .meta { color: var(--muted); font-size:13px; }
+  .ticket-item .subject { font-weight:600; color:#dff8ff; }
+  
+  /* faq */
+  .faq-card h2 { color: var(--accent); margin-top:0; }
+  .accordion .accordion-item { width:100%; text-align:left; background:transparent; border: none; padding:12px; margin-bottom:8px; border-radius:8px; cursor:pointer; display:block; }
+  .accordion .q { font-weight:600; color:#dff8ff; }
+  .accordion .a { display:none; margin-top:8px; color:var(--muted); line-height:1.5; }
+  .accordion .accordion-item.active .a { display:block; }
+  
+  /* right column */
+  .support-right .chat-card h3, .contacts-card h3, .status-card h3 { color: var(--accent); margin-top:0; }
+  .small { font-size:13px; color:var(--muted); }
+  
+  /* status */
+  .status-line { display:flex; align-items:center; gap:8px; color:var(--muted); margin-bottom:8px; }
+  .dot { width:10px; height:10px; border-radius:50%; display:inline-block; }
+  .dot.green { background:#28a745; }
+  .dot.yellow { background:#ffb020; }
+  .dot.red { background:#ef4444; }
+  
+  /* team */
+  .team-grid { display:flex; flex-direction:column; gap:8px; }
+  .agent { display:flex; gap:10px; align-items:center; }
+  .agent img { width:48px; height:48px; border-radius:8px; object-fit:cover; }
+  
+  /* responsive */
+  @media (max-width: 940px) {
+    .support-grid { grid-template-columns: 1fr; }
+    .support-right { order: 2; }
+    .support-left { order: 1; }
+  }
+  
