@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CDN для сайта: что это и как увеличить скорость в 3 раза — Блог NextHost</title>
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/blog.css">
+  <link rel="stylesheet" href="../css/blog-post.css">
+</head>
+<body>
+
+  <!-- 🌐 HEADER -->
+  <header class="main-header">
+    <div class="container">
+      <div class="logo">
+        <img src="../images/nh.jpg" alt="NextHost Logo">
+        <span>NextHost</span>
+      </div>
+      <nav class="nav-links">
+        <a href="../index.html">Главная</a>
+        <a href="../about.html">О нас</a>
+        <a href="../hosting.html">Хостинг</a>
+        <a href="../support.html">Поддержка</a>
+        <a href="../reviews.html">Отзывы</a>
+        <a href="../partners.html">Партнёры</a>
+        <a href="../blog.html">Блог</a>
+        <a href="../profile.html" class="profile-link">Профиль</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 📝 СТАТЬЯ -->
+  <article class="blog-post">
+    <div class="container">
+      <!-- Хлебные крошки -->
+      <nav class="breadcrumbs">
+        <a href="../index.html">Главная</a>
+        <span>→</span>
+        <a href="../blog.html">Блог</a>
+        <span>→</span>
+        <span class="current">Производительность</span>
+      </nav>
+
+      <!-- Заголовок статьи -->
+      <header class="post-header">
+        <div class="post-category">Производительность</div>
+        <h1>CDN для сайта: что это и как увеличить скорость в 3 раза</h1>
+        <div class="post-meta">
+          <div class="author-info">
+            <img src="../images/team/author2.jpg" alt="Ізбасхан Әселхан">
+            <div>
+              <div class="author-name">Ізбасхан Әселхан</div>
+              <div class="post-date">30 ноября 2024 · 9 мин чтения</div>
+            </div>
+          </div>
+          <div class="social-share">
+            <button class="share-btn" data-platform="twitter">🐦</button>
+            <button class="share-btn" data-platform="facebook">📘</button>
+            <button class="share-btn" data-platform="linkedin">💼</button>
+            <button class="share-btn" data-platform="copy">📋</button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Обложка статьи -->
+      <div class="post-hero">
+        <img src="../images/blog/cdn.jpg" alt="CDN для ускорения сайта">
+      </div>
+
+      <!-- Контент статьи -->
+      <div class="post-content">
+        <p>Content Delivery Network (CDN) — это не просто модная технология, а необходимость для любого сайта, который хочет обеспечивать быструю загрузку для пользователей по всему миру. В этой статье я покажу, как CDN может ускорить ваш сайт в 3 раза и как правильно его настроить.</p>
+
+        <h2>1. Что такое CDN и как он работает?</h2>
+        <p>CDN — это сеть распределенных серверов, которые кэшируют контент вашего сайта и доставляют его пользователям из ближайшего к ним местоположения.</p>
+        
+        <h3>Принцип работы CDN:</h3>
+        <ol>
+          <li>Пользователь запрашивает ваш сайт из Бразилии</li>
+          <li>CDN определяет ближайший сервер (Пойнт Присутствия)</li>
+          <li>Контент доставляется из São Paulo вместо Москвы</li>
+          <li>Время загрузки сокращается с 2 секунд до 200 мс</li>
+        </ol>
+
+        <div class="tip-box">
+          <strong>⚡ Факт:</strong> CDN может уменьшить время загрузки на 50-300% для пользователей из других стран.
+        </div>
+
+        <h2>2. Основные преимущества CDN</h2>
+
+        <h3>Скорость и производительность</h3>
+        <p>Что ускоряет CDN:</p>
+        <ul>
+          <li>Статические файлы (CSS, JS, изображения)</li>
+          <li>Медиа контент (видео, аудио)</li>
+          <li>Шрифты и иконки</li>
+          <li>HTML страницы (с динамическим кэшированием)</li>
+        </ul>
+
+        <h3>Глобальная доступность</h3>
+        <p>Пользователи получают контент из ближайших локаций:</p>
+        
+        <pre><code># Пример задержек без CDN
+Москва → Нью-Йорк: 150-200ms
+Москва → Сидней: 300-400ms
+Москва → Сан-Паулу: 200-250ms
+
+# С CDN - задержка 20-50ms из любого места</code></pre>
+
+        <h3>Снижение нагрузки на основной сервер</h3>
+        <p>CDN принимает на себя:</p>
+        <ul>
+          <li>80-90% трафика статических файлов</li>
+          <li>Обработку больших файлов</li>
+          <li>Запросы из разных временных зон</li>
+        </ul>
+
+        <h3>Безопасность и DDoS защита</h3>
+        <p>Дополнительные преимущества:</p>
+        <ul>
+          <li>Фильтрация вредоносного трафика</li>
+          <li>Защита от бот-атак</li>
+          <li>WAF (Web Application Firewall)</li>
+          <li>SSL терминация</li>
+        </ul>
+
+        <h2>3. Когда нужен CDN?</h2>
+
+        <h3>Обязательно нужен:</h3>
+        <ul>
+          <li>🌍 Международная аудитория</li>
+          <li>📱 Высокие требования к скорости</li>
+          <li>🛒 Интернет-магазины</li>
+          <li>📹 Сайты с видео и тяжелым медиа</li>
+          <li>📊 Высоконагруженные проекты</li>
+        </ul>
+
+        <h3>Можно обойтись без:</h3>
+        <ul>
+          <li>Локальный бизнес с аудиторией в одном городе</li>
+          <li>Небольшие блоги с минимальным трафиком</li>
+          <li>Сайты-визитки без медиа контента</li>
+        </ul>
+
+        <div class="warning-box">
+          <strong>⚠️ Важно:</strong> Даже для локальных проектов CDN может улучшить Core Web Vitals и SEO.
+        </div>
+
+        <h2>4. Популярные CDN провайдеры</h2>
+
+        <h3>Cloudflare</h3>
+        <p><strong>Преимущества:</strong></p>
+        <ul>
+          <li>Бесплатный тариф с базовыми функциями</li>
+          <li>Простая настройка (только смена DNS)</li>
+          <li>Встроенная DDoS защита</li>
+          <li>200+ точек присутствия</li>
+        </ul>
+
+        <h3>Amazon CloudFront</h3>
+        <p><strong>Преимущества:</strong></p>
+        <ul>
+          <li>Интеграция с AWS экосистемой</li>
+          <li>Гибкая ценовая политика</li>
+          <li>Продвинутые функции кэширования</li>
+          <li>Lambda@Edge для кастомной логики</li>
+        </ul>
+
+        <h3>Google Cloud CDN</h3>
+        <p><strong>Преимущества:</strong></p>
+        <ul>
+          <li>Интеграция с Google Cloud</li>
+          <li>Высокая производительность</li>
+          <li>Глобальная сеть Google</li>
+          <li>SSL по умолчанию</li>
+        </ul>
+
+        <h3>KeyCDN</h3>
+        <p><strong>Преимущества:</strong></p>
+        <ul>
+          <li>Простая pay-as-you-go модель</li>
+          <li>Быстрая настройка</li>
+          <li>Поддержка HTTP/2 и Brotli</li>
+          <li>Детальная статистика</li>
+        </ul>
+
+        <h2>5. Пошаговая настройка Cloudflare</h2>
+
+        <h3>Шаг 1: Регистрация и добавление сайта</h3>
+        <ol>
+          <li>Перейдите на cloudflare.com</li>
+          <li>Добавьте ваш домен</li>
+          <li>Выберите бесплатный тариф</li>
+        </ol>
+
+        <h3>Шаг 2: Смена DNS серверов</h3>
+        <p>Замените DNS у вашего регистратора:</p>
+
+        <pre><code># Старые DNS (пример)
+ns1.oldhosting.com
+ns2.oldhosting.com
+
+# Новые DNS от Cloudflare
+cora.ns.cloudflare.com
+dave.ns.cloudflare.com</code></pre>
+
+        <h3>Шаг 3: Настройка в панели Cloudflare</h3>
+
+        <h4>DNS настройки:</h4>
+        <pre><code># Обязательные записи
+A     @      192.0.2.1          Proxied ✅
+A     www    192.0.2.1          Proxied ✅
+CNAME blog   yoursite.com       Proxied ✅</code></pre>
+
+        <h4>Рекомендуемые настройки:</h4>
+
+        <pre><code># Speed → Optimization
+✅ Auto Minify (HTML, CSS, JS)
+✅ Brotli Compression
+✅ Rocket Loader
+
+# Caching → Configuration
+Caching Level: Standard
+Browser Cache TTL: 1 month
+Always Online: On
+
+# Network
+✅ HTTP/2
+✅ HTTP/3 (with QUIC)
+✅ 0-RTT Connection Resumption</code></pre>
+
+        <h2>6. Интеграция CDN с WordPress</h2>
+
+        <h3>Через плагины</h3>
+        <p><strong>WP Rocket + CDN:</strong></p>
+        <pre><code>// В настройках WP Rocket
+CDN CNAME: cdn.yoursite.com
+✅ Enable CDN
+✅ CDN for images
+✅ CDN for CSS & JS</code></pre>
+
+        <p><strong>Плагины для CDN:</strong></p>
+        <ul>
+          <li>CDN Enabler</li>
+          <li>W3 Total Cache</li>
+          <li>WP Super Cache</li>
+          <li>Autoptimize</li>
+        </ul>
+
+        <h3>Ручная настройка в functions.php</h3>
+        <pre><code>// Замена URL на CDN в WordPress
+function replace_urls_with_cdn($content) {
+    $local_url = 'https://yoursite.com/wp-content/';
+    $cdn_url = 'https://cdn.yoursite.com/wp-content/';
+    return str_replace($local_url, $cdn_url, $content);
+}
+add_filter('the_content', 'replace_urls_with_cdn');
+add_filter('widget_text', 'replace_urls_with_cdn');</code></pre>
+
+        <h2>7. Оптимизация CDN настроек</h2>
+
+        <h3>Кэширование статических файлов</h3>
+        <p>Рекомендуемые TTL (Time to Live):</p>
+
+        <table style="width: 100%; border-collapse: collapse; margin: 2rem 0;">
+          <thead>
+            <tr style="background: var(--accent-color); color: white;">
+              <th style="padding: 12px; text-align: left;">Тип файла</th>
+              <th style="padding: 12px; text-align: left;">TTL</th>
+              <th style="padding: 12px; text-align: left;">Причина</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+              <td style="padding: 12px;">Изображения, шрифты</td>
+              <td style="padding: 12px;">1 год</td>
+              <td style="padding: 12px;">Редко меняются</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+              <td style="padding: 12px;">CSS, JavaScript</td>
+              <td style="padding: 12px;">1 месяц</td>
+              <td style="padding: 12px;">Обновляются чаще</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+              <td style="padding: 12px;">HTML страницы</td>
+              <td style="padding: 12px;">1 час</td>
+              <td style="padding: 12px;">Часто меняются</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Сжатие и оптимизация</h3>
+        <p>Включите все доступные методы сжатия:</p>
+        <ul>
+          <li><strong>Gzip:</strong> Базовая компрессия</li>
+          <li><strong>Brotli:</strong> На 20-26% лучше чем Gzip</li>
+          <li><strong>WebP:</strong> Автоматическая конвертация изображений</li>
+          <li><strong>HTTP/2:</strong> Мультиплексирование запросов</li>
+        </ul>
+
+        <h2>8. Мониторинг эффективности CDN</h2>
+
+        <h3>Ключевые метрики для отслеживания:</h3>
+        
+        <ul>
+          <li><strong>Time to First Byte (TTFB):</strong> Должен уменьшиться на 30-70%</li>
+          <li><strong>Load Time:</strong> Общее время загрузки страницы</li>
+          <li><strong>Cache Hit Ratio:</strong> Должен быть 90%+</li>
+          <li><strong>Bandwidth Savings:</strong> Экономия трафика</li>
+        </ul>
+
+        <h3>Инструменты для тестирования:</h3>
+        <ul>
+          <li>GTmetrix (с разных локаций)</li>
+          <li>WebPageTest</li>
+          <li>Pingdom Tools</li>
+          <li>Google PageSpeed Insights</li>
+          <li>CDN-провайдер аналитика</li>
+        </ul>
+
+        <h2>9. Решение частых проблем</h2>
+
+        <h3>Смешанный контент (Mixed Content)</h3>
+        <p>Проблема: HTTP ресурсы на HTTPS странице</p>
+
+        <pre><code># До
+&lt;img src="http://cdn.site.com/image.jpg"&gt;
+
+# После
+&lt;img src="https://cdn.site.com/image.jpg"&gt;</code></pre>
+
+        <p><strong>Решение:</strong> Используйте protocol-relative URLs</p>
+        <pre><code>&lt;img src="//cdn.site.com/image.jpg"&gt;</code></pre>
+
+        <h3>Кэширование устаревшего контента</h3>
+        <p><strong>Решение:</strong> Очистка кэша CDN</p>
+
+        <pre><code># В Cloudflare
+Cache → Configuration → Purge Everything
+
+# Или выборочная очистка
+Purge by URL: https://site.com/style.css
+Purge by Host: site.com</code></pre>
+
+        <h3>Проблемы с DNS</h3>
+        <p><strong>Симптомы:</strong> Сайт недоступен после смены DNS</p>
+        <p><strong>Решение:</strong> Подождите 24-48 часов для полного распространения DNS</p>
+
+        <h2>10. Продвинутые техники CDN</h2>
+
+        <h3>Динамическое кэширование</h3>
+        <p>Кэширование HTML страниц с разным TTL:</p>
+
+        <pre><code># Cloudflare Page Rules
+example.com/blog/* 
+→ Cache Level: Standard
+→ Edge Cache TTL: 1 hour
+
+example.com/product/*
+→ Cache Level: Standard  
+→ Edge Cache TTL: 30 minutes
+
+example.com/checkout/*
+→ Cache Level: Bypass</code></pre>
+
+        <h3>Геолокация и персонализация</h3>
+        <p>Разный контент для разных регионов:</p>
+
+        <pre><code>// Cloudflare Workers
+addEventListener('fetch', event => {
+  const country = event.request.cf.country
+  if (country === 'RU') {
+    // Показывать русскую версию
+  } else {
+    // Международная версия
+  }
+})</code></pre>
+
+        <h3>Image Optimization API</h3>
+        <p>Автоматическая оптимизация изображений:</p>
+
+        <pre><code># Cloudflare Images
+https://cdn.site.com/image.jpg?width=800&quality=80
+https://cdn.site.com/avatar.jpg?width=150&height=150&fit=crop</code></pre>
+
+        <h2>11. Стоимость CDN услуг</h2>
+
+        <table style="width: 100%; border-collapse: collapse; margin: 2rem 0;">
+          <thead>
+            <tr style="background: var(--accent-color); color: white;">
+              <th style="padding: 12px; text-align: left;">Провайдер</th>
+              <th style="padding: 12px; text-align: left;">Бесплатно</th>
+              <th style="padding: 12px; text-align: left;">Платно (в месяц)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+              <td style="padding: 12px;">Cloudflare</td>
+              <td style="padding: 12px;">✅ Неограниченно</td>
+              <td style="padding: 12px;">от $20</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+              <td style="padding: 12px;">Amazon CloudFront</td>
+              <td style="padding: 12px;">❌ 1TB в месяц</td>
+              <td style="padding: 12px;">$0.085/GB</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+              <td style="padding: 12px;">Google Cloud CDN</td>
+              <td style="padding: 12px;">❌</td>
+              <td style="padding: 12px;">$0.08/GB</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+              <td style="padding: 12px;">KeyCDN</td>
+              <td style="padding: 12px;">❌</td>
+              <td style="padding: 12px;">$0.04/GB</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>12. Чек-лист успешной настройки CDN</h2>
+
+        <ul>
+          <li>✅ DNS распространились (24-48 часов)</li>
+          <li>✅ Все ресурсы загружаются через CDN</li>
+          <li>✅ Нет ошибок смешанного контента</li>
+          <li>✅ SSL сертификат активен</li>
+          <li>✅ Кэширование работает (проверьте headers)</li>
+          <li>✅ Скорость улучшилась (протестируйте из разных стран)</li>
+          <li>✅ Статистика CDN показывает трафик</li>
+        </ul>
+
+        <h2>Заключение</h2>
+        <p>CDN — это не роскошь, а необходимость для современного веб-сайта. Начните с бесплатного Cloudflare — это займет 15 минут, но даст мгновенное улучшение скорости для международной аудитории.</p>
+
+        <p>Помните: скорость сайта напрямую влияет на конверсии, SEO и пользовательский опыт. Каждая миллисекунда имеет значение, особенно для мобильных пользователей.</p>
+
+        <p>Не откладывайте настройку CDN — ваши пользователи по всему миру скажут вам спасибо за быструю загрузку! 🚀</p>
+      </div>
+
+      <!-- Действия с статьей -->
+      <footer class="post-actions">
+        <div class="post-tags">
+          <span>🏷️ Теги:</span>
+          <a href="../blog.html?tag=cdn">#cdn</a>
+          <a href="../blog.html?tag=скорость">#скорость</a>
+          <a href="../blog.html?tag=производительность">#производительность</a>
+          <a href="../blog.html?tag=оптимизация">#оптимизация</a>
+        </div>
+        <div class="action-buttons">
+          <button class="like-btn">👍 <span class="like-count">94</span></button>
+          <button class="bookmark-btn">📑 Сохранить</button>
+          <button class="share-btn">📤 Поделиться</button>
+        </div>
+      </footer>
+    </div>
+  </article>
+
+  <!-- 👤 СЕКЦИЯ АВТОРА -->
+  <section class="author-section">
+    <div class="container">
+      <div class="author-card">
+        <img src="../images/team/author2.jpg" alt="Ізбасхан Әселхан">
+        <div class="author-info">
+          <h3>Ізбасхан Әселхан</h3>
+          <p>Специалист по кибербезопасности и инфраструктуре с 6-летним опытом. Эксперт в области CDN технологий, DDoS защиты и оптимизации производительности веб-приложений. Настроила CDN для более 200 проектов.</p>
+          <div class="author-stats">
+            <span>📝 18 статей</span>
+            <span>👁️ 32.7k просмотров</span>
+            <span>👍 890 лайков</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 📚 ПОХОЖИЕ СТАТЬИ -->
+  <section class="related-posts">
+    <div class="container">
+      <h2>📖 Читайте также</h2>
+      <div class="related-grid">
+        <article class="blog-card">
+          <a href="how-to-speed-up-website.html" class="card-link">
+            <div class="card-image">
+              <img src="../images/blog/optimization.jpg" alt="Оптимизация скорости">
+              <span class="card-category">Производительность</span>
+            </div>
+            <div class="card-content">
+              <h3>10 способов ускорить загрузку вашего сайта в 2024 году</h3>
+              <div class="card-meta">
+                <div class="author">
+                  <img src="../images/team/author1.jpg" alt="Тасеменов Нурбек">
+                  <span>Тасеменов Нурбек</span>
+                </div>
+                <div class="meta-info">
+                  <span class="date">15 дек 2024</span>
+                  <span class="read-time">8 мин</span>
+                  <span class="views">2.4k</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <article class="blog-card">
+          <a href="wordpress-database-optimization.html" class="card-link">
+            <div class="card-image">
+              <img src="../images/blog/wordpress-speed.jpg" alt="WordPress скорость">
+              <span class="card-category">WordPress</span>
+            </div>
+            <div class="card-content">
+              <h3>Оптимизация базы данных WordPress: ускоряем сайт на 40%</h3>
+              <div class="card-meta">
+                <div class="author">
+                  <img src="../images/team/author4.jpg" alt="Нұрхатова Райхан">
+                  <span>Нұрхатова Райхан</span>
+                </div>
+                <div class="meta-info">
+                  <span class="date">25 ноя 2024</span>
+                  <span class="read-time">8 мин</span>
+                  <span class="views">892</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <article class="blog-card">
+          <a href="ssl-certificate-guide.html" class="card-link">
+            <div class="card-image">
+              <img src="../images/blog/ssl.jpg" alt="SSL сертификаты">
+              <span class="card-category">Разработка</span>
+            </div>
+            <div class="card-content">
+              <h3>Зачем нужен SSL сертификат и как его правильно установить</h3>
+              <div class="card-meta">
+                <div class="author">
+                  <img src="../images/team/author5.jpg" alt="Жандос Арлан">
+                  <span>Жандос Арлан</span>
+                </div>
+                <div class="meta-info">
+                  <span class="date">3 дек 2024</span>
+                  <span class="read-time">5 мин</span>
+                  <span class="views">874</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 💬 КОММЕНТАРИИ -->
+  <section class="comments-section">
+    <div class="container">
+      <h2>💬 Обсуждение (<span class="comments-count">11</span>)</h2>
+      <div class="comments-list">
+        <div class="comment">
+          <div class="comment-author">
+            <img src="../images/avatars/user1.jpg" alt="Александр">
+            <div>
+              <strong>Александр</strong>
+              <span>2 дня назад</span>
+            </div>
+          </div>
+          <div class="comment-text">
+            <p>Отличная статья! Настроил Cloudflare по вашей инструкции - скорость сайта для пользователей из США увеличилась в 3 раза. Спасибо за подробное руководство!</p>
+          </div>
+        </div>
+
+        <div class="comment">
+          <div class="comment-author">
+            <img src="../images/avatars/user2.jpg" alt="Ирина">
+            <div>
+              <strong>Ирина</strong>
+              <span>3 дня назад</span>
+            </div>
+          </div>
+          <div class="comment-text">
+            <p>Спасибо за детальное описание! Подскажите, есть ли смысл использовать CDN если 95% трафика из одной страны?</p>
+          </div>
+        </div>
+      </div>
+
+      <form class="comment-form">
+        <textarea placeholder="Ваш комментарий..." required></textarea>
+        <button type="submit">Отправить комментарий</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- 📞 CTA СЕКЦИЯ -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Хотите ускорить свой сайт?</h2>
+        <p>Наши специалисты бесплатно настроят CDN и оптимизируют производительность</p>
+        <div class="cta-buttons">
+          <a href="../blog.html" class="primary-btn large">Читать другие статьи</a>
+          <a href="../support.html" class="secondary-btn large">Настроить CDN</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⚙️ FOOTER -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-left">
+          <div class="footer-logo">
+            <img src="../images/nh.jpg" alt="NextHost Logo">
+            <span>NextHost</span>
+          </div>
+          <p>Премиум хостинг для вашего успеха в цифровом мире</p>
+        </div>
+        <div class="footer-right">
+          <p>Контакты: <a href="mailto:support@nexthost.kz">support@nexthost.kz</a></p>
+          <p>Телефон: <a href="tel:+77777777777">+7 (777) 777-77-77</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 NextHost. Все права защищены.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/blog-post.js"></script>
+</body>
+</html>
