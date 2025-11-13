@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NextHost — Премиум хостинг для вашего проекта</title>
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/index.css" />
+</head>
+<body>
+
+  <!-- 🌐 HEADER -->
+  <header class="main-header">
+    <div class="container">
+      <div class="logo">
+        <img src="images/nh.jpg" alt="NextHost Logo">
+        <span>NextHost</span>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html" class="active">Главная</a>
+        <a href="about.html">О нас</a>
+        <a href="hosting.html">Хостинг</a>
+        <a href="support.html">Поддержка</a>
+        <a href="reviews.html">Отзывы</a>
+        <a href="partners.html">Партнёры</a>
+        <a href="blog.html">Блог</a>
+        <a href="profile.html" class="profile-link">Профиль</a>
+      </nav>
+    </div>
+  </header>
+
+  <script>
+    // Проверка авторизации
+    window.addEventListener('load', () => {
+        const user = localStorage.getItem('user');
+        if (!user) {
+            window.location.href = 'auth.html';
+        } else {
+            // Показываем информацию пользователя
+            const userData = JSON.parse(user);
+            console.log('Пользователь авторизован:', userData);
+        }
+    });
+    
+    // Выход из системы
+    function logout() {
+        localStorage.removeItem('user');
+        window.location.href = 'auth.html';
+    }
+    </script>
+    
+  <!-- 🏠 HERO-СЕКЦИЯ -->
+  <section class="hero">
+    <div class="hero-background">
+      <div class="hero-particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span>🚀 Премиум хостинг</span>
+        </div>
+        <h1 class="hero-title">Мощный хостинг для вашего <span class="gradient-text">успеха</span></h1>
+        <p class="hero-subtitle">Запустите свой проект на сверхбыстрых серверах с гарантией 99.9% аптайма и круглосуточной поддержкой</p>
+        <div class="hero-buttons">
+          <button class="primary-btn">
+            <span>Начать сейчас</span>
+          </button>
+          <button class="secondary-btn">
+            <span>Узнать больше</span>
+          </button>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <div class="stat-number">10k+</div>
+            <div class="stat-label">Довольных клиентов</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">99.9%</div>
+            <div class="stat-label">Гарантия аптайма</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">24/7</div>
+            <div class="stat-label">Поддержка</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🎯 СЕКЦИЯ ПРЕИМУЩЕСТВ -->
+  <section class="features-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Почему выбирают <span class="gradient-text">NextHost</span>?</h2>
+        <p>Мы предоставляем лучшие решения для вашего онлайн-присутствия</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>Молниеносная скорость</h3>
+          <p>SSD-накопители NVMe и оптимизированное железо обеспечивают мгновенную загрузку ваших проектов</p>
+          <div class="feature-highlight">До 10x быстрее</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🛡️</div>
+          <h3>Максимальная безопасность</h3>
+          <p>Многоуровневая защита от DDoS-атак, автоматические бэкапы и SSL-сертификаты</p>
+          <div class="feature-highlight">Защита 24/7</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🌍</div>
+          <h3>Глобальная инфраструктура</h3>
+          <p>Серверы по всему миру обеспечивают низкую задержку для вашей аудитории в любой точке планеты</p>
+          <div class="feature-highlight">15+ локаций</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📈</div>
+          <h3>Легкое масштабирование</h3>
+          <p>Увеличивайте ресурсы в один клик по мере роста вашего проекта без простоев</p>
+          <div class="feature-highlight">Мгновенное scaling</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔧</div>
+          <h3>Простое управление</h3>
+          <p>Интуитивная панель управления с поддержкой всех популярных CMS и фреймворков</p>
+          <div class="feature-highlight">cPanel включен</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💬</div>
+          <h3>Экспертная поддержка</h3>
+          <p>Наша команда специалистов всегда готова помочь с любыми техническими вопросами</p>
+          <div class="feature-highlight">Ответ за 5 минут</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 💰 СЕКЦИЯ ТАРИФОВ -->
+  <section class="pricing-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Доступные <span class="gradient-text">тарифы</span></h2>
+        <p>Выберите идеальное решение для ваших потребностей</p>
+      </div>
+      <div class="pricing-cards">
+        <div class="pricing-card">
+          <div class="plan-header">
+            <h3>Старт</h3>
+            <div class="price">₽490<span>/месяц</span></div>
+          </div>
+          <ul class="plan-features">
+            <li>✓ 1 GB SSD NVMe</li>
+            <li>✓ 1 Домен</li>
+            <li>✓ 1 База данных</li>
+            <li>✓ Бесплатный SSL</li>
+            <li>✓ Панель управления</li>
+          </ul>
+          <button class="plan-btn">Выбрать тариф</button>
+        </div>
+        <div class="pricing-card popular">
+          <div class="popular-badge">Популярный</div>
+          <div class="plan-header">
+            <h3>Профи</h3>
+            <div class="price">₽990<span>/месяц</span></div>
+          </div>
+          <ul class="plan-features">
+            <li>✓ 10 GB SSD NVMe</li>
+            <li>✓ 5 Доменов</li>
+            <li>✓ 10 Баз данных</li>
+            <li>✓ Бесплатный SSL</li>
+            <li>✓ Авто-бэкапы</li>
+            <li>✓ Приоритетная поддержка</li>
+          </ul>
+          <button class="plan-btn primary">Выбрать тариф</button>
+        </div>
+        <div class="pricing-card">
+          <div class="plan-header">
+            <h3>Бизнес</h3>
+            <div class="price">₽1990<span>/месяц</span></div>
+          </div>
+          <ul class="plan-features">
+            <li>✓ 50 GB SSD NVMe</li>
+            <li>✓ Неограниченно доменов</li>
+            <li>✓ Неограниченно БД</li>
+            <li>✓ Бесплатный SSL</li>
+            <li>✓ Авто-бэкапы</li>
+            <li>✓ DDoS защита</li>
+            <li>✓ Выделенный IP</li>
+          </ul>
+          <button class="plan-btn">Выбрать тариф</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🎪 СЕКЦИЯ ПАРТНЕРОВ -->
+  <section class="partners-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Нам доверяют <span class="gradient-text">лидеры</span></h2>
+        <p>Сотрудничаем с лучшими компаниями индустрии</p>
+      </div>
+      <div class="partners-grid">
+        <div class="partner-logo">NVIDIA</div>
+        <div class="partner-logo">Red Bull</div>
+        <div class="partner-logo">Cloudflare</div>
+        <div class="partner-logo">Razer</div>
+        <div class="partner-logo">Logitech G</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 📞 CTA СЕКЦИЯ -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Готовы начать?</h2>
+        <p>Присоединяйтесь к тысячам довольных клиентов NextHost сегодня</p>
+        <div class="cta-buttons">
+          <button class="primary-btn large">Начать сейчас</button>
+          <a href="support.html" class="secondary-btn large">Связаться с нами</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⚙️ FOOTER -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-left">
+          <div class="footer-logo">
+            <img src="images/nh.jpg" alt="NextHost Logo">
+            <span>NextHost</span>
+          </div>
+          <p>Премиум хостинг для вашего успеха в цифровом мире</p>
+        </div>
+        <div class="footer-right">
+          <p>Контакты: <a href="mailto:support@nexthost.kz">support@nexthost.kz</a></p>
+          <p>Телефон: <a href="tel:+77778145056">+7 (777) 814-50-56</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 NextHost. Все права защищены.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="js/index.js"></script>
+</body>
+</html>

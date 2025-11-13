@@ -1,0 +1,162 @@
+body {
+  background-color: #0a0a0f;
+  color: #e0e0e0;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.reviews-hero {
+  text-align: center;
+  padding: 60px 20px;
+  background: radial-gradient(circle at center, #0d1b2a, #000);
+  border-bottom: 1px solid #007bff33;
+}
+
+.reviews-hero h1 {
+  font-size: 2.2rem;
+  color: #00aaff;
+  text-shadow: 0 0 10px #007bff;
+}
+
+.reviews-hero .lead {
+  color: #ccc;
+  margin-top: 10px;
+}
+
+.reviews-section {
+  padding: 60px 0;
+}
+
+.reviews-slider {
+  overflow: hidden;
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto 70px;
+}
+
+.reviews-track {
+  display: flex;
+  transition: transform 1s ease-in-out;
+  gap: 40px;
+  width: 100%;
+  align-items: stretch;
+}
+
+.review-card {
+  min-width: 60%;
+  padding: 30px;
+  text-align: center;
+  background: #111421;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.2);
+  border: 1px solid rgba(0, 123, 255, 0.3);
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.8s ease-out;
+  flex: 0 0 80%;
+  margin-right: 0;
+  margin: 0 auto;
+}
+
+.review-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+  box-shadow: 0 0 25px rgba(0, 123, 255, 0.5);
+}
+
+.review-card img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 2px solid #007bff;
+  display: block;
+  margin: 0 auto 15px;
+  object-fit: cover;
+  background: #0a0a0f;
+}
+
+.review-card h3 {
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.review-card p {
+  color: #ccc;
+  font-size: 15px;
+  margin-top: 10px;
+}
+
+.stars {
+  color: #ffd700;
+  font-size: 1.2rem;
+}
+
+.review-form-section {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #111421;
+  border: 1px solid rgba(0, 123, 255, 0.3);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 0 25px rgba(0, 123, 255, 0.2);
+  text-align: center;
+}
+
+.review-form-section h2 {
+  color: #00aaff;
+  text-shadow: 0 0 10px #007bff;
+  margin-bottom: 25px;
+}
+
+.review-form-section input,
+.review-form-section textarea {
+  width: 100%;
+  background: #0a0f1f;
+  border: 1px solid #007bff66;
+  color: #fff;
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 15px;
+  outline: none;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.review-form-section input:focus,
+.review-form-section textarea:focus {
+  border-color: #00aaff;
+  box-shadow: 0 0 10px #007bff66;
+}
+
+.rating span {
+  font-size: 25px;
+  color: #444;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.rating span.active {
+  color: #ffd700;
+}
+
+.btn-glow {
+  background: #007bff;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 10px;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 10px #007bff, 0 0 25px #007bff66;
+}
+
+.btn-glow:hover {
+  background: #00aaff;
+  box-shadow: 0 0 20px #00aaff, 0 0 40px #00aaff99;
+}
+
+#review-feedback {
+  margin-top: 10px;
+  color: #00ff88;
+}
+

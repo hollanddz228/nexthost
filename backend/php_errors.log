@@ -1,0 +1,111 @@
+[10-Nov-2025 19:25:40 Europe/Berlin] PHP Fatal error:  Cannot redeclare getDBConnection() (previously declared in C:\xampp\htdocs\nexthost\backend\config.php:24) in C:\xampp\htdocs\nexthost\backend\config.php on line 22
+[10-Nov-2025 19:25:40 Europe/Berlin] PHP Fatal error:  Cannot redeclare getDBConnection() (previously declared in C:\xampp\htdocs\nexthost\backend\config.php:24) in C:\xampp\htdocs\nexthost\backend\config.php on line 22
+[10-Nov-2025 19:26:06 Europe/Berlin] PHP Fatal error:  Cannot redeclare getDBConnection() (previously declared in C:\xampp\htdocs\nexthost\backend\config.php:24) in C:\xampp\htdocs\nexthost\backend\config.php on line 22
+[10-Nov-2025 19:26:06 Europe/Berlin] PHP Fatal error:  Cannot redeclare getDBConnection() (previously declared in C:\xampp\htdocs\nexthost\backend\config.php:24) in C:\xampp\htdocs\nexthost\backend\config.php on line 22
+[10-Nov-2025 19:27:24 Europe/Berlin] PHP Fatal error:  Cannot redeclare getDBConnection() (previously declared in C:\xampp\htdocs\nexthost\backend\config.php:24) in C:\xampp\htdocs\nexthost\backend\config.php on line 22
+[10-Nov-2025 19:27:29 Europe/Berlin] PHP Fatal error:  Cannot redeclare getDBConnection() (previously declared in C:\xampp\htdocs\nexthost\backend\config.php:24) in C:\xampp\htdocs\nexthost\backend\config.php on line 22
+[10-Nov-2025 21:30:57 Europe/Moscow] Received input: {"name":"Абыл","phone":"+77778145056","email":"korol5056@gmail.com","password":"qwerty123","confirm_password":"qwerty123"}
+[10-Nov-2025 21:30:57 Europe/Moscow] Received input: {"name":"Абыл","phone":"+77778145056","email":"korol5056@gmail.com","password":"qwerty123","confirm_password":"qwerty123"}
+[10-Nov-2025 21:30:57 Europe/Moscow] Received input: {"name":"Абыл","phone":"+77778145056","email":"korol5056@gmail.com","password":"qwerty123","confirm_password":"qwerty123"}
+[10-Nov-2025 21:36:09 Europe/Moscow] Registration error: Ошибка базы данных: Duplicate entry 'korol5056@gmail.com' for key 'email'
+[10-Nov-2025 21:36:09 Europe/Moscow] Registration error: Ошибка базы данных: Duplicate entry 'korol5056@gmail.com' for key 'email'
+[10-Nov-2025 21:44:10 Europe/Moscow] Registration error: Ошибка базы данных: Duplicate entry 'atabidulla@gmail.com' for key 'email'
+[10-Nov-2025 21:44:10 Europe/Moscow] Registration error: Ошибка базы данных: Duplicate entry 'atabidulla@gmail.com' for key 'email'
+[10-Nov-2025 19:52:28 Europe/Berlin] PHP Warning:  mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\xampp\htdocs\nexthost\backend\mailer_real.php on line 109
+[10-Nov-2025 19:52:28 Europe/Berlin] Email sent to korol5056@gmail.com: FAILED
+[10-Nov-2025 19:52:29 Europe/Berlin] PHP Warning:  mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\xampp\htdocs\nexthost\backend\mailer_real.php on line 109
+[10-Nov-2025 19:52:29 Europe/Berlin] Email sent to korol5056@gmail.com: FAILED
+[10-Nov-2025 19:54:39 Europe/Berlin] === REGISTRATION DEBUG ===
+[10-Nov-2025 19:54:39 Europe/Berlin] Raw input: {"email":"T_abilay12@mail.ru"}
+[10-Nov-2025 19:54:39 Europe/Berlin] Decoded data: Array
+(
+    [email] => T_abilay12@mail.ru
+)
+
+[10-Nov-2025 19:54:39 Europe/Berlin] Database connected successfully
+[10-Nov-2025 19:54:39 Europe/Berlin] Checking email: T_abilay12@mail.ru
+[10-Nov-2025 19:54:39 Europe/Berlin] Email check result: 1 rows
+[10-Nov-2025 19:55:30 Europe/Berlin] === REGISTRATION DEBUG ===
+[10-Nov-2025 19:55:30 Europe/Berlin] Raw input: {"email":"atabidulla@gmail.com"}
+[10-Nov-2025 19:55:30 Europe/Berlin] Decoded data: Array
+(
+    [email] => atabidulla@gmail.com
+)
+
+[10-Nov-2025 19:55:30 Europe/Berlin] Database connected successfully
+[10-Nov-2025 19:55:30 Europe/Berlin] Checking email: atabidulla@gmail.com
+[10-Nov-2025 19:55:30 Europe/Berlin] Email check result: 1 rows
+[10-Nov-2025 19:58:46 Europe/Berlin] Registration error: Ошибка базы данных: Duplicate entry 'abalay5056@gmail.com' for key 'email'
+[10-Nov-2025 19:58:46 Europe/Berlin] Registration error: Ошибка базы данных: Duplicate entry 'abalay5056@gmail.com' for key 'email'
+[10-Nov-2025 19:58:48 Europe/Berlin] PHP Warning:  mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\xampp\htdocs\nexthost\backend\mailer_real.php on line 109
+[10-Nov-2025 19:58:48 Europe/Berlin] Email sent to abalay5056@gmail.com: FAILED
+[10-Nov-2025 20:06:08 Europe/Berlin] Email log write result: SUCCESS
+[10-Nov-2025 20:06:08 Europe/Berlin] Log file: C:\xampp\htdocs\nexthost\backend/email_log.txt
+[10-Nov-2025 20:06:08 Europe/Berlin] Log content: === EMAIL VERIFICATION ===
+Time: 2025-11-10 20:06:08
+To: abalay5056@gmail.com
+Name: Боб
+Verification Code: 3a6e3cd43521430ecd3d745749fc66ca
+Verification URL: http://localhost/nexthost/backend/verify.php?code=3a6e3cd43521430ecd3d745749fc66ca
+Direct Link: <a href='http://localhost/nexthost/backend/verify.php?code=3a6e3cd43521430ecd3d745749fc66ca'>Click to Verify</a>
+=================================
+
+
+[10-Nov-2025 20:11:02 Europe/Berlin] Email log write result: SUCCESS
+[10-Nov-2025 20:11:02 Europe/Berlin] Log file: C:\xampp\htdocs\nexthost\backend/email_log.txt
+[10-Nov-2025 20:11:02 Europe/Berlin] Log content: === EMAIL VERIFICATION ===
+Time: 2025-11-10 20:11:02
+To: abalay5056@gmail.com
+Name: Боб
+Verification Code: dc5600a56b446329de1b9db0dbc870e9
+Verification URL: http://localhost/nexthost/backend/verify.php?code=dc5600a56b446329de1b9db0dbc870e9
+Direct Link: <a href='http://localhost/nexthost/backend/verify.php?code=dc5600a56b446329de1b9db0dbc870e9'>Click to Verify</a>
+=================================
+
+
+[10-Nov-2025 20:17:29 Europe/Berlin] Generated code: 55e8fcf825a517bc6ebcef8be060627b
+[10-Nov-2025 20:17:29 Europe/Berlin] Email log write result: SUCCESS
+[10-Nov-2025 20:17:29 Europe/Berlin] Log file: C:\xampp\htdocs\nexthost\backend/email_log.txt
+[10-Nov-2025 20:17:29 Europe/Berlin] Log content: === EMAIL VERIFICATION ===
+Time: 2025-11-10 20:17:29
+To: abalay5056@gmail.com
+Name: бобби
+Verification Code: 3ff684c5cd63ad98a0bae9f6464ab458
+Verification URL: http://localhost/nexthost/backend/verify.php?code=3ff684c5cd63ad98a0bae9f6464ab458
+Direct Link: <a href='http://localhost/nexthost/backend/verify.php?code=3ff684c5cd63ad98a0bae9f6464ab458'>Click to Verify</a>
+=================================
+
+
+[10-Nov-2025 20:20:35 Europe/Berlin] === REGISTRATION DEBUG ===
+[10-Nov-2025 20:20:35 Europe/Berlin] Raw input: {"email":"T_abilay12@mail.ru"}
+[10-Nov-2025 20:20:35 Europe/Berlin] Decoded data: Array
+(
+    [email] => T_abilay12@mail.ru
+)
+
+[10-Nov-2025 20:20:35 Europe/Berlin] Database connected successfully
+[10-Nov-2025 20:20:35 Europe/Berlin] Checking email: T_abilay12@mail.ru
+[10-Nov-2025 20:20:35 Europe/Berlin] Email check result: 1 rows
+[10-Nov-2025 20:24:17 Europe/Berlin] Generated code: 383c7e27679ea6531509a024b35d7a91
+[10-Nov-2025 20:24:17 Europe/Berlin] Email log write result: SUCCESS
+[10-Nov-2025 20:24:17 Europe/Berlin] Log file: C:\xampp\htdocs\nexthost\backend/email_log.txt
+[10-Nov-2025 20:24:17 Europe/Berlin] Log content: === EMAIL VERIFICATION ===
+Time: 2025-11-10 20:24:17
+To: abalay5056@gmail.com
+Name: бобби
+Verification Code: f3112f0f83b6b16cd87b116fa92f6e48
+Verification URL: http://localhost/nexthost/backend/verify.php?code=f3112f0f83b6b16cd87b116fa92f6e48
+Direct Link: <a href='http://localhost/nexthost/backend/verify.php?code=f3112f0f83b6b16cd87b116fa92f6e48'>Click to Verify</a>
+=================================
+
+
+[10-Nov-2025 20:24:29 Europe/Berlin] === REGISTRATION DEBUG ===
+[10-Nov-2025 20:24:29 Europe/Berlin] Raw input: {"email":"abalay5056@gmail.com"}
+[10-Nov-2025 20:24:29 Europe/Berlin] Decoded data: Array
+(
+    [email] => abalay5056@gmail.com
+)
+
+[10-Nov-2025 20:24:29 Europe/Berlin] Database connected successfully
+[10-Nov-2025 20:24:29 Europe/Berlin] Checking email: abalay5056@gmail.com
+[10-Nov-2025 20:24:29 Europe/Berlin] Email check result: 1 rows

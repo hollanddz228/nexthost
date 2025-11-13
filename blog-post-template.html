@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{TITLE} — Блог NextHost</title>
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/blog.css">
+  <link rel="stylesheet" href="../css/blog-post.css">
+</head>
+<body>
+
+  <!-- 🌐 HEADER -->
+  <header class="main-header">
+    <div class="container">
+      <div class="logo">
+        <img src="../images/nh.jpg" alt="NextHost Logo">
+        <span>NextHost</span>
+      </div>
+      <nav class="nav-links">
+        <a href="../index.html">Главная</a>
+        <a href="../about.html">О нас</a>
+        <a href="../hosting.html">Хостинг</a>
+        <a href="../support.html">Поддержка</a>
+        <a href="../reviews.html">Отзывы</a>
+        <a href="../partners.html">Партнёры</a>
+        <a href="../blog.html">Блог</a>
+        <a href="../profile.html" class="profile-link">Профиль</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 📝 СТАТЬЯ -->
+  <article class="blog-post">
+    <div class="container">
+      <!-- Хлебные крошки -->
+      <nav class="breadcrumbs">
+        <a href="../index.html">Главная</a>
+        <span>→</span>
+        <a href="../blog.html">Блог</a>
+        <span>→</span>
+        <span class="current">{CATEGORY}</span>
+      </nav>
+
+      <!-- Заголовок статьи -->
+      <header class="post-header">
+        <div class="post-category">{CATEGORY}</div>
+        <h1>{TITLE}</h1>
+        <div class="post-meta">
+          <div class="author-info">
+            <img src="../images/team/{AUTHOR_IMAGE}" alt="{AUTHOR_NAME}">
+            <div>
+              <div class="author-name">{AUTHOR_NAME}</div>
+              <div class="post-date">{DATE} · {READ_TIME} мин чтения</div>
+            </div>
+          </div>
+          <div class="social-share">
+            <button class="share-btn" data-platform="twitter">🐦</button>
+            <button class="share-btn" data-platform="facebook">📘</button>
+            <button class="share-btn" data-platform="linkedin">💼</button>
+            <button class="share-btn" data-platform="copy">📋</button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Обложка статьи -->
+      <div class="post-hero">
+        <img src="../images/blog/{COVER_IMAGE}" alt="{TITLE}">
+      </div>
+
+      <!-- Контент статьи -->
+      <div class="post-content">
+        {CONTENT}
+      </div>
+
+      <!-- Действия с статьей -->
+      <footer class="post-actions">
+        <div class="post-tags">
+          <span>🏷️ Теги:</span>
+          {TAGS}
+        </div>
+        <div class="action-buttons">
+          <button class="like-btn">👍 <span class="like-count">42</span></button>
+          <button class="bookmark-btn">📑 Сохранить</button>
+          <button class="share-btn">📤 Поделиться</button>
+        </div>
+      </footer>
+    </div>
+  </article>
+
+  <!-- 👤 СЕКЦИЯ АВТОРА -->
+  <section class="author-section">
+    <div class="container">
+      <div class="author-card">
+        <img src="../images/team/{AUTHOR_IMAGE}" alt="{AUTHOR_NAME}">
+        <div class="author-info">
+          <h3>{AUTHOR_NAME}</h3>
+          <p>{AUTHOR_BIO}</p>
+          <div class="author-stats">
+            <span>📝 {ARTICLE_COUNT} статей</span>
+            <span>👁️ {TOTAL_VIEWS} просмотров</span>
+            <span>👍 {TOTAL_LIKES} лайков</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 📚 ПОХОЖИЕ СТАТЬИ -->
+  <section class="related-posts">
+    <div class="container">
+      <h2>📖 Читайте также</h2>
+      <div class="related-grid">
+        {RELATED_POSTS}
+      </div>
+    </div>
+  </section>
+
+  <!-- 💬 КОММЕНТАРИИ -->
+  <section class="comments-section">
+    <div class="container">
+      <h2>💬 Обсуждение (<span class="comments-count">3</span>)</h2>
+      <div class="comments-list">
+        {COMMENTS}
+      </div>
+      <form class="comment-form">
+        <textarea placeholder="Ваш комментарий..." required></textarea>
+        <button type="submit">Отправить комментарий</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- 📞 CTA СЕКЦИЯ -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Нашли статью полезной?</h2>
+        <p>Подпишитесь на наш блог и получайте новые материалы первыми</p>
+        <div class="cta-buttons">
+          <a href="../blog.html" class="primary-btn large">Читать другие статьи</a>
+          <a href="../hosting.html" class="secondary-btn large">Выбрать хостинг</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⚙️ FOOTER -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-left">
+          <div class="footer-logo">
+            <img src="../images/nh.jpg" alt="NextHost Logo">
+            <span>NextHost</span>
+          </div>
+          <p>Премиум хостинг для вашего успеха в цифровом мире</p>
+        </div>
+        <div class="footer-right">
+          <p>Контакты: <a href="mailto:support@nexthost.kz">support@nexthost.kz</a></p>
+          <p>Телефон: <a href="tel:+77777777777">+7 (777) 777-77-77</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 NextHost. Все права защищены.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/blog-post.js"></script>
+</body>
+</html>

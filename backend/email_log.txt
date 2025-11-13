@@ -1,0 +1,38 @@
+Test write at 2025-11-10 20:04:22
+=== EMAIL VERIFICATION ===
+Time: 2025-11-10 20:06:08
+To: abalay5056@gmail.com
+Name: Боб
+Verification Code: 3a6e3cd43521430ecd3d745749fc66ca
+Verification URL: http://localhost/nexthost/backend/verify.php?code=3a6e3cd43521430ecd3d745749fc66ca
+Direct Link: <a href='http://localhost/nexthost/backend/verify.php?code=3a6e3cd43521430ecd3d745749fc66ca'>Click to Verify</a>
+=================================
+
+=== EMAIL VERIFICATION ===
+Time: 2025-11-10 20:11:02
+To: abalay5056@gmail.com
+Name: Боб
+Verification Code: dc5600a56b446329de1b9db0dbc870e9
+Verification URL: http://localhost/nexthost/backend/verify.php?code=dc5600a56b446329de1b9db0dbc870e9
+Direct Link: <a href='http://localhost/nexthost/backend/verify.php?code=dc5600a56b446329de1b9db0dbc870e9'>Click to Verify</a>
+=================================
+
+=== EMAIL VERIFICATION ===
+Time: 2025-11-10 20:17:29
+To: abalay5056@gmail.com
+Name: бобби
+Verification Code: 3ff684c5cd63ad98a0bae9f6464ab458
+Verification URL: http://localhost/nexthost/backend/verify.php?code=3ff684c5cd63ad98a0bae9f6464ab458
+Direct Link: <a href='http://localhost/nexthost/backend/verify.php?code=3ff684c5cd63ad98a0bae9f6464ab458'>Click to Verify</a>
+=================================
+
+Test write at 2025-11-10 20:18:23
+=== EMAIL VERIFICATION ===
+Time: 2025-11-10 20:24:17
+To: abalay5056@gmail.com
+Name: бобби
+Verification Code: f3112f0f83b6b16cd87b116fa92f6e48
+Verification URL: http://localhost/nexthost/backend/verify.php?code=f3112f0f83b6b16cd87b116fa92f6e48
+Direct Link: <a href='http://localhost/nexthost/backend/verify.php?code=f3112f0f83b6b16cd87b116fa92f6e48'>Click to Verify</a>
+=================================
+

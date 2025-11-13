@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Блог — NextHost</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/blog.css">
+</head>
+<body>
+
+  <!-- 🌐 HEADER -->
+  <header class="main-header">
+    <div class="container">
+      <div class="logo">
+        <img src="images/nh.jpg" alt="NextHost Logo">
+        <span>NextHost</span>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Главная</a>
+        <a href="about.html">О нас</a>
+        <a href="hosting.html">Хостинг</a>
+        <a href="support.html">Поддержка</a>
+        <a href="reviews.html">Отзывы</a>
+        <a href="partners.html">Партнёры</a>
+        <a href="blog.html" class="active">Блог</a>
+        <a href="profile.html" class="profile-link">Профиль</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 🏢 HERO СЕКЦИЯ -->
+  <section class="blog-hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">Блог <span class="gradient-text">NextHost</span></h1>
+        <p class="hero-subtitle">Экспертные статьи о хостинге, веб-разработке и IT-технологиях</p>
+        <div class="search-box">
+          <input type="text" placeholder="🔍 Поиск по статьям..." class="search-input">
+          <button class="search-btn">Найти</button>
+        </div>
+      </div>
+    </div>
+    <div class="hero-background">
+      <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🎯 КАТЕГОРИИ -->
+  <section class="blog-categories">
+    <div class="container">
+      <div class="categories-filter">
+        <button class="category-btn active" data-category="all">Все статьи</button>
+        <button class="category-btn" data-category="hosting">Хостинг</button>
+        <button class="category-btn" data-category="security">Безопасность</button>
+        <button class="category-btn" data-category="performance">Производительность</button>
+        <button class="category-btn" data-category="wordpress">WordPress</button>
+        <button class="category-btn" data-category="seo">SEO</button>
+        <button class="category-btn" data-category="development">Разработка</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 📝 ОСНОВНОЙ КОНТЕНТ -->
+  <section class="blog-main">
+    <div class="container">
+      <div class="blog-layout">
+        <!-- Основная колонка со статьями -->
+        <div class="blog-content">
+          <div class="featured-posts">
+            <h2 class="section-title">🔥 Популярные статьи</h2>
+            <div class="featured-grid">
+              <!-- Featured Post 1 -->
+              <article class="blog-card featured" data-category="performance" data-id="1">
+                <a href="blog/how-to-speed-up-website.html" class="card-link">
+                <div class="card-image">
+                  <img src="images/blog/optimization.jpg" alt="Оптимизация скорости">
+                  <span class="card-category">Производительность</span>
+                  <div class="featured-badge">Популярное</div>
+                </div>
+                <div class="card-content">
+                  <h3>10 способов ускорить загрузку вашего сайта в 2024 году</h3>
+                  <p>Полное руководство по оптимизации производительности веб-сайта. От сжатия изображений до кэширования и CDN.</p>
+                  <div class="card-meta">
+                    <div class="author">
+                      <img src="images/team/author1.jpg" alt="Автор">
+                      <span>Тасеменов Нурбек</span>
+                    </div>
+                    <div class="meta-info">
+                      <span class="date">15 дек 2024</span>
+                      <span class="read-time">8 мин</span>
+                      <span class="views">2.4k</span>
+                    </div>
+                  </div>
+                </div>
+                </a>
+              </article>
+
+              <!-- Featured Post 2 -->
+              <article class="blog-card featured" data-category="security" data-id="2">
+                <a href="blog/wordpress-security-guide.html" class="card-link">
+                <div class="card-image">
+                  <img src="images/blog/security.jpg" alt="Безопасность сайта">
+                  <span class="card-category">Безопасность</span>
+                  <div class="featured-badge">Важное</div>
+                </div>
+                <div class="card-content">
+                  <h3>Полное руководство по защите WordPress от хакеров</h3>
+                  <p>Пошаговые инструкции по защите вашего WordPress сайта. Плагины, настройки и лучшие практики безопасности.</p>
+                  <div class="card-meta">
+                    <div class="author">
+                      <img src="images/team/author2.jpg" alt="Автор">
+                      <span>Ізбасхан Әселхан</span>
+                    </div>
+                    <div class="meta-info">
+                      <span class="date">12 дек 2024</span>
+                      <span class="read-time">12 мин</span>
+                      <span class="views">1.8k</span>
+                    </div>
+                  </div>
+                </div>
+                </a>
+              </article>
+            </div>
+          </div>
+
+          <!-- Все статьи -->
+          <div class="all-posts">
+            <h2 class="section-title">📚 Все статьи</h2>
+            <div class="blog-grid">
+              
+              <!-- Post 1 -->
+              <article class="blog-card" data-category="hosting" data-id="3">
+                <a href="blog/choose-hosting-for-ecommerce.html" class="card-link">
+                <div class="card-image">
+                  <img src="images/blog/hosting-choice.jpg" alt="Выбор хостинга">
+                  <span class="card-category">Хостинг</span>
+                </div>
+                <div class="card-content">
+                  <h3>Как выбрать хостинг для интернет-магазина: полное руководство</h3>
+                  <p>Критерии выбора хостинга для e-commerce проектов. Производительность, безопасность и масштабируемость.</p>
+                  <div class="card-meta">
+                    <div class="author">
+                      <img src="images/team/author3.jpg" alt="Автор">
+                      <span>Бексултанов Нурдаулет</span>
+                    </div>
+                    <div class="meta-info">
+                      <span class="date">10 дек 2024</span>
+                      <span class="read-time">6 мин</span>
+                      <span class="views">1.2k</span>
+                    </div>
+                  </div>
+                </div>
+                </a>
+              </article>
+
+              <!-- Post 2 -->
+              <article class="blog-card" data-category="seo" data-id="4">
+                <a href="blog/seo-for-beginners.html" class="card-link">
+                <div class="card-image">
+                  <img src="images/blog/seo.jpg" alt="SEO оптимизация">
+                  <span class="card-category">SEO</span>
+                </div>
+                <div class="card-content">
+                  <h3>SEO для начинающих: как поднять сайт в поисковой выдаче</h3>
+                  <p>Базовые принципы SEO оптимизации. Мета-теги, скорость загрузки и мобильная адаптивность.</p>
+                  <div class="card-meta">
+                    <div class="author">
+                      <img src="images/team/author4.jpg" alt="Автор">
+                      <span>Нұрхатова Райхан</span>
+                    </div>
+                    <div class="meta-info">
+                      <span class="date">8 дек 2024</span>
+                      <span class="read-time">10 мин</span>
+                      <span class="views">956</span>
+                    </div>
+                  </div>
+                </div>
+                </a>
+              </article>
+
+              <!-- Post 3 -->
+              <article class="blog-card" data-category="wordpress" data-id="5">
+                <a href="blog/must-have-wordpress-plugins.html" class="card-link">
+                <div class="card-image">
+                  <img src="images/blog/wordpress.jpg" alt="WordPress плагины">
+                  <span class="card-category">WordPress</span>
+                </div>
+                <div class="card-content">
+                  <h3>15 must-have плагинов WordPress для любого сайта</h3>
+                  <p>Обязательные плагины для безопасности, производительности и функциональности вашего WordPress сайта.</p>
+                  <div class="card-meta">
+                    <div class="author">
+                      <img src="images/team/author1.jpg" alt="Автор">
+                      <span>Тасеменов Нурбек</span>
+                    </div>
+                    <div class="meta-info">
+                      <span class="date">5 дек 2024</span>
+                      <span class="read-time">7 мин</span>
+                      <span class="views">1.1k</span>
+                    </div>
+                  </div>
+                </div>
+                </a>
+              </article>
+
+              <!-- Post 4 -->
+              <article class="blog-card" data-category="development" data-id="6">
+                <a href="blog/ssl-certificate-guide.html" class="card-link">
+                <div class="card-image">
+                  <img src="images/blog/ssl.jpg" alt="SSL сертификаты">
+                  <span class="card-category">Разработка</span>
+                </div>
+                <div class="card-content">
+                  <h3>Зачем нужен SSL сертификат и как его правильно установить</h3>
+                  <p>Все об SSL сертификатах: типы, процесс установки и влияние на SEO. Пошаговая инструкция.</p>
+                  <div class="card-meta">
+                    <div class="author">
+                      <img src="images/team/author5.jpg" alt="Автор">
+                      <span>Жандос Арлан</span>
+                    </div>
+                    <div class="meta-info">
+                      <span class="date">3 дек 2024</span>
+                      <span class="read-time">5 мин</span>
+                      <span class="views">874</span>
+                    </div>
+                  </div>
+                </div>
+                </a>
+              </article>
+
+              <!-- Post 5 -->
+              <article class="blog-card" data-category="performance" data-id="7">
+                <a href="blog/cdn-for-website.html" class="card-link">
+                <div class="card-image">
+                  <img src="images/blog/cdn.jpg" alt="CDN технологии">
+                  <span class="card-category">Производительность</span>
+                </div>
+                <div class="card-content">
+                  <h3>CDN для сайта: что это и как увеличить скорость в 3 раза</h3>
+                  <p>Как Content Delivery Network ускоряет ваш сайт для пользователей по всему миру. Практические примеры.</p>
+                  <div class="card-meta">
+                    <div class="author">
+                      <img src="images/team/author2.jpg" alt="Автор">
+                      <span>Ізбасхан Әселхан</span>
+                    </div>
+                    <div class="meta-info">
+                      <span class="date">30 ноя 2024</span>
+                      <span class="read-time">9 мин</span>
+                      <span class="views">1.3k</span>
+                    </div>
+                  </div>
+                </div>
+                </a>
+              </article>
+
+              <!-- Post 6 -->
+              <article class="blog-card" data-category="security" data-id="8">
+                <a href="blog/backup-strategies.html" class="card-link">
+                <div class="card-image">
+                  <img src="images/blog/backup.jpg" alt="Бэкапы сайта">
+                  <span class="card-category">Безопасность</span>
+                </div>
+                <div class="card-content">
+                  <h3>Стратегии резервного копирования: как не потерять данные сайта</h3>
+                  <p>Автоматические бэкапы, хранение и восстановление. Лучшие практики для надежной защиты данных.</p>
+                  <div class="card-meta">
+                    <div class="author">
+                      <img src="images/team/author3.jpg" alt="Автор">
+                      <span>Бексултанов Нурдаулет</span>
+                    </div>
+                    <div class="meta-info">
+                      <span class="date">28 ноя 2024</span>
+                      <span class="read-time">6 мин</span>
+                      <span class="views">723</span>
+                    </div>
+                  </div>
+                </div>
+                </a>
+              </article>
+
+              <!-- Post 7 -->
+              <article class="blog-card" data-category="wordpress" data-id="9">
+                <a href="blog/wordpress-database-optimization.html" class="card-link">
+                <div class="card-image">
+                  <img src="images/blog/wordpress-speed.jpg" alt="WordPress скорость">
+                  <span class="card-category">WordPress</span>
+                </div>
+                <div class="card-content">
+                  <h3>Оптимизация базы данных WordPress: ускоряем сайт на 40%</h3>
+                  <p>Техники очистки и оптимизации БД WordPress. Плагины и ручные методы для максимальной производительности.</p>
+                  <div class="card-meta">
+                    <div class="author">
+                      <img src="images/team/author4.jpg" alt="Автор">
+                      <span>Нұрхатова Райхан</span>
+                    </div>
+                    <div class="meta-info">
+                      <span class="date">25 ноя 2024</span>
+                      <span class="read-time">8 мин</span>
+                      <span class="views">892</span>
+                    </div>
+                  </div>
+                </div>
+                </a>
+              </article>
+
+              <!-- Post 8 -->
+              <article class="blog-card" data-category="development" data-id="10">
+                <a href="blog/website-migration-guide.html" class="card-link">
+                <div class="card-image">
+                  <img src="images/blog/migration.jpg" alt="Миграция сайта">
+                  <span class="card-category">Разработка</span>
+                </div>
+                <div class="card-content">
+                  <h3>Миграция сайта на новый хостинг: пошаговое руководство</h3>
+                  <p>Как безопасно перенести сайт без потери данных и простоя. От бэкапов до тестирования.</p>
+                  <div class="card-meta">
+                    <div class="author">
+                      <img src="images/team/author5.jpg" alt="Автор">
+                      <span>Жандос Арлан</span>
+                    </div>
+                    <div class="meta-info">
+                      <span class="date">22 ноя 2024</span>
+                      <span class="read-time">11 мин</span>
+                      <span class="views">654</span>
+                    </div>
+                  </div>
+                </div>
+                </a>
+              </article>
+
+              <!-- Post 9 -->
+              <article class="blog-card" data-category="seo" data-id="11">
+                <a href="blog/mobile-seo-2024.html" class="card-link">
+                <div class="card-image">
+                  <img src="images/blog/mobile-seo.jpg" alt="Мобильное SEO">
+                  <span class="card-category">SEO</span>
+                </div>
+                <div class="card-content">
+                  <h3>Mobile-First Indexing: SEO для мобильных устройств в 2024</h3>
+                  <p>Адаптация сайта под мобильные устройства. Core Web Vitals и мобильная скорость загрузки.</p>
+                  <div class="card-meta">
+                    <div class="author">
+                      <img src="images/team/author1.jpg" alt="Автор">
+                      <span>Тасеменов Нурбек</span>
+                    </div>
+                    <div class="meta-info">
+                      <span class="date">20 ноя 2024</span>
+                      <span class="read-time">7 мин</span>
+                      <span class="views">1.5k</span>
+                    </div>
+                  </div>
+                </div>
+                </a>
+              </article>
+
+              <!-- Post 10 -->
+              <article class="blog-card" data-category="hosting" data-id="12">
+                <a href="blog/vps-vs-shared-hosting.html" class="card-link">
+                <div class="card-image">
+                  <img src="images/blog/vps.jpg" alt="VPS хостинг">
+                  <span class="card-category">Хостинг</span>
+                </div>
+                <div class="card-content">
+                  <h3>VPS vs Shared Hosting: что выбрать для растущего проекта</h3>
+                  <p>Сравнение типов хостинга. Когда переходить на VPS и как правильно выбрать конфигурацию.</p>
+                  <div class="card-meta">
+                    <div class="author">
+                      <img src="images/team/author2.jpg" alt="Автор">
+                      <span>Ізбасхан Әселхан</span>
+                    </div>
+                    <div class="meta-info">
+                      <span class="date">18 ноя 2024</span>
+                      <span class="read-time">9 мин</span>
+                      <span class="views">987</span>
+                    </div>
+                  </div>
+                </div>
+                </a>
+              </article>
+
+            </div>
+
+            <!-- Пагинация -->
+            <div class="pagination">
+              <button class="page-btn active">1</button>
+              <button class="page-btn">2</button>
+              <button class="page-btn">3</button>
+              <span class="page-dots">...</span>
+              <button class="page-btn">10</button>
+              <button class="page-btn next">→</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Боковая панель -->
+        <aside class="blog-sidebar">
+          <!-- О блоге -->
+          <div class="sidebar-widget">
+            <h3>💡 О блоге</h3>
+            <p>Экспертные статьи о хостинге, веб-разработке и IT. Советы, руководства и новости индустрии.</p>
+          </div>
+
+          <!-- Популярные теги -->
+          <div class="sidebar-widget">
+            <h3>🏷️ Популярные теги</h3>
+            <div class="tags-cloud">
+              <span class="tag">#хостинг</span>
+              <span class="tag">#wordpress</span>
+              <span class="tag">#seo</span>
+              <span class="tag">#безопасность</span>
+              <span class="tag">#производительность</span>
+              <span class="tag">#ssl</span>
+              <span class="tag">#cdn</span>
+              <span class="tag">#vps</span>
+            </div>
+          </div>
+
+          <!-- Рассылка -->
+          <div class="sidebar-widget newsletter-widget">
+            <h3>📧 Подписка на новости</h3>
+            <p>Получайте новые статьи первыми</p>
+            <form class="newsletter-form">
+              <input type="email" placeholder="Ваш email" required>
+              <button type="submit">Подписаться</button>
+            </form>
+          </div>
+
+          <!-- Авторы -->
+          <div class="sidebar-widget">
+            <h3>👥 Наши авторы</h3>
+            <div class="authors-list">
+              <div class="author-item">
+                <img src="images/team/author1.jpg" alt="Тасеменов Нурбек">
+                <div>
+                  <strong>Тасеменов Нурбек</strong>
+                </div>
+              </div>
+              <div class="author-item">
+                <img src="images/team/author2.jpg" alt="Ізбасхан Әселхан">
+                <div>
+                  <strong>Ізбасхан Әселхан</strong>
+                  <span>Специалист по безопасности</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- 📞 CTA СЕКЦИЯ -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Есть вопросы по хостингу?</h2>
+        <p>Наша команда экспертов готова помочь вам 24/7</p>
+        <div class="cta-buttons">
+          <a href="support.html" class="primary-btn large">Задать вопрос</a>
+          <a href="hosting.html" class="secondary-btn large">Выбрать хостинг</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⚙️ FOOTER -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-left">
+          <div class="footer-logo">
+            <img src="images/nh.jpg" alt="NextHost Logo">
+            <span>NextHost</span>
+          </div>
+          <p>Премиум хостинг для вашего успеха в цифровом мире</p>
+        </div>
+        <div class="footer-right">
+          <p>Контакты: <a href="mailto:support@nexthost.kz">support@nexthost.kz</a></p>
+          <p>Телефон: <a href="tel:+77777777777">+7 (777) 777-77-77</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 NextHost. Все права защищены.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/blog.js"></script>
+</body>
+</html>

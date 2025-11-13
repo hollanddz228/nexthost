@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Отзывы — NextHost</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/reviews.css">
+</head>
+<body>
+  <!-- 🌐 HEADER -->
+<header class="main-header">
+  <div class="container">
+      <div class="logo">
+          <img src="images/nh.jpg" alt="NextHost Logo">
+          <span>NextHost</span>
+      </div>
+      <nav class="nav-links">
+          <a href="index.html">Главная</a>
+          <a href="about.html">О нас</a>
+          <a href="hosting.html">Хостинг</a>
+          <a href="support.html">Поддержка</a>
+          <a href="reviews.html">Отзывы</a>
+          <a href="partners.html">Партнёры</a>
+          <a href="blog.html">Блог</a>
+          <a href="profile.html" class="profile-link">Профиль</a>
+      </nav>
+  </div>
+</header>
+
+  <section class="reviews-hero">
+    <div class="container">
+      <h1>Отзывы клиентов NextHost</h1>
+      <p class="lead">Ваши впечатления делают нас лучше 💙</p>
+    </div>
+  </section>
+
+  <!-- Слайдер отзывов -->
+  <section class="reviews-slider">
+    <div id="reviews-track">
+      <!-- Отзывы загружаются из JS -->
+    </div>
+  </section>
+
+  <!-- Форма -->
+  <section class="review-form-section">
+    <div class="container">
+      <div class="review-form card">
+        <h2>Оставить отзыв</h2>
+        <form id="review-form" enctype="multipart/form-data">
+          <label>Имя
+            <input type="text" name="name" required placeholder="Ваше имя">
+          </label>
+          <label>Email
+            <input type="email" name="email" required placeholder="you@domain.com">
+          </label>
+          <label>Оценка</label>
+          <div class="rating" id="rating-stars">
+            <span data-rate="1">★</span>
+            <span data-rate="2">★</span>
+            <span data-rate="3">★</span>
+            <span data-rate="4">★</span>
+            <span data-rate="5">★</span>
+          </div>
+          <input type="hidden" name="rating" id="rating-value" value="0">
+
+          <label>Сообщение
+            <textarea name="message" required rows="5" placeholder="Расскажите о своём опыте..."></textarea>
+          </label>
+
+          <label>Аватар (необязательно)
+            <input type="file" name="avatar" accept=".png,.jpg,.jpeg">
+          </label>
+
+          <button type="submit" class="btn-primary">Отправить отзыв</button>
+          <div id="review-feedback" class="feedback"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="main-footer">
+    <p>© 2025 NextHost. Все права защищены.</p>
+  </footer>
+
+  <script src="js/reviews.js"></script>
+</body>
+</html>

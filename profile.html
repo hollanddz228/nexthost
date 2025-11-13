@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NextHost — Личный кабинет</title>
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/profile.css" />
+</head>
+<body>
+
+  <!-- 🌐 HEADER -->
+  <header class="main-header">
+    <div class="container">
+      <div class="logo">
+        <img src="images/nh.jpg" alt="NextHost Logo">
+        <span>NextHost</span>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Главная</a>
+        <a href="about.html">О нас</a>
+        <a href="hosting.html">Хостинг</a>
+        <a href="support.html">Поддержка</a>
+        <a href="reviews.html">Отзывы</a>
+        <a href="partners.html">Партнёры</a>
+        <a href="blog.html">Блог</a>
+        <a href="profile.html" class="profile-link active">Профиль</a>
+      </nav>
+      <div class="header-actions">
+        <div class="user-menu">
+          <span id="userName">Пользователь</span>
+          <button onclick="logout()" class="logout-btn">
+            <span>Выйти</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- 🏠 HERO-СЕКЦИЯ ПРОФИЛЯ -->
+  <section class="profile-hero">
+    <div class="profile-hero-background">
+      <div class="hero-particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="profile-hero-content">
+        <div class="profile-badge">
+          <span>👤 Личный кабинет</span>
+        </div>
+        <h1 class="profile-hero-title">Добро пожаловать, <span class="gradient-text" id="heroUserName">Пользователь</span></h1>
+        <p class="profile-hero-subtitle">Управляйте вашими услугами, настройками и платежами в одном месте</p>
+        <div class="profile-stats">
+          <div class="profile-stat">
+            <div class="profile-stat-number" id="activeServicesCount">0</div>
+            <div class="profile-stat-label">Активных услуг</div>
+          </div>
+          <div class="profile-stat">
+            <div class="profile-stat-number" id="userBalance">0 ₽</div>
+            <div class="profile-stat-label">Баланс</div>
+          </div>
+          <div class="profile-stat">
+            <div class="profile-stat-number" id="supportTickets">0</div>
+            <div class="profile-stat-label">Открытых тикетов</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🎯 ОСНОВНОЙ КОНТЕНТ ПРОФИЛЯ -->
+  <section class="profile-content">
+    <div class="container">
+      <div class="profile-grid">
+        
+        <!-- 💳 ИНФОРМАЦИЯ О ПОЛЬЗОВАТЕЛЕ -->
+        <div class="profile-card user-info-card">
+          <div class="profile-card-header">
+            <h3>👤 Информация о пользователе</h3>
+          </div>
+          <div class="profile-card-body">
+            <div class="user-avatar">
+              <div class="avatar-circle">
+                <span id="avatarInitials">U</span>
+              </div>
+            </div>
+            <div class="user-details">
+              <div class="user-detail">
+                <span class="detail-label">Имя:</span>
+                <span class="detail-value" id="profileName">-</span>
+              </div>
+              <div class="user-detail">
+                <span class="detail-label">Email:</span>
+                <span class="detail-value" id="profileEmail">-</span>
+              </div>
+              <div class="user-detail">
+                <span class="detail-label">Телефон:</span>
+                <span class="detail-value" id="profilePhone">-</span>
+              </div>
+              <div class="user-detail">
+                <span class="detail-label">Дата регистрации:</span>
+                <span class="detail-value" id="profileDate">-</span>
+              </div>
+            </div>
+            <button class="edit-profile-btn" onclick="showEditForm()">
+              <span>Редактировать профиль</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 🚀 МОИ УСЛУГИ -->
+        <div class="profile-card services-card">
+          <div class="profile-card-header">
+            <h3>🚀 Мои услуги</h3>
+          </div>
+          <div class="profile-card-body">
+            <div class="services-list" id="servicesList">
+              <div class="no-services">
+                <div class="no-services-icon">☁️</div>
+                <h4>У вас пока нет активных услуг</h4>
+                <p>Начните с выбора подходящего тарифа хостинга</p>
+                <a href="hosting.html" class="primary-btn">
+                  <span>Заказать хостинг</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ⚡ БЫСТРЫЕ ДЕЙСТВИЯ -->
+        <div class="profile-card actions-card">
+          <div class="profile-card-header">
+            <h3>⚡ Быстрые действия</h3>
+          </div>
+          <div class="profile-card-body">
+            <div class="action-buttons">
+              <button class="action-btn" onclick="location.href='hosting.html'">
+                <div class="action-icon">➕</div>
+                <span class="action-text">Заказать хостинг</span>
+              </button>
+              <button class="action-btn" onclick="location.href='support.html'">
+                <div class="action-icon">💬</div>
+                <span class="action-text">Поддержка</span>
+              </button>
+              <button class="action-btn" onclick="showBilling()">
+                <div class="action-icon">💳</div>
+                <span class="action-text">Пополнить баланс</span>
+              </button>
+              <button class="action-btn" onclick="showSettings()">
+                <div class="action-icon">⚙️</div>
+                <span class="action-text">Настройки</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 📊 СТАТИСТИКА -->
+        <div class="profile-card stats-card">
+          <div class="profile-card-header">
+            <h3>📊 Статистика</h3>
+          </div>
+          <div class="profile-card-body">
+            <div class="stats-grid">
+              <div class="stat-item">
+                <div class="stat-value" id="totalServices">0</div>
+                <div class="stat-label">Всего услуг</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-value" id="totalSpent">0 ₽</div>
+                <div class="stat-label">Всего потрачено</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-value" id="daysRegistered">0</div>
+                <div class="stat-label">Дней с нами</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 📞 CTA СЕКЦИЯ -->
+  <section class="profile-cta">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Нужна помощь?</h2>
+        <p>Наша команда поддержки всегда готова помочь с любыми вопросами</p>
+        <div class="cta-buttons">
+          <a href="support.html" class="primary-btn large">Связаться с поддержкой</a>
+          <button class="secondary-btn large" onclick="showDocs()">Документация</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⚙️ FOOTER -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-left">
+          <div class="footer-logo">
+            <img src="images/nh.jpg" alt="NextHost Logo">
+            <span>NextHost</span>
+          </div>
+          <p>Премиум хостинг для вашего успеха в цифровом мире</p>
+        </div>
+        <div class="footer-right">
+          <p>Контакты: <a href="mailto:support@nexthost.kz">support@nexthost.kz</a></p>
+          <p>Телефон: <a href="tel:+77777777777">+7 (777) 777-77-77</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 NextHost. Все права защищены.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="js/profile.js"></script>
+</body>
+</html>
