@@ -1,16 +1,14 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="kk">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Зачем нужен SSL сертификат и как его правильно установить — Блог NextHost</title>
+  <title>SSL сертификаты не үшін қажет және оны қалай дұрыс орнату керек — NextHost блогы</title>
   <link rel="stylesheet" href="../css/global.css">
   <link rel="stylesheet" href="../css/blog.css">
   <link rel="stylesheet" href="../css/blog-post.css">
 </head>
-<body>
-
-  <!-- 🌐 HEADER -->
+<body class="blog-post-page">
   <header class="main-header">
     <div class="container">
       <div class="logo">
@@ -18,545 +16,176 @@
         <span>NextHost</span>
       </div>
       <nav class="nav-links">
-        <a href="../index.html">Главная</a>
-        <a href="../about.html">О нас</a>
+        <a href="../index.html">Басты бет</a>
+        <a href="../about.html">Біз туралы</a>
         <a href="../hosting.html">Хостинг</a>
-        <a href="../support.html">Поддержка</a>
-        <a href="../reviews.html">Отзывы</a>
-        <a href="../partners.html">Партнёры</a>
+        <a href="../support.html">Қолдау</a>
+        <a href="../reviews.html">Пікірлер</a>
+        <a href="../partners.html">Серіктестер</a>
         <a href="../blog.html">Блог</a>
         <a href="../profile.html" class="profile-link">Профиль</a>
       </nav>
     </div>
   </header>
-
-  <!-- 📝 СТАТЬЯ -->
   <article class="blog-post">
     <div class="container">
-      <!-- Хлебные крошки -->
       <nav class="breadcrumbs">
-        <a href="../index.html">Главная</a>
+        <a href="../index.html">Басты бет</a>
         <span>→</span>
         <a href="../blog.html">Блог</a>
         <span>→</span>
-        <span class="current">Разработка</span>
+        <span class="current">Әзірлеу</span>
       </nav>
-
-      <!-- Заголовок статьи -->
       <header class="post-header">
-        <div class="post-category">Разработка</div>
-        <h1>Зачем нужен SSL сертификат и как его правильно установить</h1>
+        <div class="post-category">Әзірлеу</div>
+        <h1>SSL сертификаты не үшін қажет және оны қалай дұрыс орнату керек</h1>
         <div class="post-meta">
           <div class="author-info">
             <img src="../images/team/author5.jpg" alt="Жандос Арлан">
             <div>
               <div class="author-name">Жандос Арлан</div>
-              <div class="post-date">3 декабря 2024 · 5 мин чтения</div>
+              <div class="post-date">3 желтоқсан 2024 · 5 мин оқу</div>
             </div>
-          </div>
-          <div class="social-share">
-            <button class="share-btn" data-platform="twitter">🐦</button>
-            <button class="share-btn" data-platform="facebook">📘</button>
-            <button class="share-btn" data-platform="linkedin">💼</button>
-            <button class="share-btn" data-platform="copy">📋</button>
           </div>
         </div>
       </header>
-
-      <!-- Обложка статьи -->
       <div class="post-hero">
-        <img src="../images/blog/ssl.jpg" alt="SSL сертификаты и безопасность">
+        <img src="../images/blog/ssl.jpg" alt="SSL сертификаттары және қауіпсіздік">
       </div>
-
-      <!-- Контент статьи -->
       <div class="post-content">
-        <p>SSL сертификат перестал быть опцией и стал обязательным стандартом для любого сайта. В этом руководстве я расскажу, почему SSL критически важен, как выбрать правильный тип сертификата и как установить его на ваш сайт.</p>
+        <p>SSL сертификаты опция болудан қалып, кез келген сайт үшін міндетті стандартқа айналды.</p>
 
-        <h2>1. Что такое SSL и как он работает?</h2>
-        <p>SSL (Secure Sockets Layer) — это протокол безопасности, который шифрует данные между браузером пользователя и сервером.</p>
-        
-        <h3>Принцип работы SSL:</h3>
+        <h2>1. SSL дегеніміз не және ол қалай жұмыс істейді?</h2>
+        <p>SSL (Secure Sockets Layer) — пайдаланушының браузері мен сервер арасындағы деректерді шифрлайтын қауіпсіздік протоколы.</p>
+        <h3>SSL жұмыс принципі:</h3>
         <ol>
-          <li>Браузер запрашивает защищенное соединение с сайтом</li>
-          <li>Сервер отправляет копию SSL сертификата</li>
-          <li>Браузер проверяет подлинность сертификата</li>
-          <li>Устанавливается зашифрованное соединение</li>
-          <li>Данные передаются в зашифрованном виде</li>
+          <li>Браузер сайтпен қорғалған қосылымды сұрайды</li>
+          <li>Сервер SSL сертификатының көшірмесін жібереді</li>
+          <li>Браузер сертификаттың түпнұсқалығын тексереді</li>
+          <li>Шифрланған қосылым орнатылады</li>
+          <li>Деректер шифрланған түрде беріледі</li>
         </ol>
-
         <div class="tip-box">
-          <strong>🔐 Факт:</strong> Без SSL данные передаются в открытом виде, и злоумышленники могут перехватить пароли, номера карт и личную информацию.
+          <strong>🔐 Факт:</strong> SSL-сіз деректер ашық түрде беріледі, және зиянкестер құпия сөздерді, карта нөмірлерін және жеке ақпаратты ұстап алуы мүмкін.
         </div>
-
-        <h2>2. Почему SSL обязателен в 2024 году?</h2>
-
-        <h3>Безопасность данных</h3>
-        <p>SSL защищает:</p>
+        <h2>2. 2024 жылы SSL неге міндетті?</h2>
+        <h3>Деректер қауіпсіздігі</h3>
+        <p>SSL қорғайды:</p>
         <ul>
-          <li>Логины и пароли</li>
-          <li>Платежную информацию</li>
-          <li>Личные данные пользователей</li>
-          <li>Корпоративную информацию</li>
+          <li>Логиндер мен құпия сөздер</li>
+          <li>Төлем ақпараты</li>
+          <li>Пайдаланушылардың жеке деректері</li>
+          <li>Корпоративтік ақпарат</li>
         </ul>
-
-        <h3>SEO преимущества</h3>
-        <p>Google официально подтвердил:</p>
+        <h3>SEO артықшылықтары</h3>
+        <p>Google ресми түрде растады:</p>
         <ul>
-          <li>HTTPS — фактор ранжирования</li>
-          <li>Сайты без SSL теряют позиции</li>
-          <li>Chrome помечает сайты без SSL как "Небезопасные"</li>
+          <li>HTTPS — рейтинг факторы</li>
+          <li>SSL-сіз сайттар позицияларын жоғалтады</li>
+          <li>Chrome SSL-сіз сайттарды "Қауіпсіз емес" деп белгілейді</li>
         </ul>
-
-        <h3>Доверие пользователей</h3>
-        <p>Визуальные индикаторы безопасности:</p>
-        
-        <pre><code>🔒 https://site.com - Безопасное соединение
-🚫 http://site.com - Небезопасное соединение</code></pre>
-
-        <div class="warning-box">
-          <strong>⚠️ Важно:</strong> С 2018 года Chrome и Firefox показывают предупреждения на сайтах без SSL.
-        </div>
-
-        <h2>3. Типы SSL сертификатов</h2>
-
-        <h3>DV (Domain Validation) — Проверка домена</h3>
-        <p><strong>Для кого:</strong> Блоги, личные сайты, небольшие проекты</p>
-        <p><strong>Проверка:</strong> Подтверждение права на домен</p>
-        <p><strong>Срок:</strong> 5-10 минут</p>
-        <p><strong>Стоимость:</strong> Бесплатно (Let's Encrypt) или от $10/год</p>
-
-        <h3>OV (Organization Validation) — Проверка организации</h3>
-        <p><strong>Для кого:</strong> Бизнес-сайты, корпоративные порталы</p>
-        <p><strong>Проверка:</strong> Проверка компании в официальных реестрах</p>
-        <p><strong>Срок:</strong> 1-3 дня</p>
-        <p><strong>Стоимость:</strong> от $50/год</p>
-
-        <h3>EV (Extended Validation) — Расширенная проверка</h3>
-        <p><strong>Для кого:</strong> Банки, платежные системы, крупный бизнес</p>
-        <p><strong>Проверка:</strong> Глубокая проверка бизнеса</p>
-        <p><strong>Срок:</strong> 5-10 дней</p>
-        <p><strong>Стоимость:</strong> от $150/год</p>
-
-        <h2>4. Wildcard и Multi-Domain сертификаты</h2>
-
-        <h3>Wildcard SSL</h3>
-        <p>Защищает домен и все поддомены:</p>
-        
-        <pre><code>✅ example.com
-✅ www.example.com
-✅ shop.example.com
-✅ blog.example.com
-✅ *.example.com</code></pre>
-
-        <h3>Multi-Domain (SAN) SSL</h3>
-        <p>Защищает несколько разных доменов:</p>
-        
-        <pre><code>✅ example.com
-✅ example.net
-✅ example.org
-✅ mysite.com</code></pre>
-
-        <h2>5. Бесплатные SSL сертификаты</h2>
-
+        <h2>3. SSL сертификаттарының түрлері</h2>
+        <h3>DV (Domain Validation) — Домен тексеру</h3>
+        <p><strong>Кімге арналған:</strong> Блогтар, жеке сайттар, шағын жобалар</p>
+        <p><strong>Құны:</strong> Тегін (Let's Encrypt) немесе $10/жылдан</p>
+        <h3>OV (Organization Validation) — Ұйым тексеру</h3>
+        <p><strong>Кімге арналған:</strong> Бизнес-сайттар, корпоративтік порталдар</p>
+        <p><strong>Құны:</strong> $50/жылдан</p>
+        <h3>EV (Extended Validation) — Кеңейтілген тексеру</h3>
+        <p><strong>Кімге арналған:</strong> Банктер, төлем жүйелері, ірі бизнес</p>
+        <p><strong>Құны:</strong> $150/жылдан</p>
+        <h2>4. Тегін SSL сертификаттары</h2>
         <h3>Let's Encrypt</h3>
-        <p><strong>Преимущества:</strong></p>
+        <p><strong>Артықшылықтары:</strong></p>
         <ul>
-          <li>Полностью бесплатный</li>
-          <li>Автоматическое обновление</li>
-          <li>Поддержка большинством хостингов</li>
-          <li>90-дневный срок действия</li>
+          <li>Толығымен тегін</li>
+          <li>Автоматты жаңарту</li>
+          <li>Көптеген хостингтер қолдайды</li>
+          <li>90 күндік әрекет ету мерзімі</li>
         </ul>
-
-        <p><strong>Ограничения:</strong></p>
-        <ul>
-          <li>Только DV сертификаты</li>
-          <li>Нет гарантий</li>
-          <li>Ограниченная поддержка</li>
-        </ul>
-
         <div class="tip-box">
-          <strong>💡 Совет:</strong> Большинство современных хостингов включают бесплатный Let's Encrypt в базовый тариф.
+          <strong>💡 Кеңес:</strong> Көптеген заманауи хостингтер базалық тарифке тегін Let's Encrypt қосады.
         </div>
-
-        <h2>6. Пошаговая установка SSL сертификата</h2>
-
-        <h3>Шаг 1: Выбор и покупка сертификата</h3>
-        <p>Определите ваши потребности:</p>
-        
+        <h2>5. SSL сертификатын қадамдық орнату</h2>
+        <h3>1-қадам: Сертификатты таңдау және сатып алу</h3>
+        <p>Қажеттіліктеріңізді анықтаңыз:</p>
         <ul>
-          <li>Один домен или несколько?</li>
-          <li>Нужны ли поддомены?</li>
-          <li>Требуется ли проверка организации?</li>
-          <li>Какой бюджет?</li>
+          <li>Бір домен немесе бірнеше?</li>
+          <li>Субдомендер қажет пе?</li>
+          <li>Ұйымды тексеру қажет пе?</li>
         </ul>
-
-        <h3>Шаг 2: Генерация CSR (Certificate Signing Request)</h3>
-        <p>CSR содержит информацию о вашем домене и компании:</p>
-
-        <pre><code># Пример CSR данных
-Common Name: example.com
-Organization: My Company LLC
-City: Moscow
-Country: RU
-Email: admin@example.com</code></pre>
-
-        <h3>Шаг 3: Прохождение проверки</h3>
-        <p>В зависимости от типа сертификата:</p>
-        
+        <h3>2-қадам: CSR генерациясы</h3>
+        <p>CSR доменіңіз және компанияңыз туралы ақпаратты қамтиды.</p>
+        <h3>3-қадам: Тексеруден өту</h3>
+        <p>Сертификат түріне байланысты:</p>
         <ul>
-          <li><strong>DV:</strong> Подтверждение по email или DNS</li>
-          <li><strong>OV:</strong> Проверка компании по телефону</li>
-          <li><strong>EV:</strong> Глубокая проверка документов</li>
+          <li><strong>DV:</strong> Email немесе DNS арқылы растау</li>
+          <li><strong>OV:</strong> Компанияны телефон арқылы тексеру</li>
+          <li><strong>EV:</strong> Құжаттарды терең тексеру</li>
         </ul>
-
-        <h3>Шаг 4: Установка сертификата</h3>
-        <p>Методы установки:</p>
-
-        <h4>Через панель управления хостингом (cPanel)</h4>
+        <h3>4-қадам: Сертификатты орнату</h3>
+        <p>Хостинг басқару панелі арқылы (cPanel):</p>
         <ol>
-          <li>Войдите в cPanel</li>
-          <li>Найдите раздел "SSL/TLS"</li>
-          <li>Выберите "Установить SSL сертификат"</li>
-          <li>Загрузите файлы сертификата</li>
+          <li>cPanel-ге кіріңіз</li>
+          <li>"SSL/TLS" бөлімін табыңыз</li>
+          <li>"SSL сертификатын орнату" таңдаңыз</li>
+          <li>Сертификат файлдарын жүктеңіз</li>
         </ol>
-
-        <h4>Вручную на сервере</h4>
-        <pre><code># Размещение файлов сертификата
-/etc/ssl/certs/example.com.crt
-/etc/ssl/private/example.com.key
-/etc/ssl/certs/ca-bundle.crt</code></pre>
-
-        <h3>Шаг 5: Настройка веб-сервера</h3>
-
-        <h4>Для Apache:</h4>
-        <pre><code>&lt;VirtualHost *:443&gt;
-    ServerName example.com
-    DocumentRoot /var/www/html
-    
-    SSLEngine on
-    SSLCertificateFile /etc/ssl/certs/example.com.crt
-    SSLCertificateKeyFile /etc/ssl/private/example.com.key
-    SSLCertificateChainFile /etc/ssl/certs/ca-bundle.crt
-&lt;/VirtualHost&gt;</code></pre>
-
-        <h4>Для Nginx:</h4>
-        <pre><code>server {
-    listen 443 ssl;
-    server_name example.com;
-    
-    ssl_certificate /etc/ssl/certs/example.com.crt;
-    ssl_certificate_key /etc/ssl/private/example.com.key;
-    ssl_trusted_certificate /etc/ssl/certs/ca-bundle.crt;
-    
-    # Остальная конфигурация...
-}</code></pre>
-
-        <h2>7. Перенаправление HTTP на HTTPS</h2>
-
-        <h3>Через .htaccess (Apache)</h3>
+        <h2>6. HTTP-ден HTTPS-ке қайта бағыттау</h2>
+        <p>.htaccess арқылы (Apache):</p>
         <pre><code>RewriteEngine On
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]</code></pre>
-
-        <h3>Через конфиг Nginx</h3>
-        <pre><code>server {
-    listen 80;
-    server_name example.com;
-    return 301 https://$server_name$request_uri;
-}</code></pre>
-
-        <h3>В WordPress через плагин</h3>
-        <p>Плагины для простого перехода:</p>
-        <ul>
-          <li>Really Simple SSL</li>
-          <li>SSL Insecure Content Fixer</li>
-          <li>WP Force SSL</li>
-        </ul>
-
-        <h2>8. Решение частых проблем</h2>
-
-        <h3>Смешанный контент (Mixed Content)</h3>
-        <p>Проблема: На HTTPS страницах загружаются HTTP ресурсы</p>
-        
-        <pre><code># Пример ошибки
-Заблокировано: http://site.com/image.jpg
-Разрешено: https://site.com/image.jpg</code></pre>
-
-        <p><strong>Решение:</strong></p>
-        <ul>
-          <li>Обновите ссылки в базе данных</li>
-          <li>Используйте плагины для автоматического исправления</li>
-          <li>Проверьте настройки CDN</li>
-        </ul>
-
-        <h3>Недействительный сертификат</h3>
-        <p><strong>Причины:</strong></p>
-        <ul>
-          <li>Срок действия истек</li>
-          <li>Несоответствие домена</li>
-          <li>Неправильная цепочка доверия</li>
-        </ul>
-
-        <h2>9. Проверка установки SSL</h2>
-
-        <h3>Онлайн инструменты для проверки:</h3>
+        <h2>7. Орнатуды тексеру</h2>
+        <h3>Тексеру үшін онлайн құралдар:</h3>
         <ul>
           <li>SSL Labs SSL Test</li>
           <li>Why No Padlock?</li>
           <li>SSL Checker</li>
-          <li>Google Transparency Report</li>
         </ul>
-
-        <h3>Что проверять:</h3>
+        <h3>Нені тексеру керек:</h3>
         <ul>
-          <li>✅ Сертификат действителен</li>
-          <li>✅ Цепочка доверия настроена</li>
-          <li>✅ Протоколы безопасности актуальны</li>
-          <li>✅ Нет ошибок смешанного контента</li>
-          <li>✅ HSTS заголовки настроены</li>
+          <li>✅ Сертификат жарамды</li>
+          <li>✅ Сенім тізбегі бапталған</li>
+          <li>✅ Қауіпсіздік протоколдары өзекті</li>
+          <li>✅ Аралас мазмұн қателері жоқ</li>
         </ul>
-
-        <h2>10. HSTS (HTTP Strict Transport Security)</h2>
-        <p>Принудительное использование HTTPS:</p>
-
-        <pre><code># Добавьте в .htaccess или конфиг сервера
-Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"</code></pre>
-
-        <p><strong>Преимущества HSTS:</strong></p>
-        <ul>
-          <li>Защита от downgrade атак</li>
-          <li>Ускорение загрузки (нет редиректа)</li>
-          <li>Повышенная безопасность</li>
-        </ul>
-
-        <h2>11. Обновление SSL сертификатов</h2>
-
-        <h3>Автоматическое обновление</h3>
-        <p>Для Let's Encrypt используйте Certbot:</p>
-
-        <pre><code># Автоматическое обновление
-certbot renew --quiet
-
-# Добавьте в cron для автоматизации
-0 12 * * * /usr/bin/certbot renew --quiet</code></pre>
-
-        <h3>Ручное обновление</h3>
-        <p>Для платных сертификатов:</p>
-        <ol>
-          <li>Сгенерируйте новый CSR за 30 дней до истечения</li>
-          <li>Пройдите проверку заново</li>
-          <li>Установите новый сертификат</li>
-          <li>Протестируйте работу</li>
-        </ol>
-
-        <h2>12. Чек-лист успешной установки SSL</h2>
-
-        <ul>
-          <li>✅ Браузер показывает 🔒 и "Безопасно"</li>
-          <li>✅ Все страницы загружаются по HTTPS</li>
-          <li>✅ Нет ошибок смешанного контента</li>
-          <li>✅ Редирект с HTTP на HTTPS работает</li>
-          <li>✅ Скорость сайта не ухудшилась</li>
-          <li>✅ SEO-показатели в норме</li>
-          <li>✅ Все формы и скрипты работают</li>
-        </ul>
-
-        <h2>Заключение</h2>
-        <p>SSL сертификат — это не просто галочка для SEO, а фундаментальный элемент безопасности вашего сайта. Начните с бесплатного Let's Encrypt, а по мере роста проекта переходите на более надежные варианты с проверкой организации.</p>
-
-        <p>Помните: безопасность пользовательских данных — это ваша ответственность. Не откладывайте переход на HTTPS, ведь каждый день без SSL — это потенциальный риск для ваших пользователей и репутации бизнеса.</p>
-
-        <p>Если у вас возникли сложности с установкой — обращайтесь к нашей технической поддержке. Мы поможем настроить SSL правильно и быстро!</p>
+        <h2>Қорытынды</h2>
+        <p>SSL сертификаты — бұл SEO үшін жай ғана белгі емес, сайтыңыздың қауіпсіздігінің іргелі элементі. Тегін Let's Encrypt-тен бастаңыз, ал жоба өскен сайын ұйымды тексеретін сенімдірек нұсқаларға көшіңіз.</p>
+        <p>Есіңізде болсын: пайдаланушы деректерінің қауіпсіздігі — сіздің жауапкершілігіңіз. HTTPS-ке көшуді кейінге қалдырмаңыз!</p>
       </div>
-
-      <!-- Действия с статьей -->
       <footer class="post-actions">
         <div class="post-tags">
-          <span>🏷️ Теги:</span>
+          <span>🏷️ Тегтер:</span>
           <a href="../blog.html?tag=ssl">#ssl</a>
           <a href="../blog.html?tag=https">#https</a>
-          <a href="../blog.html?tag=безопасность">#безопасность</a>
-          <a href="../blog.html?tag=шифрование">#шифрование</a>
+          <a href="../blog.html?tag=қауіпсіздік">#қауіпсіздік</a>
         </div>
         <div class="action-buttons">
           <button class="like-btn">👍 <span class="like-count">67</span></button>
-          <button class="bookmark-btn">📑 Сохранить</button>
-          <button class="share-btn">📤 Поделиться</button>
+          <button class="bookmark-btn">📑 Сақтау</button>
         </div>
       </footer>
     </div>
   </article>
-
-  <!-- 👤 СЕКЦИЯ АВТОРА -->
   <section class="author-section">
     <div class="container">
       <div class="author-card">
         <img src="../images/team/author5.jpg" alt="Жандос Арлан">
         <div class="author-info">
           <h3>Жандос Арлан</h3>
-          <p>Специалист по веб-безопасности и серверной инфраструктуре с 6-летним опытом. Эксперт в области криптографии, SSL/TLS настройки и защиты от кибератак. Провел более 200 успешных миграций на HTTPS.</p>
-          <div class="author-stats">
-            <span>📝 19 статей</span>
-            <span>👁️ 29.8k просмотров</span>
-            <span>👍 845 лайков</span>
-          </div>
+          <p>6 жылдық тәжірибесі бар веб-қауіпсіздік және сервер инфрақұрылымы маманы.</p>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- 📚 ПОХОЖИЕ СТАТЬИ -->
-  <section class="related-posts">
-    <div class="container">
-      <h2>📖 Читайте также</h2>
-      <div class="related-grid">
-        <article class="blog-card">
-          <a href="wordpress-security-guide.html" class="card-link">
-            <div class="card-image">
-              <img src="../images/blog/security.jpg" alt="Безопасность WordPress">
-              <span class="card-category">Безопасность</span>
-            </div>
-            <div class="card-content">
-              <h3>Полное руководство по защите WordPress от хакеров</h3>
-              <div class="card-meta">
-                <div class="author">
-                  <img src="../images/team/author2.jpg" alt="Ізбасхан Әселхан">
-                  <span>Ізбасхан Әселхан</span>
-                </div>
-                <div class="meta-info">
-                  <span class="date">12 дек 2024</span>
-                  <span class="read-time">12 мин</span>
-                  <span class="views">1.8k</span>
-                </div>
-              </div>
-            </div>
-          </a>
-        </article>
-
-        <article class="blog-card">
-          <a href="website-migration-guide.html" class="card-link">
-            <div class="card-image">
-              <img src="../images/blog/migration.jpg" alt="Миграция сайта">
-              <span class="card-category">Разработка</span>
-            </div>
-            <div class="card-content">
-              <h3>Миграция сайта на новый хостинг: пошаговое руководство</h3>
-              <div class="card-meta">
-                <div class="author">
-                  <img src="../images/team/author5.jpg" alt="Жандос Арлан">
-                  <span>Жандос Арлан</span>
-                </div>
-                <div class="meta-info">
-                  <span class="date">22 ноя 2024</span>
-                  <span class="read-time">11 мин</span>
-                  <span class="views">654</span>
-                </div>
-              </div>
-            </div>
-          </a>
-        </article>
-
-        <article class="blog-card">
-          <a href="choose-hosting-for-ecommerce.html" class="card-link">
-            <div class="card-image">
-              <img src="../images/blog/hosting-choice.jpg" alt="Выбор хостинга">
-              <span class="card-category">Хостинг</span>
-            </div>
-            <div class="card-content">
-              <h3>Как выбрать хостинг для интернет-магазина: полное руководство</h3>
-              <div class="card-meta">
-                <div class="author">
-                  <img src="../images/team/author3.jpg" alt="Бексултанов Нурдаулет">
-                  <span>Бексултанов Нурдаулет</span>
-                </div>
-                <div class="meta-info">
-                  <span class="date">10 дек 2024</span>
-                  <span class="read-time">6 мин</span>
-                  <span class="views">1.2k</span>
-                </div>
-              </div>
-            </div>
-          </a>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- 💬 КОММЕНТАРИИ -->
-  <section class="comments-section">
-    <div class="container">
-      <h2>💬 Обсуждение (<span class="comments-count">6</span>)</h2>
-      <div class="comments-list">
-        <div class="comment">
-          <div class="comment-author">
-            <img src="../images/avatars/user1.jpg" alt="Михаил">
-            <div>
-              <strong>Михаил</strong>
-              <span>1 день назад</span>
-            </div>
-          </div>
-          <div class="comment-text">
-            <p>Отличное руководство! Особенно полезным оказался раздел про решение проблем со смешанным контентом. Столкнулся с этой проблемой при переходе на HTTPS.</p>
-          </div>
-        </div>
-
-        <div class="comment">
-          <div class="comment-author">
-            <img src="../images/avatars/user2.jpg" alt="Елена">
-            <div>
-              <strong>Елена</strong>
-              <span>2 дня назад</span>
-            </div>
-          </div>
-          <div class="comment-text">
-            <p>Спасибо за подробную статью! Подскажите, есть ли смысл покупать платный SSL сертификат для небольшого блога, или достаточно бесплатного Let's Encrypt?</p>
-          </div>
-        </div>
-      </div>
-
-      <form class="comment-form">
-        <textarea placeholder="Ваш комментарий..." required></textarea>
-        <button type="submit">Отправить комментарий</button>
-      </form>
-    </div>
-  </section>
-
-  <!-- 📞 CTA СЕКЦИЯ -->
-  <section class="cta-section">
-    <div class="container">
-      <div class="cta-content">
-        <h2>Нужна помощь с SSL сертификатом?</h2>
-        <p>Наши специалисты бесплатно установят и настроят SSL для вашего сайта</p>
-        <div class="cta-buttons">
-          <a href="../blog.html" class="primary-btn large">Читать другие статьи</a>
-          <a href="../support.html" class="secondary-btn large">Установить SSL</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ⚙️ FOOTER -->
   <footer class="main-footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-left">
-          <div class="footer-logo">
-            <img src="../images/nh.jpg" alt="NextHost Logo">
-            <span>NextHost</span>
-          </div>
-          <p>Премиум хостинг для вашего успеха в цифровом мире</p>
-        </div>
-        <div class="footer-right">
-          <p>Контакты: <a href="mailto:support@nexthost.kz">support@nexthost.kz</a></p>
-          <p>Телефон: <a href="tel:+77777777777">+7 (777) 777-77-77</a></p>
-        </div>
-      </div>
+    <div class="footer-content">
       <div class="footer-bottom">
-        <p>© 2025 NextHost. Все права защищены.</p>
+        <p>© 2025 NextHost. Барлық құқықтар қорғалған.</p>
       </div>
     </div>
   </footer>
-
   <script src="../js/blog-post.js"></script>
 </body>
 </html>

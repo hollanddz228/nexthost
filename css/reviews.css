@@ -160,3 +160,76 @@ body {
   color: #00ff88;
 }
 
+
+/* Стрелки навигации слайдера */
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background: rgba(0, 123, 255, 0.2);
+  border: 2px solid rgba(0, 123, 255, 0.5);
+  border-radius: 50%;
+  color: #00aaff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.reviews-slider:hover .slider-arrow {
+  opacity: 1;
+  visibility: visible;
+}
+
+.slider-arrow:hover {
+  background: rgba(0, 123, 255, 0.4);
+  border-color: #00aaff;
+  box-shadow: 0 0 20px rgba(0, 170, 255, 0.5);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.slider-arrow:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.slider-arrow-left {
+  left: 10px;
+}
+
+.slider-arrow-right {
+  right: 10px;
+}
+
+.slider-arrow svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Адаптив для мобильных */
+@media (max-width: 768px) {
+  .slider-arrow {
+    width: 40px;
+    height: 40px;
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .slider-arrow-left {
+    left: 5px;
+  }
+  
+  .slider-arrow-right {
+    right: 5px;
+  }
+  
+  .slider-arrow svg {
+    width: 20px;
+    height: 20px;
+  }
+}

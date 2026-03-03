@@ -1,16 +1,14 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="kk">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Полное руководство по защите WordPress от хакеров — Блог NextHost</title>
+  <title>WordPress-ті хакерлерден қорғаудың толық нұсқаулығы — NextHost блогы</title>
   <link rel="stylesheet" href="../css/global.css">
   <link rel="stylesheet" href="../css/blog.css">
   <link rel="stylesheet" href="../css/blog-post.css">
 </head>
-<body>
-
-  <!-- 🌐 HEADER -->
+<body class="blog-post-page">
   <header class="main-header">
     <div class="container">
       <div class="logo">
@@ -18,385 +16,149 @@
         <span>NextHost</span>
       </div>
       <nav class="nav-links">
-        <a href="../index.html">Главная</a>
-        <a href="../about.html">О нас</a>
+        <a href="../index.html">Басты бет</a>
+        <a href="../about.html">Біз туралы</a>
         <a href="../hosting.html">Хостинг</a>
-        <a href="../support.html">Поддержка</a>
-        <a href="../reviews.html">Отзывы</a>
-        <a href="../partners.html">Партнёры</a>
+        <a href="../support.html">Қолдау</a>
+        <a href="../reviews.html">Пікірлер</a>
+        <a href="../partners.html">Серіктестер</a>
         <a href="../blog.html">Блог</a>
         <a href="../profile.html" class="profile-link">Профиль</a>
       </nav>
     </div>
   </header>
-
-  <!-- 📝 СТАТЬЯ -->
   <article class="blog-post">
     <div class="container">
-      <!-- Хлебные крошки -->
       <nav class="breadcrumbs">
-        <a href="../index.html">Главная</a>
+        <a href="../index.html">Басты бет</a>
         <span>→</span>
         <a href="../blog.html">Блог</a>
         <span>→</span>
-        <span class="current">Безопасность</span>
+        <span class="current">Қауіпсіздік</span>
       </nav>
-
-      <!-- Заголовок статьи -->
       <header class="post-header">
-        <div class="post-category">Безопасность</div>
-        <h1>Полное руководство по защите WordPress от хакеров</h1>
+        <div class="post-category">Қауіпсіздік</div>
+        <h1>WordPress-ті хакерлерден қорғаудың толық нұсқаулығы</h1>
         <div class="post-meta">
           <div class="author-info">
             <img src="../images/team/author2.jpg" alt="Ізбасхан Әселхан">
             <div>
               <div class="author-name">Ізбасхан Әселхан</div>
-              <div class="post-date">12 декабря 2024 · 12 мин чтения</div>
+              <div class="post-date">12 желтоқсан 2024 · 12 мин оқу</div>
             </div>
-          </div>
-          <div class="social-share">
-            <button class="share-btn" data-platform="twitter">🐦</button>
-            <button class="share-btn" data-platform="facebook">📘</button>
-            <button class="share-btn" data-platform="linkedin">💼</button>
-            <button class="share-btn" data-platform="copy">📋</button>
           </div>
         </div>
       </header>
-
-      <!-- Обложка статьи -->
       <div class="post-hero">
-        <img src="../images/blog/security.jpg" alt="Защита WordPress">
+        <img src="../images/blog/security.jpg" alt="WordPress қорғау">
       </div>
-
-      <!-- Контент статьи -->
       <div class="post-content">
-        <p>WordPress — самая популярная CMS в мире, что делает её главной мишенью для хакеров. Ежедневно тысячи WordPress сайтов подвергаются атакам. В этом руководстве я расскажу о комплексном подходе к защите вашего WordPress сайта.</p>
-
-        <h2>1. Обновляйте всё своевременно</h2>
-        <p>Устаревшие версии — основная причина взломов:</p>
-        
+        <p>WordPress — әлемдегі ең танымал CMS, бұл оны хакерлердің басты нысанасына айналдырады. Күн сайын мыңдаған WordPress сайттары шабуылға ұшырайды.</p>
+        <h2>1. Барлығын уақытылы жаңартыңыз</h2>
+        <p>Ескірген нұсқалар — бұзылудың негізгі себебі:</p>
         <ul>
-          <li><strong>WordPress ядро:</strong> Включайте автоматические обновления</li>
-          <li><strong>Плагины и темы:</strong> Регулярно проверяйте обновления</li>
-          <li><strong>PHP версия:</strong> Используйте актуальные версии PHP 8.0+</li>
+          <li><strong>WordPress ядросы:</strong> Автоматты жаңартуларды қосыңыз</li>
+          <li><strong>Плагиндер мен тақырыптар:</strong> Жаңартуларды үнемі тексеріңіз</li>
+          <li><strong>PHP нұсқасы:</strong> PHP 8.0+ нұсқаларын пайдаланыңыз</li>
         </ul>
-
-        <div class="tip-box">
-          <strong>💡 Совет:</strong> Настройте уведомления о доступных обновлениях на почту.
-        </div>
-
-        <h2>2. Сильные пароли и пользователи</h2>
-        <p>Слабые учетные данные — открытая дверь для хакеров:</p>
-
-        <pre><code>// Пример сильного пароля
-Минимум 12 символов: Wp8#Secur1ty2024!
-Используйте: буквы, цифры, специальные символы</code></pre>
-
+        <h2>2. Күшті құпия сөздер мен пайдаланушылар</h2>
+        <p>Әлсіз тіркелгі деректері — хакерлер үшін ашық есік:</p>
         <ul>
-          <li>Измените стандартного пользователя "admin"</li>
-          <li>Ограничьте количество попыток входа</li>
-          <li>Используйте двухфакторную аутентификацию</li>
+          <li>Стандартты "admin" пайдаланушысын өзгертіңіз</li>
+          <li>Кіру әрекеттерін шектеңіз</li>
+          <li>Екі факторлы аутентификацияны пайдаланыңыз</li>
         </ul>
-
-        <h2>3. Защита wp-admin и wp-login.php</h2>
-        <p>Ограничьте доступ к критическим областям:</p>
-
-        <pre><code># Защита через .htaccess
-AuthType Basic
-AuthName "Restricted Area"
-AuthUserFile /path/to/.htpasswd
-Require valid-user</code></pre>
-
-        <p>Или используйте плагины like Wordfence для ограничения доступа по IP.</p>
-
-        <h2>4. Безопасные плагины и темы</h2>
-        <p>Выбирайте только проверенные решения:</p>
-        
+        <h2>3. wp-admin және wp-login.php қорғау</h2>
+        <p>Маңызды аймақтарға қолжетімділікті шектеңіз.</p>
+        <h2>4. Қауіпсіз плагиндер мен тақырыптар</h2>
         <ul>
-          <li>Скачивайте только с WordPress.org или авторитетных маркетплейсов</li>
-          <li>Проверяйте дату последнего обновления</li>
-          <li>Читайте отзывы и рейтинги</li>
-          <li>Удаляйте неиспользуемые плагины и темы</li>
+          <li>Тек WordPress.org немесе сенімді маркетплейстерден жүктеңіз</li>
+          <li>Соңғы жаңарту күнін тексеріңіз</li>
+          <li>Пікірлер мен рейтингтерді оқыңыз</li>
+          <li>Пайдаланылмайтын плагиндер мен тақырыптарды жойыңыз</li>
         </ul>
-
         <div class="warning-box">
-          <strong>⚠️ Важно:</strong> Nulled (взломанные) плагины и темы часто содержат бэкдоры.
+          <strong>⚠️ Маңызды:</strong> Nulled (бұзылған) плагиндер мен тақырыптар көбінесе бэкдорлар құрамында болады.
         </div>
-
-        <h2>5. Защита базы данных</h2>
-        <p>Укрепите безопасность вашей БД:</p>
-
-        <pre><code>-- Измените префикс таблиц
-Измените wp_ на что-то уникальное: mysite_</code></pre>
-
+        <h2>5. Деректер қорын қорғау</h2>
         <ul>
-          <li>Используйте сложные пароли для БД</li>
-          <li>Регулярно делайте бэкапы</li>
-          <li>Ограничьте привилегии пользователя БД</li>
+          <li>Деректер қоры үшін күрделі құпия сөздерді пайдаланыңыз</li>
+          <li>Үнемі бэкаптар жасаңыз</li>
+          <li>Деректер қоры пайдаланушысының артықшылықтарын шектеңіз</li>
         </ul>
-
-        <h2>6. SSL сертификат</h2>
-        <p>Обязательно используйте HTTPS:</p>
-        
+        <h2>6. SSL сертификаты</h2>
+        <p>HTTPS міндетті түрде пайдаланыңыз:</p>
         <ul>
-          <li>Шифрует передаваемые данные</li>
-          <li>Повышает доверие пользователей</li>
-          <li>Улучшает SEO-показатели</li>
-          <li>Обязателен для интернет-магазинов</li>
+          <li>Берілетін деректерді шифрлайды</li>
+          <li>Пайдаланушылардың сенімін арттырады</li>
+          <li>SEO көрсеткіштерін жақсартады</li>
         </ul>
-
-        <h2>7. Защита от брутфорс атак</h2>
-        <p>Ограничьте попытки входа:</p>
-
-        <pre><code># В плагине безопасности настройте:
-- Максимум 3 попытки входа
-- Блокировка на 30 минут после 5 неудачных попыток
-- Уведомления о подозрительной активности</code></pre>
-
-        <h2>8. Файловые разрешения</h2>
-        <p>Правильные права доступа к файлам:</p>
-        
+        <h2>7. Брутфорс шабуылдарынан қорғау</h2>
+        <p>Кіру әрекеттерін шектеңіз:</p>
         <ul>
-          <li>Папки: 755</li>
-          <li>Файлы: 644</li>
+          <li>Максимум 3 кіру әрекеті</li>
+          <li>5 сәтсіз әрекеттен кейін 30 минутқа блоктау</li>
+          <li>Күдікті белсенділік туралы хабарландырулар</li>
+        </ul>
+        <h2>8. Файл рұқсаттары</h2>
+        <ul>
+          <li>Қалталар: 755</li>
+          <li>Файлдар: 644</li>
           <li>wp-config.php: 600</li>
-          <li>Отключите редактирование файлов через админку</li>
         </ul>
-
-        <h2>9. Регулярные бэкапы</h2>
-        <p>Стратегия резервного копирования:</p>
-        
+        <h2>9. Тұрақты бэкаптар</h2>
         <ul>
-          <li>Ежедневные бэкапы базы данных</li>
-          <li>Еженедельные полные бэкапы файлов</li>
-          <li>Храните бэкапы на внешних сервисах</li>
-          <li>Регулярно тестируйте восстановление</li>
+          <li>Деректер қорының күнделікті бэкаптары</li>
+          <li>Файлдардың апталық толық бэкаптары</li>
+          <li>Бэкаптарды сыртқы қызметтерде сақтаңыз</li>
         </ul>
-
-        <h2>10. Мониторинг и аудит</h2>
-        <p>Отслеживайте активность на сайте:</p>
-        
+        <h2>10. Мониторинг және аудит</h2>
         <ul>
-          <li>Логи входа пользователей</li>
-          <li>Изменения файлов</li>
-          <li>Установка новых плагинов</li>
-          <li>Подозрительные IP адреса</li>
+          <li>Пайдаланушылардың кіру журналдары</li>
+          <li>Файл өзгерістері</li>
+          <li>Жаңа плагиндерді орнату</li>
+          <li>Күдікті IP мекенжайлары</li>
         </ul>
-
-        <h2>Рекомендуемые плагины безопасности</h2>
-        
+        <h2>Ұсынылатын қауіпсіздік плагиндері</h2>
         <ul>
-          <li><strong>Wordfence Security:</strong> Комплексная защита</li>
-          <li><strong>Sucuri Security:</strong> Аудит и мониторинг</li>
-          <li><strong>iThemes Security:</strong> Многофункциональный</li>
-          <li><strong>All In One WP Security:</strong> Бесплатный и эффективный</li>
+          <li><strong>Wordfence Security:</strong> Кешенді қорғау</li>
+          <li><strong>Sucuri Security:</strong> Аудит және мониторинг</li>
+          <li><strong>iThemes Security:</strong> Көп функционалды</li>
         </ul>
-
-        <h2>Экстренные меры при взломе</h2>
-        <p>Если сайт всё же взломали:</p>
-        
-        <ol>
-          <li>Переведите сайт в режим обслуживания</li>
-          <li>Восстановите из чистого бэкапа</li>
-          <li>Смените все пароли</li>
-          <li>Проверьте файлы на наличие бэкдоров</li>
-          <li>Просканируйте антивирусом</li>
-        </ol>
-
-        <h2>Заключение</h2>
-        <p>Безопасность WordPress — это не разовое мероприятие, а непрерывный процесс. Начните с базовых мер: обновлений, сильных паролей и бэкапов, затем постепенно внедряйте более сложные методы защиты.</p>
-
-        <p>Помните: профилактика всегда дешевле лечения. Регулярный аудит безопасности сэкономит вам время, деньги и нервы в будущем.</p>
+        <h2>Қорытынды</h2>
+        <p>WordPress қауіпсіздігі — бұл бір реттік шара емес, үздіксіз процесс. Негізгі шаралардан бастаңыз: жаңартулар, күшті құпия сөздер және бэкаптар.</p>
       </div>
-
-      <!-- Действия с статьей -->
       <footer class="post-actions">
         <div class="post-tags">
-          <span>🏷️ Теги:</span>
+          <span>🏷️ Тегтер:</span>
           <a href="../blog.html?tag=wordpress">#wordpress</a>
-          <a href="../blog.html?tag=безопасность">#безопасность</a>
-          <a href="../blog.html?tag=защита">#защита</a>
-          <a href="../blog.html?tag=хакеры">#хакеры</a>
+          <a href="../blog.html?tag=қауіпсіздік">#қауіпсіздік</a>
         </div>
         <div class="action-buttons">
           <button class="like-btn">👍 <span class="like-count">87</span></button>
-          <button class="bookmark-btn">📑 Сохранить</button>
-          <button class="share-btn">📤 Поделиться</button>
+          <button class="bookmark-btn">📑 Сақтау</button>
         </div>
       </footer>
     </div>
   </article>
-
-  <!-- 👤 СЕКЦИЯ АВТОРА -->
   <section class="author-section">
     <div class="container">
       <div class="author-card">
         <img src="../images/team/author2.jpg" alt="Ізбасхан Әселхан">
         <div class="author-info">
           <h3>Ізбасхан Әселхан</h3>
-          <p>Специалист по кибербезопасности с 6-летним опытом. Эксперт в области защиты веб-приложений, WordPress безопасности и предотвращения DDoS атак. Провела более 150 аудитов безопасности для компаний различного масштаба.</p>
-          <div class="author-stats">
-            <span>📝 18 статей</span>
-            <span>👁️ 32.7k просмотров</span>
-            <span>👍 890 лайков</span>
-          </div>
+          <p>6 жылдық тәжірибесі бар киберқауіпсіздік маманы.</p>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- 📚 ПОХОЖИЕ СТАТЬИ -->
-  <section class="related-posts">
-    <div class="container">
-      <h2>📖 Читайте также</h2>
-      <div class="related-grid">
-        <article class="blog-card">
-          <a href="must-have-wordpress-plugins.html" class="card-link">
-            <div class="card-image">
-              <img src="../images/blog/wordpress.jpg" alt="WordPress плагины">
-              <span class="card-category">WordPress</span>
-            </div>
-            <div class="card-content">
-              <h3>15 must-have плагинов WordPress для любого сайта</h3>
-              <div class="card-meta">
-                <div class="author">
-                  <img src="../images/team/author1.jpg" alt="Тасеменов Нурбек">
-                  <span>Тасеменов Нурбек</span>
-                </div>
-                <div class="meta-info">
-                  <span class="date">5 дек 2024</span>
-                  <span class="read-time">7 мин</span>
-                  <span class="views">1.1k</span>
-                </div>
-              </div>
-            </div>
-          </a>
-        </article>
-
-        <article class="blog-card">
-          <a href="ssl-certificate-guide.html" class="card-link">
-            <div class="card-image">
-              <img src="../images/blog/ssl.jpg" alt="SSL сертификаты">
-              <span class="card-category">Разработка</span>
-            </div>
-            <div class="card-content">
-              <h3>Зачем нужен SSL сертификат и как его правильно установить</h3>
-              <div class="card-meta">
-                <div class="author">
-                  <img src="../images/team/author5.jpg" alt="Жандос Арлан">
-                  <span>Жандос Арлан</span>
-                </div>
-                <div class="meta-info">
-                  <span class="date">3 дек 2024</span>
-                  <span class="read-time">5 мин</span>
-                  <span class="views">874</span>
-                </div>
-              </div>
-            </div>
-          </a>
-        </article>
-
-        <article class="blog-card">
-          <a href="backup-strategies.html" class="card-link">
-            <div class="card-image">
-              <img src="../images/blog/backup.jpg" alt="Бэкапы сайта">
-              <span class="card-category">Безопасность</span>
-            </div>
-            <div class="card-content">
-              <h3>Стратегии резервного копирования: как не потерять данные сайта</h3>
-              <div class="card-meta">
-                <div class="author">
-                  <img src="../images/team/author3.jpg" alt="Бексултанов Нурдаулет">
-                  <span>Бексултанов Нурдаулет</span>
-                </div>
-                <div class="meta-info">
-                  <span class="date">28 ноя 2024</span>
-                  <span class="read-time">6 мин</span>
-                  <span class="views">723</span>
-                </div>
-              </div>
-            </div>
-          </a>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- 💬 КОММЕНТАРИИ -->
-  <section class="comments-section">
-    <div class="container">
-      <h2>💬 Обсуждение (<span class="comments-count">5</span>)</h2>
-      <div class="comments-list">
-        <div class="comment">
-          <div class="comment-author">
-            <img src="../images/avatars/user1.jpg" alt="Алексей">
-            <div>
-              <strong>Алексей</strong>
-              <span>2 дня назад</span>
-            </div>
-          </div>
-          <div class="comment-text">
-            <p>Отличная статья! Особенно понравился раздел про бэкапы. Добавлю от себя: всегда тестируйте восстановление из бэкапа, чтобы быть уверенным, что он рабочий.</p>
-          </div>
-        </div>
-
-        <div class="comment">
-          <div class="comment-author">
-            <img src="../images/avatars/user2.jpg" alt="Мария">
-            <div>
-              <strong>Мария</strong>
-              <span>3 дня назад</span>
-            </div>
-          </div>
-          <div class="comment-text">
-            <p>Спасибо за подробное руководство! Какой плагин безопасности вы бы порекомендовали для небольшого интернет-магазина?</p>
-          </div>
-        </div>
-      </div>
-
-      <form class="comment-form">
-        <textarea placeholder="Ваш комментарий..." required></textarea>
-        <button type="submit">Отправить комментарий</button>
-      </form>
-    </div>
-  </section>
-
-  <!-- 📞 CTA СЕКЦИЯ -->
-  <section class="cta-section">
-    <div class="container">
-      <div class="cta-content">
-        <h2>Нужна помощь с безопасностью сайта?</h2>
-        <p>Наши эксперты проведут аудит безопасности и помогут защитить ваш WordPress</p>
-        <div class="cta-buttons">
-          <a href="../blog.html" class="primary-btn large">Читать другие статьи</a>
-          <a href="../support.html" class="secondary-btn large">Заказать аудит</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ⚙️ FOOTER -->
   <footer class="main-footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-left">
-          <div class="footer-logo">
-            <img src="../images/nh.jpg" alt="NextHost Logo">
-            <span>NextHost</span>
-          </div>
-          <p>Премиум хостинг для вашего успеха в цифровом мире</p>
-        </div>
-        <div class="footer-right">
-          <p>Контакты: <a href="mailto:support@nexthost.kz">support@nexthost.kz</a></p>
-          <p>Телефон: <a href="tel:+77777777777">+7 (777) 777-77-77</a></p>
-        </div>
-      </div>
+    <div class="footer-content">
       <div class="footer-bottom">
-        <p>© 2025 NextHost. Все права защищены.</p>
+        <p>© 2025 NextHost. Барлық құқықтар қорғалған.</p>
       </div>
     </div>
   </footer>
-
   <script src="../js/blog-post.js"></script>
 </body>
 </html>

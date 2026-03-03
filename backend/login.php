@@ -3,7 +3,7 @@
 require_once 'config.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    sendJsonResponse(['success' => false, 'message' => 'Метод не поддерживается']);
+    sendJsonResponse(['success' => false, 'message' => 'Әдіс қолдау көрсетілмейді']);
 }
 
 $input = file_get_contents('php://input');
@@ -13,36 +13,36 @@ $email = trim($data['email'] ?? '');
 $password = $data['password'] ?? '';
 
 if (empty($email) || empty($password)) {
-    sendJsonResponse(['success' => false, 'message' => 'Email и пароль обязательны']);
+    sendJsonResponse(['success' => false, 'message' => 'Email және құпиясөз міндетті']);
 }
 
 $conn = getDBConnection();
 
-// Ищем пользователя
+// Пайдаланушыны іздейміз
 $stmt = $conn->prepare("SELECT id, username, email, password, balance, email_verified FROM users WHERE email = ?");
 $stmt->bind_param("s", $email);
 $stmt->execute();
 $result = $stmt->get_result();
 
 if ($result->num_rows === 0) {
-    sendJsonResponse(['success' => false, 'message' => 'Пользователь не найден']);
+    sendJsonResponse(['success' => false, 'message' => 'Пайдаланушы табылмады']);
 }
 
 $user = $result->fetch_assoc();
 
-// 🔒 ПРОВЕРЯЕМ ПОДТВЕРЖДЕНИЕ EMAIL
+// 🔒 EMAIL РАСТАУЫН ТЕКСЕРЕМІЗ
 if (!$user['email_verified']) {
     sendJsonResponse([
         'success' => false, 
-        'message' => 'Подтвердите ваш email перед входом. Проверьте вашу почту.'
+        'message' => 'Кірер алдында email-ды растаңыз. Поштаңызды тексеріңіз.'
     ]);
 }
 
-// Проверяем пароль
+// Құпиясөзді тексереміз
 if (password_verify($password, $user['password'])) {
     sendJsonResponse([
         'success' => true,
-        'message' => 'Вход успешен',
+        'message' => 'Кіру сәтті',
         'user' => [
             'id' => $user['id'],
             'name' => $user['username'],
@@ -51,7 +51,7 @@ if (password_verify($password, $user['password'])) {
         ]
     ]);
 } else {
-    sendJsonResponse(['success' => false, 'message' => 'Неверный пароль']);
+    sendJsonResponse(['success' => false, 'message' => 'Құпиясөз дұрыс емес']);
 }
 
 $stmt->close();

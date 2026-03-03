@@ -1,4 +1,4 @@
-/* support.js — логика страницы поддержки */
+/* support.js — қолдау бетінің логикасы */
 
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('ticket-form');
@@ -7,10 +7,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const noTickets = document.getElementById('no-tickets');
   const openChatBtn = document.getElementById('open-chat');
 
-  // === Отправка тикета ===
+  // === Тикет жіберу ===
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    feedback.textContent = '⏳ Отправка...';
+    feedback.textContent = '⏳ Жіберілуде...';
     feedback.style.color = '#ccc';
 
     const fd = new FormData(form);
@@ -25,21 +25,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (data.success) {
         feedback.style.color = '#bfffe6';
-        feedback.textContent = `✅ Тикет создан (ID: ${data.id}). Мы скоро свяжемся с вами!`;
+        feedback.textContent = `✅ Тикет жасалды (ID: ${data.id}). Жақын арада сізбен хабарласамыз!`;
         form.reset();
         loadTickets();
       } else {
         feedback.style.color = '#ffb3b3';
-        feedback.textContent = '⚠️ Ошибка: ' + (data.message || 'Не удалось создать тикет.');
+        feedback.textContent = '⚠️ Қате: ' + (data.message || 'Тикет жасау мүмкін болмады.');
       }
     } catch (err) {
       console.error(err);
       feedback.style.color = '#ffb3b3';
-      feedback.textContent = '❌ Ошибка соединения с сервером.';
+      feedback.textContent = '❌ Сервермен байланыс қатесі.';
     }
   });
 
-  // === Загрузка тикетов из базы ===
+  // === Базадан тикеттерді жүктеу ===
   async function loadTickets() {
     try {
       const res = await fetch('backend/get_tickets.php');
@@ -58,10 +58,10 @@ document.addEventListener('DOMContentLoaded', () => {
         div.className = 'ticket-item';
         div.innerHTML = `
           <div>
-            <div class="subject">${escapeHtml(t.subject || '(Без темы)')}</div>
+            <div class="subject">${escapeHtml(t.subject || '(Тақырыпсыз)')}</div>
             <div class="meta">${escapeHtml(t.name)} • ${escapeHtml(t.email)}</div>
             <div class="meta">📅 ${new Date(t.created_at).toLocaleString()}</div>
-            <div class="meta">🟢 Статус: <strong>${escapeHtml(t.status || 'новый')}</strong></div>
+            <div class="meta">🟢 Күйі: <strong>${escapeHtml(t.status || 'жаңа')}</strong></div>
             ${t.screenshot_path ? `<div class="meta">📎 <a href="/nexthost/backend/${escapeHtml(t.screenshot_path)}" target="_blank">Скриншот</a></div>` : ''}
             <div class="meta">💬 ${escapeHtml(t.message.slice(0, 150))}${t.message.length > 150 ? '...' : ''}</div>
           </div>
@@ -70,33 +70,33 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     } catch (err) {
       console.error(err);
-      ticketsList.innerHTML = '<p class="error">Ошибка загрузки тикетов.</p>';
+      ticketsList.innerHTML = '<p class="error">Тикеттерді жүктеу қатесі.</p>';
     }
   }
 
-  // === Защита от XSS ===
+  // === XSS-тен қорғау ===
   function escapeHtml(s) {
     return String(s).replace(/[&<>"']/g, c => (
       { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]
     ));
   }
 
-  // === Сброс формы ===
+  // === Форманы тазарту ===
   document.getElementById('btn-reset').addEventListener('click', () => {
     form.reset();
     feedback.textContent = '';
   });
 
-  // === Открытие чата Tawk.to ===
+  // === Tawk.to чатын ашу ===
   openChatBtn.addEventListener('click', () => {
     if (window.Tawk_API && typeof window.Tawk_API.toggle === 'function') {
       window.Tawk_API.toggle();
     } else {
-      alert('Чат не подключен. Проверь код Tawk.to в support.html');
+      alert('Чат қосылмаған. support.html ішіндегі Tawk.to кодын тексеріңіз');
     }
   });
 
-  // === FAQ аккордеон ===
+  // === FAQ аккордеоны ===
   document.querySelectorAll('.accordion .accordion-item').forEach(btn => {
     btn.addEventListener('click', () => {
       btn.classList.toggle('active');
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // === Обновление статуса времени ===
+  // === Уақыт күйін жаңарту ===
   function updateStatus() {
     const now = new Date();
     document.getElementById('status-updated').textContent = now.toLocaleTimeString();
@@ -115,6 +115,6 @@ document.addEventListener('DOMContentLoaded', () => {
   updateStatus();
   setInterval(updateStatus, 60 * 1000);
 
-  // === Загружаем тикеты при входе ===
+  // === Кіргенде тикеттерді жүктейміз ===
   loadTickets();
 });

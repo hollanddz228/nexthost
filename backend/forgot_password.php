@@ -4,7 +4,7 @@ require_once 'config.php';
 require_once 'mailer_real.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    sendJsonResponse(['success' => false, 'message' => 'Метод не поддерживается']);
+    sendJsonResponse(['success' => false, 'message' => 'Әдіс қолдау көрсетілмейді']);
 }
 
 $input = file_get_contents('php://input');
@@ -13,12 +13,12 @@ $data = json_decode($input, true);
 $email = trim($data['email'] ?? '');
 
 if (empty($email)) {
-    sendJsonResponse(['success' => false, 'message' => 'Email обязателен']);
+    sendJsonResponse(['success' => false, 'message' => 'Email міндетті']);
 }
 
 $conn = getDBConnection();
 if (!$conn) {
-    sendJsonResponse(['success' => false, 'message' => 'Ошибка подключения к базе данных']);
+    sendJsonResponse(['success' => false, 'message' => 'Дерекқорға қосылу қатесі']);
 }
 
 try {
@@ -35,7 +35,7 @@ try {
     if ($result->num_rows === 0) {
         sendJsonResponse([
             'success' => false, 
-            'message' => 'Пользователь с таким email не найден или email не подтвержден'
+            'message' => 'Бұл email-мен пайдаланушы табылмады немесе email расталмаған'
         ]);
     }
 
@@ -76,25 +76,25 @@ try {
         if ($email_sent) {
             sendJsonResponse([
                 'success' => true, 
-                'message' => 'Инструкции по восстановлению пароля отправлены на ваш email',
-                'debug_token' => $reset_token // Для тестирования
+                'message' => 'Құпиясөзді қалпына келтіру нұсқаулары email-ға жіберілді',
+                'debug_token' => $reset_token // Тестілеу үшін
             ]);
         } else {
             sendJsonResponse([
                 'success' => true, 
-                'message' => 'Письмо не отправлено, но токен создан: ' . $reset_token
+                'message' => 'Хат жіберілмеді, бірақ токен жасалды: ' . $reset_token
             ]);
         }
     } else {
         error_log("❌ Token save failed: " . $update_stmt->error);
-        sendJsonResponse(['success' => false, 'message' => 'Ошибка сохранения токена: ' . $update_stmt->error]);
+        sendJsonResponse(['success' => false, 'message' => 'Токенді сақтау қатесі: ' . $update_stmt->error]);
     }
     
     $update_stmt->close();
     
 } catch (Exception $e) {
     error_log("❌ Exception in forgot_password: " . $e->getMessage());
-    sendJsonResponse(['success' => false, 'message' => 'Ошибка: ' . $e->getMessage()]);
+    sendJsonResponse(['success' => false, 'message' => 'Қате: ' . $e->getMessage()]);
 } finally {
     $conn->close();
 }

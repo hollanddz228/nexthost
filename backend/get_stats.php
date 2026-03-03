@@ -5,7 +5,7 @@ include 'config.php';
 $user_id = $_GET['id'] ?? 0;
 
 if (!$user_id) {
-    echo json_encode(['success' => false, 'message' => 'ID пользователя не указан']);
+    echo json_encode(['success' => false, 'message' => 'Пайдаланушы ID көрсетілмеген']);
     exit;
 }
 

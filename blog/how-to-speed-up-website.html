@@ -1,16 +1,14 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="kk">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>10 способов ускорить загрузку вашего сайта в 2024 году — Блог NextHost</title>
+  <title>2024 жылы сайт жүктелуін жылдамдатудың 10 тәсілі — NextHost блогы</title>
   <link rel="stylesheet" href="../css/global.css">
   <link rel="stylesheet" href="../css/blog.css">
   <link rel="stylesheet" href="../css/blog-post.css">
 </head>
-<body>
-
-  <!-- 🌐 HEADER -->
+<body class="blog-post-page">
   <header class="main-header">
     <div class="container">
       <div class="logo">
@@ -18,238 +16,102 @@
         <span>NextHost</span>
       </div>
       <nav class="nav-links">
-        <a href="../index.html">Главная</a>
-        <a href="../about.html">О нас</a>
+        <a href="../index.html">Басты бет</a>
+        <a href="../about.html">Біз туралы</a>
         <a href="../hosting.html">Хостинг</a>
-        <a href="../support.html">Поддержка</a>
-        <a href="../reviews.html">Отзывы</a>
-        <a href="../partners.html">Партнёры</a>
+        <a href="../support.html">Қолдау</a>
+        <a href="../reviews.html">Пікірлер</a>
+        <a href="../partners.html">Серіктестер</a>
         <a href="../blog.html">Блог</a>
         <a href="../profile.html" class="profile-link">Профиль</a>
       </nav>
     </div>
   </header>
-
-  <!-- 📝 СТАТЬЯ -->
   <article class="blog-post">
     <div class="container">
-      <!-- Хлебные крошки -->
       <nav class="breadcrumbs">
-        <a href="../index.html">Главная</a>
+        <a href="../index.html">Басты бет</a>
         <span>→</span>
         <a href="../blog.html">Блог</a>
         <span>→</span>
-        <span class="current">Производительность</span>
+        <span class="current">Өнімділік</span>
       </nav>
-
-      <!-- Заголовок статьи -->
       <header class="post-header">
-        <div class="post-category">Производительность</div>
-        <h1>10 способов ускорить загрузку вашего сайта в 2024 году</h1>
+        <div class="post-category">Өнімділік</div>
+        <h1>2024 жылы сайт жүктелуін жылдамдатудың 10 тәсілі</h1>
         <div class="post-meta">
           <div class="author-info">
             <img src="../images/team/author1.jpg" alt="Тасеменов Нурбек">
             <div>
               <div class="author-name">Тасеменов Нурбек</div>
-              <div class="post-date">15 декабря 2024 · 8 мин чтения</div>
+              <div class="post-date">15 желтоқсан 2024 · 8 мин оқу</div>
             </div>
-          </div>
-          <div class="social-share">
-            <button class="share-btn" data-platform="twitter">🐦</button>
-            <button class="share-btn" data-platform="facebook">📘</button>
-            <button class="share-btn" data-platform="linkedin">💼</button>
-            <button class="share-btn" data-platform="copy">📋</button>
           </div>
         </div>
       </header>
-
-      <!-- Обложка статьи -->
       <div class="post-hero">
-        <img src="../images/blog/optimization.jpg" alt="Оптимизация скорости сайта">
+        <img src="../images/blog/optimization.jpg" alt="Сайт жылдамдығын оңтайландыру">
       </div>
-
-      <!-- Контент статьи -->
       <div class="post-content">
-        <p>Скорость загрузки сайта — один из ключевых факторов, влияющих на пользовательский опыт и SEO. В 2024 году ожидания пользователей продолжают расти, и медленный сайт может стоить вам клиентов. В этой статье я расскажу о 10 эффективных способах ускорения вашего сайта.</p>
-
-        <h2>1. Оптимизация изображений</h2>
-        <p>Изображения часто составляют большую часть веса страницы. Вот как их оптимизировать:</p>
-        
+        <p>Сайт жүктелу жылдамдығы — пайдаланушы тәжірибесі мен SEO-ға әсер ететін негізгі факторлардың бірі.</p>
+        <h2>1. Суреттерді оңтайландыру</h2>
         <ul>
-          <li><strong>Используйте современные форматы:</strong> WebP обеспечивает лучшее сжатие чем JPEG и PNG</li>
-          <li><strong>Сжимайте изображения:</strong> Используйте инструменты like TinyPNG или ImageOptim</li>
-          <li><strong>Указывайте размеры:</strong> Всегда задавайте width и height для изображений</li>
-          <li><strong>Используйте lazy loading:</strong> Загружайте изображения по мере прокрутки</li>
+          <li><strong>Заманауи форматтарды пайдаланыңыз:</strong> WebP JPEG және PNG-ден жақсы сығымдауды қамтамасыз етеді</li>
+          <li><strong>Суреттерді сығымдаңыз:</strong> TinyPNG немесе ImageOptim құралдарын пайдаланыңыз</li>
+          <li><strong>Lazy loading пайдаланыңыз:</strong> Суреттерді айналдыру кезінде жүктеңіз</li>
         </ul>
-
-        <div class="tip-box">
-          <strong>💡 Совет:</strong> Для WordPress используйте плагин Smush или ShortPixel для автоматической оптимизации изображений.
-        </div>
-
-        <h2>2. Включите кэширование</h2>
-        <p>Кэширование позволяет браузерам хранить статические ресурсы локально:</p>
-
-        <pre><code># Пример настройки кэширования в .htaccess
-ExpiresActive On
-ExpiresByType image/jpg "access plus 1 month"
-ExpiresByType image/jpeg "access plus 1 month"
-ExpiresByType image/gif "access plus 1 month"
-ExpiresByType image/png "access plus 1 month"
-ExpiresByType text/css "access plus 1 month"
-ExpiresByType application/pdf "access plus 1 month"
-ExpiresByType text/javascript "access plus 1 month"
-ExpiresByType application/javascript "access plus 1 month"</code></pre>
-
-        <h2>3. Используйте CDN</h2>
-        <p>Content Delivery Network распределяет контент по серверам по всему миру:</p>
-        
-        <ul>
-          <li>Уменьшает задержку для пользователей из разных регионов</li>
-          <li>Снижает нагрузку на основной сервер</li>
-          <li>Обеспечивает защиту от DDoS-атак</li>
-        </ul>
-
-        <p>Популярные CDN провайдеры: Cloudflare, Amazon CloudFront, Google Cloud CDN.</p>
-
-        <h2>4. Минификация CSS и JavaScript</h2>
-        <p>Удалите все ненужные символы из кода:</p>
-
-        <pre><code>// До минификации
-function calculateTotal(price, quantity) {
-    const total = price * quantity;
-    return total;
-}
-
-// После минификации
-function calculateTotal(e,t){return e*t}</code></pre>
-
-        <p>Используйте инструменты: UglifyJS для JavaScript, CSSNano для CSS.</p>
-
-        <!-- Остальные 6 способов... -->
-        
-        <h2>5. Оптимизация веб-шрифтов</h2>
-        <p>Веб-шрифты могут значительно замедлить загрузку. Используйте:</p>
-        
-        <ul>
-          <li>font-display: swap для избежания FOIT</li>
-          <li>Подмножество шрифтов (только нужные символы)</li>
-          <li>Системные шрифты когда возможно</li>
-        </ul>
-
-        <h2>6. Оптимизация базы данных</h2>
-        <p>Для WordPress и других CMS:</p>
-        
-        <ul>
-          <li>Регулярно очищайте ревизии и черновики</li>
-          <li>Оптимизируйте таблицы базы данных</li>
-          <li>Используйте кэширование запросов</li>
-        </ul>
-
-        <div class="warning-box">
-          <strong>⚠️ Важно:</strong> Всегда создавайте бэкап перед оптимизацией базы данных.
-        </div>
-
-        <h2>7. Включите Gzip сжатие</h2>
-        <p>Сжимайте текстовые ресурсы на сервере:</p>
-
-        <pre><code># Включение Gzip в .htaccess
-AddOutputFilterByType DEFLATE text/plain
-AddOutputFilterByType DEFLATE text/html
-AddOutputFilterByType DEFLATE text/xml
-AddOutputFilterByType DEFLATE text/css
-AddOutputFilterByType DEFLATE application/xml
-AddOutputFilterByType DEFLATE application/xhtml+xml
-AddOutputFilterByType DEFLATE application/rss+xml
-AddOutputFilterByType DEFLATE application/javascript
-AddOutputFilterByType DEFLATE application/x-javascript</code></pre>
-
-        <h2>8. Оптимизируйте сторонние скрипты</h2>
-        <p>Сторонние сервисы могут замедлять сайт:</p>
-        
-        <ul>
-          <li>Загружайте аналитику асинхронно</li>
-          <li>Используйте отложенную загрузку для виджетов</li>
-          <li>Минимизируйте количество внешних запросов</li>
-        </ul>
-
-        <h2>9. Используйте HTTP/2</h2>
-        <p>HTTP/2 позволяет multiplexing запросов:</p>
-        
-        <ul>
-          <li>Множественные запросы в одном соединении</li>
-          <li>Приоритизация ресурсов</li>
-          <li>Сжатие заголовков</li>
-        </ul>
-
-        <h2>10. Мониторинг и анализ</h2>
-        <p>Регулярно проверяйте производительность:</p>
-        
-        <ul>
-          <li>Google PageSpeed Insights</li>
-          <li>GTmetrix</li>
-          <li>WebPageTest</li>
-          <li>Lighthouse</li>
-        </ul>
-
-        <h2>Заключение</h2>
-        <p>Оптимизация скорости — это непрерывный процесс. Начните с самых эффективных методов: оптимизации изображений и включения кэширования, затем постепенно внедряйте остальные техники. Помните, что даже улучшение на 0.1 секунду может значительно повлиять на конверсии.</p>
-
-        <p>Какие методы оптимизации используете вы? Делитесь в комментариях!</p>
+        <h2>2. Кэштеуді қосыңыз</h2>
+        <p>Кэштеу браузерлерге статикалық ресурстарды жергілікті сақтауға мүмкіндік береді.</p>
+        <h2>3. CDN пайдаланыңыз</h2>
+        <p>Content Delivery Network мазмұнды бүкіл әлем бойынша серверлерге таратады.</p>
+        <h2>4. CSS және JavaScript минификациясы</h2>
+        <p>Кодтан барлық қажетсіз таңбаларды алып тастаңыз.</p>
+        <h2>5. Веб-қаріптерді оңтайландыру</h2>
+        <p>Веб-қаріптер жүктеуді айтарлықтай баяулатуы мүмкін.</p>
+        <h2>6. Деректер қорын оңтайландыру</h2>
+        <p>WordPress және басқа CMS үшін ревизиялар мен жобаларды үнемі тазалаңыз.</p>
+        <h2>7. Gzip сығымдауды қосыңыз</h2>
+        <p>Серверде мәтіндік ресурстарды сығымдаңыз.</p>
+        <h2>8. Сыртқы скрипттерді оңтайландырыңыз</h2>
+        <p>Аналитиканы асинхронды жүктеңіз.</p>
+        <h2>9. HTTP/2 пайдаланыңыз</h2>
+        <p>HTTP/2 сұраулардың мультиплексингіне мүмкіндік береді.</p>
+        <h2>10. Мониторинг және талдау</h2>
+        <p>Google PageSpeed Insights, GTmetrix, WebPageTest құралдарын пайдаланыңыз.</p>
+        <h2>Қорытынды</h2>
+        <p>Жылдамдықты оңтайландыру — бұл үздіксіз процесс. Ең тиімді әдістерден бастаңыз.</p>
       </div>
-
-      <!-- Действия с статьей -->
       <footer class="post-actions">
         <div class="post-tags">
-          <span>🏷️ Теги:</span>
-          <a href="../blog.html?tag=производительность">#производительность</a>
-          <a href="../blog.html?tag=оптимизация">#оптимизация</a>
-          <a href="../blog.html?tag=скорость">#скорость</a>
-          <a href="../blog.html?tag=seo">#seo</a>
+          <span>🏷️ Тегтер:</span>
+          <a href="../blog.html?tag=өнімділік">#өнімділік</a>
+          <a href="../blog.html?tag=оңтайландыру">#оңтайландыру</a>
         </div>
         <div class="action-buttons">
           <button class="like-btn">👍 <span class="like-count">42</span></button>
-          <button class="bookmark-btn">📑 Сохранить</button>
-          <button class="share-btn">📤 Поделиться</button>
+          <button class="bookmark-btn">📑 Сақтау</button>
         </div>
       </footer>
     </div>
   </article>
-
-  <!-- 👤 СЕКЦИЯ АВТОРА -->
   <section class="author-section">
     <div class="container">
       <div class="author-card">
         <img src="../images/team/author1.jpg" alt="Тасеменов Нурбек">
         <div class="author-info">
           <h3>Тасеменов Нурбек</h3>
-          <p>Эксперт по веб-производительности с 7-летним опытом. Специализируется на оптимизации скорости загрузки, кэшировании и CDN технологиях. Помог более 200 компаниям ускорить их веб-проекты.</p>
-          <div class="author-stats">
-            <span>📝 24 статьи</span>
-            <span>👁️ 45.2k просмотров</span>
-            <span>👍 1.2k лайков</span>
-          </div>
+          <p>7 жылдық тәжірибесі бар веб-өнімділік бойынша сарапшы.</p>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- 📚 ПОХОЖИЕ СТАТЬИ -->
-  <section class="related-posts">
-    <div class="container">
-      <h2>📖 Читайте также</h2>
-      <div class="related-grid">
-        <article class="blog-card">
-          <a href="cdn-for-website.html" class="card-link">
-            <div class="card-image">
-              <img src="../images/blog/cdn.jpg" alt="CDN технологии">
-              <span class="card-category">Производительность</span>
-            </div>
-            <div class="card-content">
-              <h3>CDN для сайта: что это и как увеличить скорость в 3 раза</h3>
-              <div class="card-meta">
-                <div class="author">
-                  <img src="../images/team/author2.jpg" alt="Ізбасхан Әселхан">
-                  <span>Ізбасхан Әселхан</span>
-                </div>
-                <div class="meta-info">
-                  <span class="date">30 ноя
+  <footer class="main-footer">
+    <div class="footer-content">
+      <div class="footer-bottom">
+        <p>© 2025 NextHost. Барлық құқықтар қорғалған.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="../js/blog-post.js"></script>
+</body>
+</html>

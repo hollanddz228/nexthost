@@ -1,50 +1,90 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="kk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Партнеры - NextHost</title>
+    <title data-translate="page_title">Серіктестер — NextHost</title>
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/partners.css">
+    <link rel="stylesheet" href="css/theme-styles.css">
 </head>
 <body>
     <!-- 🌐 HEADER -->
-<header class="main-header">
-    <div class="container">
-        <div class="logo">
-            <img src="images/nh.jpg" alt="NextHost Logo">
-            <span>NextHost</span>
+    <header class="main-header">
+        <div class="header-container">
+            <!-- Логотип -->
+            <div class="logo">
+                <img src="images/nh.jpg" alt="NextHost Logo">
+                <span data-translate="logo_text">NextHost</span>
+            </div>
+        
+            <!-- Навигация -->
+            <nav class="nav-links">
+                <a href="index.html" data-translate="nav_home">Басты бет</a>
+                <a href="about.html" data-translate="nav_about">Біз туралы</a>
+                <a href="hosting.html" data-translate="nav_hosting">Хостинг</a>
+                <a href="support.html" data-translate="nav_support">Қолдау</a>
+                <a href="reviews.html" data-translate="nav_reviews">Пікірлер</a>
+                <a href="partners.html" class="active" data-translate="nav_partners">Серіктестер</a>
+                <a href="blog.html" data-translate="nav_blog">Блог</a>
+            </nav>
+        
+            <!-- Правая часть: Профиль + Переключатели -->
+            <div class="header-actions">
+                <!-- Профиль -->
+                <a href="profile.html" class="profile-link" data-translate="nav_profile">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <span data-translate="nav_profile">Профиль</span>
+                </a>
+        
+                <!-- Разделитель -->
+                <div class="header-divider"></div>
+        
+                <!-- Переключатель языка -->
+                <div class="language-switcher">
+                    <button data-lang="kk" class="active">ҚЗ</button>
+                    <button data-lang="en">EN</button>
+                </div>
+        
+                <!-- Разделитель -->
+                <div class="header-divider"></div>
+        
+                <!-- Тақырып ауыстырғыш -->
+                <label class="theme-switch" title="Тақырыпты ауыстыру">
+                    <input type="checkbox" id="theme-toggle">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        
+            <!-- Мобильное меню (бургер) -->
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-        <nav class="nav-links">
-            <a href="index.html">Главная</a>
-            <a href="about.html">О нас</a>
-            <a href="hosting.html">Хостинг</a>
-            <a href="support.html">Поддержка</a>
-            <a href="reviews.html">Отзывы</a>
-            <a href="partners.html">Партнёры</a>
-            <a href="blog.html">Блог</a>
-            <a href="profile.html" class="profile-link">Профиль</a>
-        </nav>
-    </div>
-</header>
+    </header>
 
     <section class="partners-hero">
-        <div class="container">
+        <div class="section-content">
             <div class="hero-content">
-                <h1 class="hero-title">Наши <span class="gradient-text">Партнеры</span></h1>
-                <p class="hero-subtitle">Совместно с лидерами индустрии мы создаем будущее хостинга</p>
+                <h1 class="hero-title" data-translate="partners_title">Наши <span class="gradient-text">Партнеры</span></h1>
+                <p class="hero-subtitle" data-translate="partners_subtitle">Совместно с лидерами индустрии мы создаем будущее хостинга</p>
                 <div class="hero-stats">
                     <div class="stat">
                         <div class="stat-number">50+</div>
-                        <div class="stat-label">Стратегических партнеров</div>
+                        <div class="stat-label" data-translate="partners_stat1">Стратегических партнеров</div>
                     </div>
                     <div class="stat">
                         <div class="stat-number">99.9%</div>
-                        <div class="stat-label">Надежности инфраструктуры</div>
+                        <div class="stat-label" data-translate="partners_stat2">Надежности инфраструктуры</div>
                     </div>
                     <div class="stat">
                         <div class="stat-number">24/7</div>
-                        <div class="stat-label">Совместная поддержка</div>
+                        <div class="stat-label" data-translate="partners_stat3">Совместная поддержка</div>
                     </div>
                 </div>
             </div>
@@ -59,8 +99,8 @@
     </section>
 
     <section class="partners-showcase">
-        <div class="container">
-            <h2 class="section-title">Ведущие технологические компании доверяют нам</h2>
+        <div class="section-content">
+            <h2 class="section-title" data-translate="partners_trust_title">Ведущие технологические компании доверяют нам</h2>
             <div class="partners-grid">
                 <div class="partner-card" data-partner="nvidia">
                     <div class="partner-logo">
@@ -68,11 +108,11 @@
                         <div class="logo-placeholder">NVIDIA</div>
                     </div>
                     <h3>NVIDIA</h3>
-                    <p>Совместные решения на основе GPU для высокопроизводительных вычислений и AI-инфраструктуры</p>
+                    <p data-translate="partner_nvidia_desc">Совместные решения на основе GPU для высокопроизводительных вычислений и AI-инфраструктуры</p>
                     <div class="partner-benefits">
-                        <span class="benefit">GPU-ускорение</span>
-                        <span class="benefit">AI/ML инфраструктура</span>
-                        <span class="benefit">CUDA технологии</span>
+                        <span class="benefit" data-translate="benefit_gpu">GPU-ускорение</span>
+                        <span class="benefit" data-translate="benefit_ai">AI/ML инфраструктура</span>
+                        <span class="benefit" data-translate="benefit_cuda">CUDA технологии</span>
                     </div>
                 </div>
 
@@ -82,11 +122,11 @@
                         <div class="logo-placeholder">Red Bull</div>
                     </div>
                     <h3>Red Bull</h3>
-                    <p>Хостинг для глобальных спортивных событий, киберспортивных турниров и экстремальных проектов</p>
+                    <p data-translate="partner_redbull_desc">Хостинг для глобальных спортивных событий, киберспортивных турниров и экстремальных проектов</p>
                     <div class="partner-benefits">
-                        <span class="benefit">Глобальная CDN</span>
-                        <span class="benefit">Event хостинг</span>
-                        <span class="benefit">Стриминг</span>
+                        <span class="benefit" data-translate="benefit_cdn">Глобальная CDN</span>
+                        <span class="benefit" data-translate="benefit_event">Event хостинг</span>
+                        <span class="benefit" data-translate="benefit_streaming">Стриминг</span>
                     </div>
                 </div>
 
@@ -96,11 +136,11 @@
                         <div class="logo-placeholder">Cloudflare</div>
                     </div>
                     <h3>Cloudflare</h3>
-                    <p>Интегрированная сеть доставки контента и многоуровневая защита от DDoS атак мирового уровня</p>
+                    <p data-translate="partner_cloudflare_desc">Интегрированная сеть доставки контента и многоуровневая защита от DDoS атак мирового уровня</p>
                     <div class="partner-benefits">
-                        <span class="benefit">DDoS защита</span>
-                        <span class="benefit">Глобальный кэшинг</span>
-                        <span class="benefit">Web Application Firewall</span>
+                        <span class="benefit" data-translate="benefit_ddos">DDoS защита</span>
+                        <span class="benefit" data-translate="benefit_caching">Глобальный кэшинг</span>
+                        <span class="benefit" data-translate="benefit_waf">Web Application Firewall</span>
                     </div>
                 </div>
 
@@ -110,11 +150,11 @@
                         <div class="logo-placeholder">Razer</div>
                     </div>
                     <h3>Razer</h3>
-                    <p>Оптимизированная инфраструктура для игровых серверов, стриминговых платформ и киберспорта</p>
+                    <p data-translate="partner_razer_desc">Оптимизированная инфраструктура для игровых серверов, стриминговых платформ и киберспорта</p>
                     <div class="partner-benefits">
-                        <span class="benefit">Игровые серверы</span>
-                        <span class="benefit">Low-latency сеть</span>
-                        <span class="benefit">Razer Gold интеграция</span>
+                        <span class="benefit" data-translate="benefit_gaming">Игровые серверы</span>
+                        <span class="benefit" data-translate="benefit_latency">Low-latency сеть</span>
+                        <span class="benefit" data-translate="benefit_gold">Razer Gold интеграция</span>
                     </div>
                 </div>
 
@@ -124,11 +164,11 @@
                         <div class="logo-placeholder">Logitech G</div>
                     </div>
                     <h3>Logitech G</h3>
-                    <p>Совместные решения для стриминговых платформ, контент-создателей и игровых сообществ</p>
+                    <p data-translate="partner_logitech_desc">Совместные решения для стриминговых платформ, контент-создателей и игровых сообществ</p>
                     <div class="partner-benefits">
-                        <span class="benefit">Стриминг платформы</span>
-                        <span class="benefit">Контент доставка</span>
-                        <span class="benefit">Социальные функции</span>
+                        <span class="benefit" data-translate="benefit_streaming_platforms">Стриминг платформы</span>
+                        <span class="benefit" data-translate="benefit_content">Контент доставка</span>
+                        <span class="benefit" data-translate="benefit_social">Социальные функции</span>
                     </div>
                 </div>
             </div>
@@ -136,41 +176,41 @@
     </section>
 
     <section class="partnership-benefits">
-        <div class="container">
-            <h2 class="section-title">Преимущества нашего партнерства</h2>
+        <div class="section-content">
+            <h2 class="section-title" data-translate="benefits_title">Преимущества нашего партнерства</h2>
             <div class="benefits-grid">
                 <div class="benefit-item">
                     <div class="benefit-icon">🚀</div>
-                    <h3>Технологический обмен</h3>
-                    <p>Доступ к передовым технологиям и совместная разработка инновационных решений</p>
+                    <h3 data-translate="benefit1_title">Технологический обмен</h3>
+                    <p data-translate="benefit1_desc">Доступ к передовым технологиям и совместная разработка инновационных решений</p>
                 </div>
                 <div class="benefit-item">
                     <div class="benefit-icon">🌍</div>
-                    <h3>Глобальная инфраструктура</h3>
-                    <p>Использование мировых сетей доставки контента и премиальных дата-центров</p>
+                    <h3 data-translate="benefit2_title">Глобальная инфраструктура</h3>
+                    <p data-translate="benefit2_desc">Использование мировых сетей доставки контента и премиальных дата-центров</p>
                 </div>
                 <div class="benefit-item">
                     <div class="benefit-icon">🛡️</div>
-                    <h3>Совместная безопасность</h3>
-                    <p>Объединенные усилия в области кибербезопасности и защиты данных</p>
+                    <h3 data-translate="benefit3_title">Совместная безопасность</h3>
+                    <p data-translate="benefit3_desc">Объединенные усилия в области кибербезопасности и защиты данных</p>
                 </div>
                 <div class="benefit-item">
                     <div class="benefit-icon">📈</div>
-                    <h3>Совместный маркетинг</h3>
-                    <p>Партнерские программы, кросс-продвижение и совместные мероприятия</p>
+                    <h3 data-translate="benefit4_title">Совместный маркетинг</h3>
+                    <p data-translate="benefit4_desc">Партнерские программы, кросс-продвижение и совместные мероприятия</p>
                 </div>
             </div>
         </div>
     </section>
 
     <section class="cta-partnership">
-        <div class="container">
+        <div class="section-content">
             <div class="cta-content">
-                <h2>Станьте нашим партнером</h2>
-                <p>Присоединяйтесь к экосистеме NextHost и откройте новые возможности для роста вашего бизнеса</p>
+                <h2 data-translate="cta_partners_title">Станьте нашим партнером</h2>
+                <p data-translate="cta_partners_subtitle">Присоединяйтесь к экосистеме NextHost и откройте новые возможности для роста вашего бизнеса</p>
                 <div class="cta-buttons">
-                    <button class="btn-primary">Отправить заявку</button>
-                    <button class="btn-secondary">Узнать условия</button>
+                    <button class="btn-primary" data-translate="btn_send_application">Отправить заявку</button>
+                    <button class="btn-secondary" data-translate="btn_learn_conditions">Узнать условия</button>
                 </div>
             </div>
         </div>
@@ -178,14 +218,98 @@
 
     <!-- ⚙️ FOOTER -->
     <footer class="main-footer">
-        <div class="footer-left">
-            <p>© 2025 NextHost. Все права защищены.</p>
-        </div>
-        <div class="footer-right">
-            <p>Контакты: <a href="mailto:support@nexthost.kz">support@nexthost.kz</a></p>
+        <div class="footer-content">
+            <!-- Социальные иконки -->
+            <div class="footer-social-section">
+                <h4 data-translate="social_title">Следите за нами в соцсетях</h4>
+                <div class="social-links">
+                    <div class="social-item telegram">
+                        <div class="social-icon" aria-label="Telegram">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.67-.52.36-.99.53-1.42.52-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.37-.48 1.02-.73 3.98-1.74 6.64-2.89 7.97-3.45 3.79-1.58 4.58-1.85 5.09-1.86.11 0 .37.03.53.17.14.12.18.27.2.38-.01.06.01.24 0 .38z"/></svg>
+                        </div>
+                        <div class="social-tooltip">Telegram</div>
+                    </div>
+        
+                    <div class="social-item whatsapp">
+                        <div class="social-icon" aria-label="WhatsApp">
+                            <svg viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.32a8.188 8.188 0 0 1-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.65.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.39 1 2.56.14.17 1.76 2.67 4.25 3.73.59.27 1.05.42 1.41.53.59.22 1.13.19 1.56.12.48-.08 1.48-.6 1.69-1.18.21-.58.21-1.08.15-1.18-.05-.1-.21-.16-.43-.28-.23-.12-1.36-.67-1.57-.75-.21-.08-.36-.12-.52.12-.16.23-.64.75-.78.91-.15.16-.29.18-.54.06-.26-.12-1.09-.4-2.07-1.27-.77-.69-1.29-1.54-1.44-1.8-.15-.26-.02-.4.11-.53.12-.12.26-.31.39-.46.13-.16.17-.26.26-.43.09-.17.05-.32-.02-.45-.07-.13-.61-1.46-.84-2-.22-.55-.44-.48-.61-.48-.16 0-.34-.01-.53-.01z"/></svg>
+                        </div>
+                        <div class="social-tooltip">WhatsApp</div>
+                    </div>
+        
+                    <div class="social-item instagram">
+                        <div class="social-icon" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg>
+                        </div>
+                        <div class="social-tooltip">Instagram</div>
+                    </div>
+        
+                    <div class="social-item youtube">
+                        <div class="social-icon" aria-label="YouTube">
+                            <svg viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg>
+                        </div>
+                        <div class="social-tooltip">YouTube</div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="footer-main">
+                <div class="footer-left">
+                    <p data-translate="footer_tagline">Премиум хостинг для вашего успеха в цифровом мире</p>
+                </div>
+                <div class="footer-right">
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                    <polyline points="22,6 12,13 2,6"/>
+                                </svg>
+                            </div>
+                            <div class="contact-info">
+                                <span class="contact-label" data-translate="contacts_email">Email</span>
+                                <a href="mailto:support@nexthost.kz" class="contact-value">support@nexthost.kz</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                            </div>
+                            <div class="contact-info">
+                                <span class="contact-label" data-translate="contacts_phone">Телефон</span>
+                                <a href="tel:+77778145056" class="contact-value">+7 (777) 814-50-56</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                            </div>
+                            <div class="contact-info">
+                                <span class="contact-label" data-translate="contacts_location">Локация</span>
+                                <span class="contact-value" data-translate="contacts_city">Казахстан, Алматы</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="footer-bottom">
+                <p data-translate="footer_copyright">© 2025 NextHost. Все права защищены.</p>
+            </div>
         </div>
     </footer>
 
+    <!-- JS -->
+    <script src="js/translations.js"></script>
+    <script src="js/lang-theme.js"></script>
+    <script src="js/global.js"></script>
     <script src="js/partners.js"></script>
 </body>
 </html>

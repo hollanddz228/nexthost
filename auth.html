@@ -1,77 +1,266 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="kk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <title>NextHost - Вход и регистрация</title>
+    <title data-translate="auth_page_title">NextHost - Кіру және тіркелу</title>
     <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="css/theme-styles.css">
+
+    <style>
+        /* Панель языка и темы — НЕ ЛОМАЕТ ДИЗАЙН */
+        .auth-top-controls {
+            position: fixed;
+            top: 15px;
+            right: 15px;
+            display: flex;
+            gap: 8px;
+            z-index: 9999;
+        }
+        .auth-lang-btn,
+        .auth-theme-btn {
+            padding: 5px 10px;
+            font-size: 13px;
+            border-radius: 6px;
+            border: 1px solid rgba(255,255,255,0.6);
+            background: rgba(255,255,255,0.35);
+            backdrop-filter: blur(4px);
+            cursor: pointer;
+            font-weight: 600;
+        }
+        .auth-theme-btn i { pointer-events: none; }
+
+        /* Секретная админ-модалка */
+        .admin-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 99999;
+            animation: overlayFadeIn 0.3s ease;
+        }
+        .admin-modal-overlay.active {
+            display: flex;
+        }
+        .admin-modal-box {
+            background: linear-gradient(145deg, #1a1a2e, #16213e);
+            border: 2px solid #f39c12;
+            border-radius: 20px;
+            padding: 40px;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 25px 60px rgba(243, 156, 18, 0.3);
+            animation: modalSlideIn 0.4s ease;
+        }
+        .admin-modal-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .admin-modal-header i {
+            font-size: 50px;
+            color: #f39c12;
+            margin-bottom: 15px;
+        }
+        .admin-modal-header h2 {
+            color: #fff;
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+        .admin-modal-header p {
+            color: #888;
+            font-size: 14px;
+        }
+        .admin-modal-box input {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid rgba(243, 156, 18, 0.3);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            font-size: 16px;
+            margin-bottom: 20px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        .admin-modal-box input:focus {
+            outline: none;
+            border-color: #f39c12;
+            box-shadow: 0 0 20px rgba(243, 156, 18, 0.2);
+        }
+        .admin-modal-box input::placeholder {
+            color: #666;
+        }
+        .admin-modal-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .admin-modal-btn {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .admin-modal-btn.primary {
+            background: linear-gradient(135deg, #f39c12, #e74c3c);
+            color: white;
+        }
+        .admin-modal-btn.secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: #aaa;
+        }
+        .admin-modal-btn:hover {
+            transform: translateY(-2px);
+        }
+        .admin-modal-btn.primary:hover {
+            box-shadow: 0 10px 30px rgba(243, 156, 18, 0.4);
+        }
+        @keyframes overlayFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes modalSlideIn {
+            from { opacity: 0; transform: scale(0.9) translateY(-20px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20%, 60% { transform: translateX(-10px); }
+            40%, 80% { transform: translateX(10px); }
+        }
+        .admin-modal-box.shake {
+            animation: shake 0.5s ease;
+            border-color: #e74c3c;
+        }
+    </style>
 </head>
 <body>
+
+    <!-- ===== ВЕРХНЯЯ ПАНЕЛЬ: язык + тема ===== -->
+    <div class="auth-top-controls">
+        <button class="auth-lang-btn active" data-lang="kk">ҚЗ</button>
+        <button class="auth-lang-btn" data-lang="en">EN</button>
+
+        <button id="themeToggle" class="auth-theme-btn">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+    </div>
+    <!-- ======================================= -->
+
     <div class="background-blur"></div>
     
     <div class="container" id="container">
+
+        <!-- ==================== РЕГИСТРАЦИЯ ==================== -->
         <div class="form-container sign-up">
             <form id="registerForm">
-                <h1>Создать аккаунт</h1>
+                <h1 data-translate="auth_create_account">Создать аккаунт</h1>
+
                 <div class="social-icons">
                     <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
                     <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
                     <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
                     <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
-                <span>или используйте email для регистрации</span>
-                <input type="text" name="name" placeholder="Имя" required>
-                <input type="tel" name="phone" placeholder="Телефон" required>
-                <input type="email" name="email" placeholder="Email" required>
-                <input type="password" name="password" placeholder="Пароль" required>
-                <input type="password" name="confirm_password" placeholder="Подтвердите пароль" required>
-                <button type="submit">Зарегистрироваться</button>
+
+                <span data-translate="auth_or_use_email">или используйте email для регистрации</span>
+
+                <input type="text" name="name" data-translate-placeholder="auth_name" placeholder="Имя" required>
+                <input type="tel" name="phone" data-translate-placeholder="auth_phone" placeholder="Телефон" required>
+                <input type="email" name="email" data-translate-placeholder="auth_email" placeholder="Email" required>
+                <input type="password" name="password" data-translate-placeholder="auth_password" placeholder="Пароль" required>
+                <input type="password" name="confirm_password" data-translate-placeholder="auth_password_confirm" placeholder="Подтвердите пароль" required>
+
+                <button type="submit" data-translate="auth_register_btn">Зарегистрироваться</button>
             </form>
         </div>
 
+        <!-- ======================== ВХОД ======================== -->
         <div class="form-container sign-in">
             <form id="loginForm">
-                <h1>Войти</h1>
+                <h1 data-translate="auth_login_title">Войти</h1>
+
                 <div class="social-icons">
                     <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
                     <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
                     <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
                     <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
-                <span>или используйте email и пароль</span>
-                <input type="email" name="email" placeholder="Email" required>
-                <input type="password" name="password" placeholder="Пароль" required>
-                <a href="#" id="forgotPassword">Забыли пароль?</a>
-                <button type="submit">Войти</button>
+
+                <span data-translate="auth_or_use_credentials">или используйте email и пароль</span>
+
+                <input type="email" name="email" data-translate-placeholder="auth_email" placeholder="Email" required>
+                <input type="password" name="password" data-translate-placeholder="auth_password" placeholder="Пароль" required>
+
+                <a href="#" id="forgotPassword" data-translate="auth_forgot_password">Забыли пароль?</a>
+
+                <button type="submit" data-translate="auth_login_btn">Войти</button>
             </form>
         </div>
 
+        <!-- ===================== ВОССТАНОВЛЕНИЕ ===================== -->
         <div class="form-container password-reset">
             <form id="resetForm">
-                <h1>Восстановление пароля</h1>
-                <input type="email" name="email" placeholder="Введите ваш email" required>
-                <button type="submit">Отправить код</button>
-                <a href="#" id="backToLogin">Назад к входу</a>
+                <h1 data-translate="auth_reset_title">Восстановление пароля</h1>
+
+                <input type="email" name="email" data-translate-placeholder="auth_email" placeholder="Введите ваш email" required>
+
+                <button type="submit" data-translate="auth_reset_send_code">Отправить код</button>
+
+                <a href="#" id="backToLogin" data-translate="auth_back_to_login">Назад к входу</a>
             </form>
         </div>
 
+        <!-- ===================== ПАНЕЛЬ СПРАВА/СЛЕВА ===================== -->
         <div class="toggle-container">
             <div class="toggle">
+
                 <div class="toggle-panel toggle-left">
-                    <h1>С возвращением!</h1>
-                    <p>Введите ваши данные для использования всех функций сайта</p>
-                    <button class="hidden" id="login">Войти</button>
+                    <h1 data-translate="auth_welcome_back">С возвращением!</h1>
+                    <p data-translate="auth_welcome_desc">Введите ваши данные для использования всех функций сайта</p>
+                    <button class="hidden" id="login" data-translate="auth_login_btn">Войти</button>
                 </div>
+
                 <div class="toggle-panel toggle-right">
-                    <h1>Привет, друг!</h1>
-                    <p>Зарегистрируйтесь с вашими данными для использования всех функций</p>
-                    <button class="hidden" id="register">Регистрация</button>
+                    <h1 data-translate="auth_hello_friend">Привет, друг!</h1>
+                    <p data-translate="auth_register_desc">Зарегистрируйтесь с вашими данными для использования всех функций</p>
+                    <button class="hidden" id="register" data-translate="auth_register_btn">Регистрация</button>
                 </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Секретная админ-модалка -->
+    <div class="admin-modal-overlay" id="adminModal">
+        <div class="admin-modal-box">
+            <div class="admin-modal-header">
+                <i class="fas fa-user-shield"></i>
+                <h2>Әкімші режимі</h2>
+                <p>Құпия сөзді енгізіңіз</p>
+            </div>
+            <input type="password" id="adminPassword" placeholder="Құпия сөз..." autocomplete="off">
+            <div class="admin-modal-buttons">
+                <button class="admin-modal-btn secondary" id="adminCancelBtn">Болдырмау</button>
+                <button class="admin-modal-btn primary" id="adminLoginBtn">Кіру</button>
             </div>
         </div>
     </div>
 
     <script src="js/auth.js"></script>
+    <script src="js/translations.js"></script>
+    <script src="js/lang-theme.js"></script>
+
 </body>
 </html>

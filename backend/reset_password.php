@@ -3,7 +3,7 @@
 require_once 'config.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    sendJsonResponse(['success' => false, 'message' => 'Метод не поддерживается']);
+    sendJsonResponse(['success' => false, 'message' => 'Әдіс қолдау көрсетілмейді']);
 }
 
 $input = file_get_contents('php://input');
@@ -17,20 +17,20 @@ error_log("🔄 Reset password attempt with token: " . $token);
 
 // Валидация
 if (empty($token) || empty($password) || empty($confirm_password)) {
-    sendJsonResponse(['success' => false, 'message' => 'Все поля обязательны']);
+    sendJsonResponse(['success' => false, 'message' => 'Барлық өрістер міндетті']);
 }
 
 if ($password !== $confirm_password) {
-    sendJsonResponse(['success' => false, 'message' => 'Пароли не совпадают']);
+    sendJsonResponse(['success' => false, 'message' => 'Құпиясөздер сәйкес келмейді']);
 }
 
 if (strlen($password) < 6) {
-    sendJsonResponse(['success' => false, 'message' => 'Пароль должен быть не менее 6 символов']);
+    sendJsonResponse(['success' => false, 'message' => 'Құпиясөз кемінде 6 таңбадан тұруы керек']);
 }
 
 $conn = getDBConnection();
 if (!$conn) {
-    sendJsonResponse(['success' => false, 'message' => 'Ошибка подключения к базе данных']);
+    sendJsonResponse(['success' => false, 'message' => 'Дерекқорға қосылу қатесі']);
 }
 
 try {
@@ -55,12 +55,12 @@ try {
         }
         error_log("🔍 Available tokens: " . implode(', ', $tokens_list));
         
-        sendJsonResponse(['success' => false, 'message' => 'Неверный токен. Доступные токены: ' . count($tokens_list)]);
+        sendJsonResponse(['success' => false, 'message' => 'Токен дұрыс емес. Қолжетімді токендер: ' . count($tokens_list)]);
     }
 
     $user = $result->fetch_assoc();
     
-    // Проверяем срок действия токена
+    // Токеннің жарамдылық мерзімін тексереміз
     $current_time = time();
     $token_expires = strtotime($user['reset_token_expires']);
     
@@ -68,7 +68,7 @@ try {
     
     if ($token_expires < $current_time) {
         error_log("❌ Token expired: " . $token . " Expires: " . $user['reset_token_expires']);
-        sendJsonResponse(['success' => false, 'message' => 'Токен просрочен']);
+        sendJsonResponse(['success' => false, 'message' => 'Токеннің мерзімі өтіп кеткен']);
     }
     
     error_log("✅ Token valid. User ID: " . $user['id'] . " Expires: " . $user['reset_token_expires']);
@@ -86,17 +86,17 @@ try {
 
     if ($update_stmt->execute()) {
         error_log("✅ Password reset successful for user ID: " . $user['id']);
-        sendJsonResponse(['success' => true, 'message' => 'Пароль успешно изменен']);
+        sendJsonResponse(['success' => true, 'message' => 'Құпиясөз сәтті өзгертілді']);
     } else {
         error_log("❌ Password reset failed: " . $update_stmt->error);
-        sendJsonResponse(['success' => false, 'message' => 'Ошибка при изменении пароля: ' . $update_stmt->error]);
+        sendJsonResponse(['success' => false, 'message' => 'Құпиясөзді өзгерту қатесі: ' . $update_stmt->error]);
     }
     
     $update_stmt->close();
     
 } catch (Exception $e) {
     error_log("❌ Reset password exception: " . $e->getMessage());
-    sendJsonResponse(['success' => false, 'message' => 'Ошибка: ' . $e->getMessage()]);
+    sendJsonResponse(['success' => false, 'message' => 'Қате: ' . $e->getMessage()]);
 } finally {
     $conn->close();
 }

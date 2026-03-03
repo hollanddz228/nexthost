@@ -4,7 +4,7 @@ require_once 'config.php';
 require_once 'mailer_real.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    sendJsonResponse(['success' => false, 'message' => 'Метод не поддерживается']);
+    sendJsonResponse(['success' => false, 'message' => 'Әдіс қолдау көрсетілмейді']);
 }
 
 $input = file_get_contents('php://input');
@@ -17,15 +17,15 @@ $password = $data['password'] ?? '';
 
 // Валидация
 if (empty($name) || empty($phone) || empty($email) || empty($password)) {
-    sendJsonResponse(['success' => false, 'message' => 'Все поля обязательны']);
+    sendJsonResponse(['success' => false, 'message' => 'Барлық өрістер міндетті']);
 }
 
 if ($password !== ($data['confirm_password'] ?? '')) {
-    sendJsonResponse(['success' => false, 'message' => 'Пароли не совпадают']);
+    sendJsonResponse(['success' => false, 'message' => 'Құпиясөздер сәйкес келмейді']);
 }
 
 if (strlen($password) < 6) {
-    sendJsonResponse(['success' => false, 'message' => 'Пароль должен быть не менее 6 символов']);
+    sendJsonResponse(['success' => false, 'message' => 'Құпиясөз кемінде 6 таңбадан тұруы керек']);
 }
 
 $conn = getDBConnection();
@@ -37,7 +37,7 @@ $check_stmt->execute();
 $check_stmt->store_result();
 
 if ($check_stmt->num_rows > 0) {
-    sendJsonResponse(['success' => false, 'message' => 'Email уже зарегистрирован']);
+    sendJsonResponse(['success' => false, 'message' => 'Email тіркелген']);
 }
 $check_stmt->close();
 
@@ -56,16 +56,16 @@ if ($insert_stmt->execute()) {
     if ($email_sent) {
         sendJsonResponse([
             'success' => true, 
-            'message' => 'Регистрация успешна! Проверьте почту для подтверждения email.'
+            'message' => 'Тіркелу сәтті! Email-ды растау үшін поштаңызды тексеріңіз.'
         ]);
     } else {
         sendJsonResponse([
             'success' => false, 
-            'message' => 'Ошибка отправки email. Попробуйте позже.'
+            'message' => 'Email жіберу қатесі. Кейінірек қайталап көріңіз.'
         ]);
     }
 } else {
-    sendJsonResponse(['success' => false, 'message' => 'Ошибка базы данных']);
+    sendJsonResponse(['success' => false, 'message' => 'Дерекқор қатесі']);
 }
 
 $insert_stmt->close();

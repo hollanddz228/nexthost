@@ -20,13 +20,17 @@ class RealMailer {
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port = 587;
 
+            // Кодировка UTF-8 для казахского языка
+            $mail->CharSet = 'UTF-8';
+            $mail->Encoding = 'base64';
+
             // Отправитель и получатель
             $mail->setFrom('my.nexthost222@gmail.com', 'NextHost');
             $mail->addAddress($email, $name);
 
             // Письмо
             $mail->isHTML(true);
-            $mail->Subject = 'Подтверждение регистрации - NextHost';
+            $mail->Subject = '=?UTF-8?B?' . base64_encode('Тіркелуді растау - NextHost') . '?=';
             
             $verification_url = "http://localhost/nexthost/backend/verify.php?code=" . $verification_code;
             
@@ -35,12 +39,16 @@ class RealMailer {
             <html>
             <head>
                 <meta charset='UTF-8'>
+                <link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap' rel='stylesheet'>
                 <style>
-                    body { font-family: Arial, sans-serif; background: #f5f7fa; margin: 0; padding: 20px; }
+                    body { font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f5f7fa; margin: 0; padding: 20px; }
                     .container { max-width: 600px; background: white; margin: 0 auto; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
                     .header { background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 30px; text-align: center; }
+                    .header h1 { font-weight: 700; margin: 0 0 10px 0; }
+                    .header p { margin: 0; font-weight: 500; }
                     .content { padding: 30px; }
-                    .button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; margin: 20px 0; font-weight: bold; }
+                    .content h2 { font-weight: 500; }
+                    .button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; margin: 20px 0; font-weight: 500; }
                     .footer { background: #f8f9fa; padding: 20px; text-align: center; color: #666; font-size: 14px; }
                 </style>
             </head>
@@ -48,19 +56,19 @@ class RealMailer {
                 <div class='container'>
                     <div class='header'>
                         <h1>NextHost</h1>
-                        <p>Подтверждение регистрации</p>
+                        <p>Тіркелуді растау</p>
                     </div>
                     <div class='content'>
-                        <h2>Здравствуйте, {$name}!</h2>
-                        <p>Для завершения регистрации подтвердите ваш email:</p>
+                        <h2>Сәлеметсіз бе, {$name}!</h2>
+                        <p>Тіркелуді аяқтау үшін email-ды растаңыз:</p>
                         <div style='text-align: center;'>
-                            <a href='{$verification_url}' class='button'>Подтвердить Email</a>
+                            <a href='{$verification_url}' class='button'>Email-ды растау</a>
                         </div>
-                        <p>Если кнопка не работает, скопируйте ссылку в браузер:</p>
-                        <p style='color: #666; font-size: 14px;'>{$verification_url}</p>
+                        <p>Егер түйме жұмыс істемесе, сілтемені браузерге көшіріңіз:</p>
+                        <p style='color: #666; font-size: 14px; word-break: break-all;'>{$verification_url}</p>
                     </div>
                     <div class='footer'>
-                        <p>С уважением,<br>Команда NextHost</p>
+                        <p>Құрметпен,<br>NextHost командасы</p>
                     </div>
                 </div>
             </body>
@@ -87,11 +95,15 @@ class RealMailer {
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port = 587;
 
+            // Кодировка UTF-8 для казахского языка
+            $mail->CharSet = 'UTF-8';
+            $mail->Encoding = 'base64';
+
             $mail->setFrom('my.nexthost222@gmail.com', 'NextHost');
             $mail->addAddress($email);
 
             $mail->isHTML(true);
-            $mail->Subject = 'Восстановление пароля - NextHost';
+            $mail->Subject = '=?UTF-8?B?' . base64_encode('Құпиясөзді қалпына келтіру - NextHost') . '?=';
             
             $reset_url = "http://localhost/nexthost/reset-password.html?token=" . $reset_token;
             
@@ -100,30 +112,38 @@ class RealMailer {
             <html>
             <head>
                 <meta charset='UTF-8'>
+                <link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap' rel='stylesheet'>
                 <style>
-                    body { font-family: Arial, sans-serif; background: #f5f7fa; margin: 0; padding: 20px; }
+                    body { font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f5f7fa; margin: 0; padding: 20px; }
                     .container { max-width: 600px; background: white; margin: 0 auto; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
                     .header { background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 30px; text-align: center; }
+                    .header h1 { font-weight: 700; margin: 0 0 10px 0; }
+                    .header p { margin: 0; font-weight: 500; }
                     .content { padding: 30px; }
-                    .button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; margin: 20px 0; font-weight: bold; }
+                    .content h2 { font-weight: 500; }
+                    .button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; margin: 20px 0; font-weight: 500; }
                     .warning { background: #fff3cd; border: 1px solid #ffeaa7; padding: 15px; border-radius: 5px; margin: 15px 0; }
+                    .footer { background: #f8f9fa; padding: 20px; text-align: center; color: #666; font-size: 14px; }
                 </style>
             </head>
             <body>
                 <div class='container'>
                     <div class='header'>
                         <h1>NextHost</h1>
-                        <p>Восстановление пароля</p>
+                        <p>Құпиясөзді қалпына келтіру</p>
                     </div>
                     <div class='content'>
-                        <h2>Восстановление доступа</h2>
-                        <p>Для восстановления пароля перейдите по ссылке:</p>
+                        <h2>Қолжетімділікті қалпына келтіру</h2>
+                        <p>Құпиясөзді қалпына келтіру үшін сілтемеге өтіңіз:</p>
                         <div style='text-align: center;'>
-                            <a href='{$reset_url}' class='button'>Восстановить пароль</a>
+                            <a href='{$reset_url}' class='button'>Құпиясөзді қалпына келтіру</a>
                         </div>
                         <div class='warning'>
-                            <strong>Ссылка действительна 1 час.</strong>
+                            <strong>Сілтеме 1 сағат жарамды.</strong>
                         </div>
+                    </div>
+                    <div class='footer'>
+                        <p>Құрметпен,<br>NextHost командасы</p>
                     </div>
                 </div>
             </body>

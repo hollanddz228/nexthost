@@ -9,26 +9,26 @@ $dbname = "nexthost";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Проверка подключения
+// Қосылуды тексеру
 if ($conn->connect_error) {
-    echo json_encode(['success' => false, 'message' => 'Ошибка соединения с базой: ' . $conn->connect_error]);
+    echo json_encode(['success' => false, 'message' => 'Дерекқорға қосылу қатесі: ' . $conn->connect_error]);
     exit;
 }
 
-// === 2. Проверка метода ===
+// === 2. Әдісті тексеру ===
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    echo json_encode(['success' => false, 'message' => 'Некорректный метод запроса (требуется POST)']);
+    echo json_encode(['success' => false, 'message' => 'Сұраныс әдісі дұрыс емес (POST қажет)']);
     exit;
 }
 
-// === 3. Получение данных ===
+// === 3. Деректерді алу ===
 $name = $_POST['name'] ?? '';
 $email = $_POST['email'] ?? '';
 $message = $_POST['message'] ?? '';
 
-// Проверка заполнения
+// Толтыруды тексеру
 if (empty($name) || empty($email) || empty($message)) {
-    echo json_encode(['success' => false, 'message' => 'Заполните все поля']);
+    echo json_encode(['success' => false, 'message' => 'Барлық өрістерді толтырыңыз']);
     exit;
 }
 
@@ -47,7 +47,7 @@ if (!empty($_FILES['screenshot']['name'])) {
     if (move_uploaded_file($_FILES['screenshot']['tmp_name'], $targetPath)) {
         $screenshotPath = 'uploads/' . $filename;
     } else {
-        echo json_encode(['success' => false, 'message' => 'Ошибка загрузки файла']);
+        echo json_encode(['success' => false, 'message' => 'Файлды жүктеу қатесі']);
         exit;
     }
 }
@@ -62,9 +62,9 @@ if ($screenshotPath) {
 }
 
 if ($stmt && $stmt->execute()) {
-    echo json_encode(['success' => true, 'message' => 'Тикет успешно создан', 'id' => $stmt->insert_id]);
+    echo json_encode(['success' => true, 'message' => 'Тикет сәтті жасалды', 'id' => $stmt->insert_id]);
 } else {
-    echo json_encode(['success' => false, 'message' => 'Ошибка при сохранении тикета: ' . $conn->error]);
+    echo json_encode(['success' => false, 'message' => 'Тикетті сақтау қатесі: ' . $conn->error]);
 }
 
 // === 6. Закрытие соединения ===

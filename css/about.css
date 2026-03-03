@@ -519,3 +519,347 @@
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Секция с видео о компании */
+.company-video {
+  padding: 80px 0;
+  background: var(--bg-secondary);
+}
+
+.company-video h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+}
+
+.video-container {
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.video-container video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Скрытый текст для доступности */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .company-video {
+    padding: 60px 0;
+  }
+  
+  .company-video h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  
+  .video-container {
+    margin: 0 20px;
+  }
+}
+
+/* Секция с приветствием от CEO */
+.ceo-message {
+  padding: 80px 0;
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+}
+
+.ceo-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.ceo-info {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.ceo-info img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--accent-primary);
+}
+
+.ceo-details h3 {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+
+.ceo-details p {
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+.ceo-quote {
+  background: var(--bg-card);
+  padding: 20px;
+  border-radius: 12px;
+  border-left: 4px solid var(--accent-primary);
+}
+
+.ceo-quote p {
+  font-style: italic;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.audio-message h4 {
+  margin-bottom: 20px;
+  font-size: 1.25rem;
+  color: var(--text-primary);
+}
+
+.audio-message audio {
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.audio-transcript details {
+  background: var(--bg-card);
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.audio-transcript summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--accent-primary);
+}
+
+.audio-transcript summary:hover {
+  color: var(--accent-secondary);
+}
+
+.transcript-content {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid var(--border-color);
+}
+
+.transcript-content p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.transcript-content strong {
+  color: var(--accent-primary);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .ceo-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .ceo-info {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+  
+  .ceo-info img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/* Hero секция с видео-фоном */
+.about-hero {
+  position: relative;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.about-hero .hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.about-hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 0;
+}
+
+.about-hero .hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 800px;
+  padding: 0 20px;
+  color: white;
+}
+
+/* Базовые стили для секций без контейнеров */
+.about-main,
+.company-video,
+.ceo-message,
+.services-section,
+.mission-section,
+.cta-section {
+  padding: 100px 20px;
+  width: 100%;
+}
+
+.section-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Стили для фонов секций */
+.about-main {
+  background: var(--bg-primary);
+}
+
+.company-video {
+  background: var(--bg-secondary);
+}
+
+.ceo-message {
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+}
+
+.services-section {
+  background: var(--bg-primary);
+}
+
+.mission-section {
+  background: var(--bg-secondary);
+}
+
+.cta-section {
+  background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+  color: white;
+}
+
+/* Футер без контейнера */
+.main-footer {
+  background: var(--bg-footer);
+  padding: 60px 20px 20px;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .about-hero {
+    height: 60vh;
+  }
+  
+  .about-main,
+  .company-video,
+  .ceo-message,
+  .services-section,
+  .mission-section,
+  .cta-section {
+    padding: 60px 15px;
+  }
+  
+  .main-footer {
+    padding: 40px 15px 20px;
+  }
+}
+
+/* Hero секция с видео-фоном */
+.about-hero {
+  position: relative;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #000; /* Фон на случай если видео не загрузится */
+}
+
+.about-hero .hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 1;
+}
+
+/* Fallback background если видео не загрузится */
+.hero-fallback {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  z-index: 0;
+}
+
+.about-hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+}
+
+.about-hero .hero-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  max-width: 800px;
+  padding: 0 20px;
+  color: white;
+}
+
+/* Убедитесь что видео не перекрывает контент */
+.about-hero .hero-video {
+  z-index: 1;
+}

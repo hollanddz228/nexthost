@@ -5,40 +5,42 @@ require_once 'config.php';
 $verification_code = $_GET['code'] ?? '';
 
 if (empty($verification_code)) {
-    die("Неверный код подтверждения");
+    die("Растау коды дұрыс емес");
 }
 
 $conn = getDBConnection();
 if (!$conn) {
-    die("Ошибка подключения к базе данных");
+    die("Дерекқорға қосылу қатесі");
 }
 
 try {
-    // Ищем пользователя
+    // Пайдаланушыны іздейміз
     $stmt = $conn->prepare("SELECT id, username, email FROM users WHERE verification_code = ? AND email_verified = 0");
     $stmt->bind_param("s", $verification_code);
     $stmt->execute();
     $result = $stmt->get_result();
 
     if ($result->num_rows === 0) {
-        die("Неверный или устаревший код подтверждения");
+        die("Растау коды дұрыс емес немесе ескірген");
     }
 
     $user = $result->fetch_assoc();
 
-    // Активируем аккаунт
+    // Аккаунтты белсендіреміз
     $stmt = $conn->prepare("UPDATE users SET email_verified = 1, verification_code = NULL WHERE id = ?");
     $stmt->bind_param("i", $user['id']);
 
     if ($stmt->execute()) {
         echo "
         <!DOCTYPE html>
-        <html>
+        <html lang='kk'>
         <head>
-            <title>Email подтвержден - NextHost</title>
+            <meta charset='UTF-8'>
+            <title>Email расталды - NextHost</title>
+            <link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap' rel='stylesheet'>
             <style>
                 body { 
-                    font-family: Arial, sans-serif; 
+                    font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
                     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
                     display: flex;
                     justify-content: center;
@@ -73,22 +75,22 @@ try {
         </head>
         <body>
             <div class='container'>
-                <div class='success'>✅ Email успешно подтвержден!</div>
-                <h2>Добро пожаловать в NextHost!</h2>
-                <p>Ваш аккаунт <strong>{$user['email']}</strong> активирован.</p>
-                <a href='../auth.html' class='button'>Войти в аккаунт</a>
+                <div class='success'>✅ Email сәтті расталды!</div>
+                <h2>NextHost-қа қош келдіңіз!</h2>
+                <p>Сіздің аккаунтыңыз <strong>{$user['email']}</strong> белсендірілді.</p>
+                <a href='../auth.html' class='button'>Аккаунтқа кіру</a>
             </div>
         </body>
         </html>
         ";
     } else {
-        echo "Ошибка при активации аккаунта";
+        echo "Аккаунтты белсендіру қатесі";
     }
     
     $stmt->close();
     
 } catch (Exception $e) {
-    echo "Ошибка: " . $e->getMessage();
+    echo "Қате: " . $e->getMessage();
 } finally {
     $conn->close();
 }

@@ -179,7 +179,7 @@ function showPartnerDetails(partner) {
     
     if (secondaryBtn) {
         secondaryBtn.addEventListener('click', function() {
-            alert('Условия партнерства будут отправлены на вашу почту! Для получения информации свяжитесь с support@nexthost.kz');
+            alert('Серіктестік шарттары поштаңызға жіберіледі! Ақпарат алу үшін support@nexthost.kz-ге хабарласыңыз');
         });
     }
 

@@ -4,6 +4,15 @@
     background: var(--bg-primary);
 }
 
+.blog-post-title {
+    color: var(--text-color);
+}
+
+.blog-category {
+    color: var(--text-color);
+}
+
+
 /* Хлебные крошки */
 .breadcrumbs {
     display: flex;
@@ -11,7 +20,7 @@
     gap: 0.5rem;
     margin-bottom: 2rem;
     font-size: 0.9rem;
-    color: var(--text-secondary);
+    color: var(--text-muted, #999);
 }
 
 .breadcrumbs a {
@@ -416,3 +425,70 @@
         justify-content: space-between;
     }
 }
+
+/* ==========================================
+   FORCE DARK THEME FOR BLOG POSTS ONLY
+   ========================================== */
+
+   body.blog-post-page,
+   .blog-post,
+   .post-content,
+   .post-header,
+   .post-hero,
+   .author-section,
+   .related-posts,
+   .comments-section {
+       background-color: #0a0e27 !important;
+       color: #ffffff !important;
+   }
+   
+   /* Заголовки */
+   .post-header h1,
+   .post-content h2,
+   .post-content h3,
+   .related-posts h2,
+   .comments-section h2 {
+       color: #ffffff !important;
+   }
+   
+   /* Текст */
+   .post-content p,
+   .post-content li,
+   .breadcrumbs,
+   .post-date,
+   .author-info p {
+       color: #d1d5db !important;
+   }
+   
+   /* Боковые блоки */
+   .author-card,
+   .comment-form {
+       background-color: #151932 !important;
+       border: 1px solid #2d3748 !important;
+   }
+   
+   /* Акценты */
+   .post-category,
+   .post-tags a {
+       background: rgba(102, 126, 234, 0.2) !important;
+       color: #7b8af7 !important;
+       border-color: rgba(102, 126, 234, 0.3) !important;
+   }
+   
+   /* Кнопки действий */
+   .like-btn,
+   .bookmark-btn,
+   .share-btn {
+       background: rgba(255, 255, 255, 0.05) !important;
+       border: 1px solid #2d3748 !important;
+       color: #e5e7eb !important;
+   }
+   
+   .like-btn:hover,
+   .bookmark-btn:hover,
+   .share-btn:hover {
+       background: #667eea !important;
+       color: #fff !important;
+       border-color: #667eea !important;
+   }
+   

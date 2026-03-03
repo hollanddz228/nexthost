@@ -1,6 +1,6 @@
 /* 🌟 HERO SECTION */
 .hero {
-  background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%);
+  background: var(--hero-bg);
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -25,7 +25,7 @@
 
 .particle {
   position: absolute;
-  background: rgba(102, 126, 234, 0.1);
+  background: var(--particle-color);
   border-radius: 50%;
   animation: float 6s ease-in-out infinite;
 }
@@ -77,20 +77,20 @@
 
 .hero-content {
   text-align: center;
-  color: white;
+  color: var(--text-inverse);
   position: relative;
   z-index: 2;
 }
 
 .hero-badge {
   display: inline-block;
-  background: rgba(102, 126, 234, 0.2);
-  color: #667eea;
+  background: var(--hero-badge-bg);
+  color: var(--hero-badge-color);
   padding: 8px 16px;
   border-radius: 20px;
   font-size: 0.9rem;
   margin-bottom: 2rem;
-  border: 1px solid rgba(102, 126, 234, 0.3);
+  border: 1px solid var(--hero-badge-border);
 }
 
 .hero-title {
@@ -101,7 +101,7 @@
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -109,7 +109,7 @@
 
 .hero-subtitle {
   font-size: 1.3rem;
-  color: #b0b0b0;
+  color: var(--hero-subtitle-color);
   margin-bottom: 3rem;
   max-width: 600px;
   margin-left: auto;
@@ -138,19 +138,19 @@
 }
 
 .primary-btn {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
   color: white;
 }
 
 .secondary-btn {
   background: transparent;
-  color: white;
+  color: var(--text-inverse);
   border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
 .primary-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 10px 25px var(--accent-light);
 }
 
 .secondary-btn:hover {
@@ -172,12 +172,12 @@
 .stat-number {
   font-size: 2.5rem;
   font-weight: 800;
-  color: var(--accent-color);
+  color: var(--accent-primary);
   margin-bottom: 0.5rem;
 }
 
 .stat-label {
-  color: #b0b0b0;
+  color: var(--hero-subtitle-color);
   font-size: 0.9rem;
 }
 
@@ -212,20 +212,20 @@
 }
 
 .feature-card {
-  background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+  background: var(--bg-card);
   padding: 2.5rem;
   border-radius: 20px;
   text-align: center;
   transition: all 0.3s ease;
-  border: 1px solid transparent;
+  border: 1px solid var(--border-color);
   position: relative;
   overflow: hidden;
 }
 
 .feature-card:hover {
   transform: translateY(-10px);
-  border-color: var(--accent-color);
-  box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
+  border-color: var(--accent-primary);
+  box-shadow: 0 20px 40px var(--accent-light);
 }
 
 .feature-icon {
@@ -247,12 +247,12 @@
 
 .feature-highlight {
   display: inline-block;
-  background: rgba(102, 126, 234, 0.1);
-  color: var(--accent-color);
+  background: var(--accent-light);
+  color: var(--accent-primary);
   padding: 0.5rem 1rem;
   border-radius: 15px;
   font-size: 0.9rem;
-  border: 1px solid rgba(102, 126, 234, 0.3);
+  border: 1px solid var(--border-color);
 }
 
 /* 💰 PRICING SECTION */
@@ -269,7 +269,7 @@
 }
 
 .pricing-card {
-  background: var(--bg-primary);
+  background: var(--bg-card);
   border-radius: 20px;
   padding: 2.5rem;
   position: relative;
@@ -388,7 +388,7 @@
 /* 📞 CTA SECTION */
 .cta-section {
   padding: 100px 0;
-  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
   color: white;
   text-align: center;
 }
@@ -418,9 +418,9 @@
 
 /* ⚙️ FOOTER */
 .main-footer {
-  background: #0a0a0a;
+  background: var(--bg-secondary);
   padding: 3rem 0 1rem;
-  border-top: 1px solid rgba(102, 126, 234, 0.2);
+  border-top: 1px solid var(--border-color);
 }
 
 .footer-content {
@@ -527,4 +527,275 @@
 .section-header.visible {
     opacity: 1 !important;
     transform: translateY(0) !important;
+}
+
+/* Добавьте в index.css */
+.hero-title.gradient-text {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Или если уже есть стиль для .gradient-text, убедитесь что он применяется к hero-title */
+.hero-title {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+/* Базовые стили для секций без контейнеров */
+.features-section,
+.pricing-section, 
+.partners-section,
+.cta-section {
+  padding: 100px 20px;
+  width: 100%;
+}
+
+.section-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Стили для фонов секций */
+.features-section {
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+}
+
+.pricing-section {
+  background: var(--bg-secondary);
+}
+
+.partners-section {
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+}
+
+.cta-section {
+  background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+  color: white;
+}
+
+/* Футер без контейнера */
+.main-footer {
+  background: var(--bg-footer);
+  padding: 60px 20px 20px;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .features-section,
+  .pricing-section,
+  .partners-section,
+  .cta-section {
+    padding: 60px 15px;
+  }
+  
+  .main-footer {
+    padding: 40px 15px 20px;
+  }
+}
+
+/* Базовые стили для секций без контейнеров */
+.hosting-plans,
+.why-us {
+  padding: 100px 20px;
+  width: 100%;
+}
+
+.section-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Стили для фонов секций */
+.hosting-plans {
+  background: var(--bg-primary);
+}
+
+.why-us {
+  background: var(--bg-secondary);
+}
+
+/* Футер без контейнера */
+.main-footer {
+  background: var(--bg-footer);
+  padding: 60px 20px 20px;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .hosting-plans,
+  .why-us {
+    padding: 60px 15px;
+  }
+  
+  .main-footer {
+    padding: 40px 15px 20px;
+  }
+}
+
+/* Стили для тарифов */
+.plans-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.plan-card {
+  background: var(--bg-card);
+  padding: 40px 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  border: 2px solid transparent;
+}
+
+.plan-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.plan-card.popular {
+  border-color: var(--accent-primary);
+  transform: scale(1.05);
+}
+
+.plan-card.popular:hover {
+  transform: scale(1.05) translateY(-10px);
+}
+
+.badge {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent-primary);
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.price {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--accent-primary);
+  margin: 20px 0;
+}
+
+.price span {
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+.plan-card ul {
+  list-style: none;
+  margin: 30px 0;
+  text-align: left;
+}
+
+.plan-card li {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.plan-card li:last-child {
+  border-bottom: none;
+}
+
+.plan-btn {
+  background: var(--accent-primary);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  width: 100%;
+}
+
+.plan-btn:hover {
+  background: var(--accent-secondary);
+}
+
+/* Секция "Почему мы" */
+.reasons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  margin-top: 50px;
+}
+
+.reason {
+  text-align: center;
+  padding: 30px;
+  background: var(--bg-card);
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.reason h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: var(--accent-primary);
 }

@@ -60,19 +60,19 @@ function initializeBookmarkSystem() {
         const isBookmarked = localStorage.getItem(`bookmarked_${postId}`);
         
         if (isBookmarked) {
-            bookmarkBtn.textContent = '📑 В закладках';
+            bookmarkBtn.textContent = '📑 Бетбелгілерде';
             bookmarkBtn.classList.add('active');
         }
         
         bookmarkBtn.addEventListener('click', function() {
             if (bookmarkBtn.classList.contains('active')) {
-                // Убираем из закладок
-                bookmarkBtn.textContent = '📑 Сохранить';
+                // Бетбелгілерден алып тастаймыз
+                bookmarkBtn.textContent = '📑 Сақтау';
                 bookmarkBtn.classList.remove('active');
                 localStorage.removeItem(`bookmarked_${postId}`);
             } else {
-                // Добавляем в закладки
-                bookmarkBtn.textContent = '📑 В закладках';
+                // Бетбелгілерге қосамыз
+                bookmarkBtn.textContent = '📑 Бетбелгілерде';
                 bookmarkBtn.classList.add('active');
                 localStorage.setItem(`bookmarked_${postId}`, 'true');
                 
@@ -111,7 +111,7 @@ function initializeSocialShare() {
                     break;
                 case 'copy':
                     navigator.clipboard.writeText(window.location.href).then(() => {
-                        alert('Ссылка скопирована в буфер обмена!');
+                        alert('Сілтеме алмасу буферіне көшірілді!');
                     });
                     return;
                 default:
@@ -124,9 +124,9 @@ function initializeSocialShare() {
                         });
                         return;
                     } else {
-                        // Фолбэк для desktop
+                        // Desktop үшін фолбэк
                         navigator.clipboard.writeText(window.location.href).then(() => {
-                            alert('Ссылка скопирована в буфер обмена!');
+                            alert('Сілтеме алмасу буферіне көшірілді!');
                         });
                         return;
                     }
@@ -230,7 +230,7 @@ function initializeTableOfContents() {
 function createTableOfContents(headings) {
     const toc = document.createElement('div');
     toc.className = 'table-of-contents';
-    toc.innerHTML = '<h3>📑 Содержание</h3><ul></ul>';
+    toc.innerHTML = '<h3>📑 Мазмұны</h3><ul></ul>';
     
     const tocList = toc.querySelector('ul');
     let tocHTML = '';

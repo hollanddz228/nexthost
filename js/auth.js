@@ -42,12 +42,12 @@ document.getElementById('registerForm').addEventListener('submit', async (e) => 
 
     // Валидация
     if (data.password !== data.confirm_password) {
-        alert('Пароли не совпадают!');
+        alert('Құпиясөздер сәйкес келмейді!');
         return;
     }
 
     if (data.password.length < 6) {
-        alert('Пароль должен быть не менее 6 символов!');
+        alert('Құпиясөз кемінде 6 таңбадан тұруы керек!');
         return;
     }
 
@@ -63,13 +63,13 @@ document.getElementById('registerForm').addEventListener('submit', async (e) => 
         const result = await response.json();
         
         if (result.success) {
-            alert('Регистрация успешна! Проверьте email для подтверждения.');
+            alert('Тіркелу сәтті! Растау үшін email-ды тексеріңіз.');
             container.classList.remove("active");
         } else {
-            alert('Ошибка: ' + result.message);
+            alert('Қате: ' + result.message);
         }
     } catch (error) {
-        alert('Ошибка сети: ' + error.message);
+        alert('Желі қатесі: ' + error.message);
     }
 });
 
@@ -95,15 +95,15 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
         const result = await response.json();
         
         if (result.success) {
-            // Сохраняем данные пользователя
+            // Пайдаланушы деректерін сақтаймыз
             localStorage.setItem('user', JSON.stringify(result.user));
-            // Перенаправляем на главную
+            // Басты бетке бағыттаймыз
             window.location.href = 'index.html';
         } else {
-            alert('Ошибка: ' + result.message);
+            alert('Қате: ' + result.message);
         }
     } catch (error) {
-        alert('Ошибка сети: ' + error.message);
+        alert('Желі қатесі: ' + error.message);
     }
 });
 
@@ -127,14 +127,14 @@ document.getElementById('resetForm').addEventListener('submit', async (e) => {
         
         if (result.success) {
             alert(result.message);
-            // Возвращаем к форме входа
+            // Кіру формасына қайтарамыз
             document.querySelector('.password-reset').style.display = 'none';
             document.querySelector('.sign-in').style.display = 'flex';
         } else {
-            alert('Ошибка: ' + result.message);
+            alert('Қате: ' + result.message);
         }
     } catch (error) {
-        alert('Ошибка сети: ' + error.message);
+        alert('Желі қатесі: ' + error.message);
     }
 });
 
@@ -145,3 +145,107 @@ window.addEventListener('load', () => {
         window.location.href = 'index.html';
     }
 });
+
+// ============================================================
+// СЕКРЕТНЫЙ ВХОД В АДМИНКУ
+// Комбинация: Ctrl+Shift+Z
+// ============================================================
+const adminModal = document.getElementById("adminModal");
+const adminPasswordInput = document.getElementById("adminPassword");
+const adminLoginBtn = document.getElementById("adminLoginBtn");
+const adminCancelBtn = document.getElementById("adminCancelBtn");
+
+// Комбинация Ctrl+Shift+Z — открыть модалку
+document.addEventListener("keydown", (e) => {
+    if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "z") {
+        e.preventDefault();
+        openAdminModal();
+    }
+    
+    // ESC — закрыть модалку
+    if (e.key === "Escape" && adminModal?.classList.contains("active")) {
+        closeAdminModal();
+    }
+});
+
+// Открыть модалку админки
+function openAdminModal() {
+    if (adminModal) {
+        adminModal.classList.add("active");
+        adminPasswordInput?.focus();
+        console.log("🔐 Әкімші режимі белсендірілді");
+    }
+}
+
+// Закрыть модалку
+function closeAdminModal() {
+    if (adminModal) {
+        adminModal.classList.remove("active");
+        if (adminPasswordInput) adminPasswordInput.value = "";
+    }
+}
+
+// Клик по оверлею — закрыть
+adminModal?.addEventListener("click", (e) => {
+    if (e.target === adminModal) {
+        closeAdminModal();
+    }
+});
+
+// Кнопка отмены
+adminCancelBtn?.addEventListener("click", closeAdminModal);
+
+// Кнопка входа
+adminLoginBtn?.addEventListener("click", adminLogin);
+
+// Enter в поле пароля
+adminPasswordInput?.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") adminLogin();
+});
+
+// Вход в админку
+async function adminLogin() {
+    const password = adminPasswordInput?.value;
+    
+    if (!password) {
+        adminPasswordInput?.focus();
+        return;
+    }
+    
+    // Анимация загрузки
+    if (adminLoginBtn) {
+        adminLoginBtn.disabled = true;
+        adminLoginBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+    }
+    
+    try {
+        const response = await fetch("backend/admin/login.php", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ password })
+        });
+        
+        const result = await response.json();
+        
+        if (result.success) {
+            localStorage.setItem("adminToken", result.token);
+            localStorage.setItem("adminLogin", Date.now());
+            window.location.href = "admin.html";
+        } else {
+            // Тряска при ошибке
+            const box = document.querySelector(".admin-modal-box");
+            box?.classList.add("shake");
+            setTimeout(() => box?.classList.remove("shake"), 500);
+            
+            if (adminPasswordInput) adminPasswordInput.value = "";
+            adminPasswordInput?.focus();
+        }
+    } catch (error) {
+        alert("Сервер қатесі: " + error.message);
+    } finally {
+        if (adminLoginBtn) {
+            adminLoginBtn.disabled = false;
+            adminLoginBtn.textContent = "Кіру";
+        }
+    }
+}
