@@ -1,97 +1,132 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="kk">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>О компании — NextHost</title>
+  <title data-translate="page_title">Компания туралы — NextHost</title>
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/about.css">
+  <link rel="stylesheet" href="css/theme-styles.css">
 </head>
 <body>
 
   <!-- 🌐 HEADER -->
   <header class="main-header">
-    <div class="container">
+    <div class="header-container">
+      <!-- Логотип -->
       <div class="logo">
         <img src="images/nh.jpg" alt="NextHost Logo">
-        <span>NextHost</span>
+        <span data-translate="logo_text">NextHost</span>
       </div>
+  
+      <!-- Навигация -->
       <nav class="nav-links">
-        <a href="index.html">Главная</a>
-        <a href="about.html" class="active">О нас</a>
-        <a href="hosting.html">Хостинг</a>
-        <a href="support.html">Поддержка</a>
-        <a href="reviews.html">Отзывы</a>
-        <a href="partners.html">Партнёры</a>
-        <a href="blog.html">Блог</a>
-        <a href="profile.html" class="profile-link">Профиль</a>
+        <a href="index.html" data-translate="nav_home">Басты бет</a>
+        <a href="about.html" class="active" data-translate="nav_about">Біз туралы</a>
+        <a href="hosting.html" data-translate="nav_hosting">Хостинг</a>
+        <a href="support.html" data-translate="nav_support">Қолдау</a>
+        <a href="reviews.html" data-translate="nav_reviews">Пікірлер</a>
+        <a href="partners.html" data-translate="nav_partners">Серіктестер</a>
+        <a href="blog.html" data-translate="nav_blog">Блог</a>
       </nav>
+  
+      <!-- Правая часть: Профиль + Переключатели -->
+      <div class="header-actions">
+        <!-- Профиль -->
+        <a href="profile.html" class="profile-link" data-translate="nav_profile">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span data-translate="nav_profile">Профиль</span>
+        </a>
+  
+        <!-- Разделитель -->
+        <div class="header-divider"></div>
+  
+        <!-- Переключатель языка -->
+        <div class="language-switcher">
+          <button data-lang="kk" class="active">ҚЗ</button>
+          <button data-lang="en">EN</button>
+        </div>
+  
+        <!-- Разделитель -->
+        <div class="header-divider"></div>
+  
+        <!-- Тақырып ауыстырғыш -->
+        <label class="theme-switch" title="Тақырыпты ауыстыру">
+          <input type="checkbox" id="theme-toggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+  
+      <!-- Мобильное меню (бургер) -->
+      <button class="mobile-menu-toggle" id="mobileMenuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </header>
 
   <!-- 🏢 HERO СЕКЦИЯ -->
   <section class="about-hero">
-    <div class="container">
-      <div class="hero-content">
-        <h1 class="hero-title">О компании <span class="gradient-text">NextHost</span></h1>
-        <p class="hero-subtitle">Создаем будущее хостинга вместе с вами с 2020 года</p>
-        <div class="hero-stats">
-          <div class="stat">
-            <div class="stat-number">10.000+</div>
-            <div class="stat-label">Довольных клиентов</div>
-          </div>
-          <div class="stat">
-            <div class="stat-number">99%</div>
-            <div class="stat-label">Гарантия аптайма</div>
-          </div>
-          <div class="stat">
-            <div class="stat-number">50+</div>
-            <div class="stat-label">Специалистов в команде</div>
-          </div>
+    <video class="hero-video" autoplay muted loop playsinline aria-label="NextHost сервер бөлмесі">
+      <source src="videos/server-room.mp4" type="video/mp4">
+      Сіздің браузеріңіз видеоны қолдамайды
+    </video>
+    
+    <div class="hero-content">
+      <h1 class="hero-title" data-translate="about_title"><span class="gradient-text">NextHost</span> компаниясы туралы</h1>
+      <p class="hero-subtitle" data-translate="about_subtitle">2020 жылдан бастап сізбен бірге хостингтің болашағын құрамыз</p>
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-number">10k+</div>
+          <div class="stat-label" data-translate="stats_clients">Қанағаттанған клиенттер</div>
         </div>
-      </div>
-    </div>
-    <div class="hero-background">
-      <div class="floating-shapes">
-        <div class="shape shape-1"></div>
-        <div class="shape shape-2"></div>
-        <div class="shape shape-3"></div>
+        <div class="stat">
+          <div class="stat-number">99.9%</div>
+          <div class="stat-label" data-translate="stats_uptime">Жұмыс уақыты кепілдігі</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">50+</div>
+          <div class="stat-label" data-translate="about_team_count">Командадағы мамандар</div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- 🎯 ОСНОВНАЯ ИНФОРМАЦИЯ -->
   <section class="about-main">
-    <div class="container">
+    <div class="section-content">
       <div class="about-grid">
         <div class="about-content">
-          <div class="section-badge">О НАС</div>
-          <h2>Мы создаем инфраструктуру для вашего успеха</h2>
-          <p class="intro-text">
-            NextHost — это современный хостинг-провайдер, созданный командой энтузиастов, 
-            чтобы сделать размещение сайтов быстрым, безопасным и доступным для каждого.
+          <div class="section-badge" data-translate="about_badge">БІЗ ТУРАЛЫ</div>
+          <h2 data-translate="about_goal_title">Сіздің табысыңыз үшін инфрақұрылым жасаймыз</h2>
+          <p class="intro-text" data-translate="about_description">
+            NextHost — бұл веб-сайттарды орналастыруды жылдам, қауіпсіз және әркімге қолжетімді ету үшін энтузиасттар тобы құрған заманауи хостинг-провайдер.
           </p>
 
           <div class="features-list">
             <div class="feature-item">
               <div class="feature-icon">🚀</div>
               <div class="feature-content">
-                <h3>Инновационные технологии</h3>
-                <p>Используем только современное оборудование и программное обеспечение</p>
+                <h3 data-translate="about_feature1_title">Инновациялық технологиялар</h3>
+                <p data-translate="about_feature1_desc">Тек заманауи жабдықтар мен бағдарламалық жасақтамаларды қолданамыз</p>
               </div>
             </div>
             <div class="feature-item">
               <div class="feature-icon">🛡️</div>
               <div class="feature-content">
-                <h3>Безопасность прежде всего</h3>
-                <p>Многоуровневая защита данных и круглосуточный мониторинг</p>
+                <h3 data-translate="about_feature2_title">Қауіпсіздік бірінші орында</h3>
+                <p data-translate="about_feature2_desc">Көп деңгейлі деректерді қорғау және тәулік бойы мониторинг</p>
               </div>
             </div>
             <div class="feature-item">
               <div class="feature-icon">💬</div>
               <div class="feature-content">
-                <h3>Поддержка 24/7</h3>
-                <p>Наши специалисты всегда готовы помочь в любое время суток</p>
+                <h3 data-translate="about_feature3_title">24/7 Қолдау</h3>
+                <p data-translate="about_feature3_desc">Біздің мамандар кез келген уақытта көмектесуге әрдайым дайын</p>
               </div>
             </div>
           </div>
@@ -100,25 +135,25 @@
         <div class="about-visual">
           <div class="visual-card">
             <div class="card-header">
-              <h3>Наша команда</h3>
-              <div class="card-badge">50+ специалистов</div>
+              <h3 data-translate="team_title">Біздің команда</h3>
+              <div class="card-badge" data-translate="about_team_count">50+ маман</div>
             </div>
             <div class="team-stats">
               <div class="team-stat">
                 <div class="stat-value">15</div>
-                <div class="stat-label">DevOps инженеров</div>
+                <div class="stat-label" data-translate="about_devops">DevOps инженерлері</div>
               </div>
               <div class="team-stat">
                 <div class="stat-value">20</div>
-                <div class="stat-label">Техподдержка</div>
+                <div class="stat-label" data-translate="about_support">Техникалық қолдау</div>
               </div>
               <div class="team-stat">
                 <div class="stat-value">10</div>
-                <div class="stat-label">Разработчики</div>
+                <div class="stat-label" data-translate="about_developers">Әзірлеушілер</div>
               </div>
               <div class="team-stat">
                 <div class="stat-value">5</div>
-                <div class="stat-label">Менеджеры</div>
+                <div class="stat-label" data-translate="about_managers">Менеджерлер</div>
               </div>
             </div>
           </div>
@@ -127,120 +162,192 @@
     </div>
   </section>
 
-  <!-- 🎯 ЧЕМ МЫ ЗАНИМАЕМСЯ -->
+  <!-- 🎥 КОМПАНИЯ ТУРАЛЫ ВИДЕО -->
+  <section class="company-video">
+    <div class="section-content">
+      <h2 data-translate="about_video_title">Біздің компанияның тимбилдингі</h2>
+      
+      <div class="video-container">
+        <video controls 
+               poster="images/video-poster.jpg"
+               aria-label="Біздің компанияның тимбилдинг видеосы"
+               aria-describedby="video-description">
+          <source src="videos/company-presentation.mp4" type="video/mp4">
+          <source src="videos/company-presentation.webm" type="video/webm">
+          Сіздің браузеріңіз видеоны қолдамайды
+        </video>
+        
+        <p id="video-description" class="sr-only">
+          NextHost компаниясы, біздің қызметтеріміз және командамыз туралы видеопрезентация
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🎙️ БАС ДИРЕКТОРДЫҢ ҚҰТТЫҚТАУЫ -->
+  <section class="ceo-message">
+    <div class="section-content">
+      <div class="ceo-content">
+        <div class="ceo-info">
+          <img src="images/team/ceo.jpg" alt="NextHost бас директоры - Табидулла Абылайхан">
+          <div class="ceo-details">
+            <h3>Табидулла Абылайхан</h3>
+            <p data-translate="team_ceo">Бас директор</p>
+            <div class="ceo-quote">
+              <p>"Біз интернетті әркімге қолжетімді ететін технологиялар жасаймыз"</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="audio-message">
+          <h4 data-translate="ceo_greeting">Құттықтау сөзі</h4>
+          <audio controls 
+                 aria-label="Бас директордың құттықтау сөзі"
+                 aria-describedby="audio-description">
+            <source src="audio/ceo-welcome.mp3" type="audio/mpeg">
+            <source src="audio/ceo-welcome.ogg" type="audio/ogg">
+            Сіздің браузеріңіз аудионы қолдамайды
+          </audio>
+          <p id="audio-description" class="sr-only">
+            NextHost бас директоры Табидулла Абылайханның құттықтау сөзі
+          </p>
+          <div class="audio-transcript">
+            <details>
+              <summary data-translate="audio_transcript">Құттықтаудың мәтіндік нұсқасы</summary>
+              <div class="transcript-content">
+                <p><strong>Табидулла Абылайхан:</strong> Қайырлы күн! Мен сіздерді бүкіл NextHost командасы атынан құттықтауға қуаныштымын.</p>
+                
+                <p>2020 жылы жолымызды бастағанда, бізде қарапайым, бірақ маңызды миссия болды: сапалы хостингті Қазақстан мен Орталық Азияның әрбір тұрғынына қолжетімді ету. Біз көптеген талантты әзірлеушілер мен кәсіпкерлердің өздерінің онлайн-жобаларын құру кезінде техникалық кедергілерге тап болатынын көрдік.</p>
+                
+                <p>Осы жылдар ішінде біз шағын энтузиасттар тобынан 10 000-нан астам клиентке қызмет көрсететін 50+ маманы бар компанияға айналдық. Бірақ біздің негізгі қағидаттарымыз өзгеріссіз қалды: ашықтық, сенімділік және клиентке бағдарлану.</p>
+                
+                <p>Біз 99.9% тұрақты жұмыс істейтін инфрақұрылым құрғанымызды мақтан тұтамыз және жаңа технологияларға инвестиция салуды жалғастырамыз. Біздің команда сіздің бизнесіңіз әрқашан онлайн болуы үшін тәулік бойы жұмыс істейді.</p>
+                
+                <p>Сандық трансформация дәуірінде біз сенімді хостинг — бұл жай ғана қызмет емес, Қазақстанның digital-экономикасының іргетасы екенін түсінеміз. Біз жобаларын бізге сенетін әрбір клиентке ризамыз және сізбен бірге дамуды жалғастыруға уәде береміз.</p>
+                
+                <p>NextHost таңдағаныңыз үшін рахмет! Жобаларыңызға сәттілік тілеймін!</p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🎯 БІЗ НЕ ІСТЕЙМІЗ -->
   <section class="services-section">
-    <div class="container">
+    <div class="section-content">
       <div class="section-header">
-        <h2>Наши <span class="gradient-text">услуги</span></h2>
-        <p>Полный спектр решений для вашего онлайн-присутствия</p>
+        <h2 data-translate="services_title">Біздің <span class="gradient-text">қызметтер</span></h2>
+        <p data-translate="services_subtitle">Сіздің онлайн-болуыңыз үшін шешімдердің толық спектрі</p>
       </div>
       <div class="services-grid">
         <div class="service-card">
           <div class="service-icon">🌐</div>
-          <h3>Виртуальный хостинг</h3>
-          <p>Идеальное решение для небольших сайтов и блогов с оптимальным соотношением цены и качества</p>
+          <h3 data-translate="service_hosting">Веб-хостинг</h3>
+          <p data-translate="service_hosting_desc">Шағын сайттар мен блогтар үшін баға мен сапаның оңтайлы арақатынасымен тамаша шешім</p>
           <ul class="service-features">
-            <li>SSD-диски</li>
-            <li>Панель управления</li>
-            <li>Бесплатный SSL</li>
+            <li data-translate="feature_ssd">SSD-дискілер</li>
+            <li data-translate="feature_panel">Басқару панелі</li>
+            <li data-translate="feature_ssl">Тегін SSL</li>
           </ul>
         </div>
         <div class="service-card">
           <div class="service-icon">⚡</div>
-          <h3>VPS серверы</h3>
-          <p>Виртуальные выделенные серверы с root-доступом и полной свободой настройки</p>
+          <h3 data-translate="service_vps">VPS серверлер</h3>
+          <p data-translate="service_vps_desc">Root-қолжетімділігі және толық баптау еркіндігі бар виртуалды бөлінген серверлер</p>
           <ul class="service-features">
-            <li>Выделенные ресурсы</li>
-            <li>Root доступ</li>
-            <li>Масштабируемость</li>
+            <li data-translate="feature_dedicated">Бөлінген ресурстар</li>
+            <li data-translate="feature_root">Root қолжетімділік</li>
+            <li data-translate="feature_scaling">Масштабталу</li>
           </ul>
         </div>
         <div class="service-card">
           <div class="service-icon">🛡️</div>
-          <h3>Безопасность</h3>
-          <p>Комплексная защита от DDoS-атак, бэкапы и мониторинг безопасности</p>
+          <h3 data-translate="service_security">Қауіпсіздік</h3>
+          <p data-translate="service_security_desc">DDoS-шабуылдардан кешенді қорғау, бэкаптар және қауіпсіздік мониторингі</p>
           <ul class="service-features">
-            <li>DDoS защита</li>
-            <li>Авто-бэкапы</li>
-            <li>SSL сертификаты</li>
+            <li data-translate="feature_ddos">DDoS қорғау</li>
+            <li data-translate="feature_backups">Авто-бэкаптар</li>
+            <li data-translate="feature_ssl_certs">SSL сертификаттар</li>
           </ul>
         </div>
         <div class="service-card">
           <div class="service-icon">📧</div>
-          <h3>Почтовые решения</h3>
-          <p>Надежная корпоративная почта с защитой от спама и вирусов</p>
+          <h3 data-translate="service_email">Пошта шешімдері</h3>
+          <p data-translate="service_email_desc">Спам мен вирустардан қорғалған сенімді корпоративтік пошта</p>
           <ul class="service-features">
-            <li>Антиспам</li>
-            <li>Веб-интерфейс</li>
-            <li>Мобильный доступ</li>
+            <li data-translate="feature_antispam">Антиспам</li>
+            <li data-translate="feature_webmail">Веб-интерфейс</li>
+            <li data-translate="feature_mobile">Мобильді қолжетімділік</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 🎯 НАША МИССИЯ -->
+  <!-- 🎯 БІЗДІҢ МИССИЯ -->
   <section class="mission-section">
-    <div class="container">
+    <div class="section-content">
       <div class="mission-content">
         <div class="mission-text">
-          <div class="section-badge">МИССИЯ</div>
-          <h2>Сделать хостинг доступным для каждого</h2>
-          <p>
-            Мы верим, что каждый человек или бизнес должен иметь возможность создать 
-            свое присутствие в интернете без технических барьеров и сложных настроек.
+          <div class="section-badge" data-translate="mission_badge">МИССИЯ</div>
+          <h2 data-translate="about_mission">Хостингті әркімге қолжетімді ету</h2>
+          <p data-translate="about_mission_text">
+            Біз әрбір адам немесе бизнес техникалық кедергілер мен күрделі баптауларсыз 
+            интернетте өз болуын құра алуы керек деп сенеміз.
           </p>
-          <p>
-            Наша цель — предоставить надежную, быструю и простую в использовании 
-            инфраструктуру, которая позволит вам сосредоточиться на развитии вашего проекта.
+          <p data-translate="about_vision_text">
+            Біздің мақсатымыз — жобаңызды дамытуға назар аударуға мүмкіндік беретін 
+            сенімді, жылдам және қолдануға оңай инфрақұрылым ұсыну.
           </p>
           <div class="mission-values">
             <div class="value-item">
               <div class="value-icon">🎯</div>
               <div class="value-content">
-                <h4>Простота</h4>
-                <p>Интуитивно понятные решения</p>
+                <h4 data-translate="value_simplicity">Қарапайымдылық</h4>
+                <p data-translate="value_simplicity_desc">Интуитивті түсінікті шешімдер</p>
               </div>
             </div>
             <div class="value-item">
               <div class="value-icon">⚡</div>
               <div class="value-content">
-                <h4>Скорость</h4>
-                <p>Максимальная производительность</p>
+                <h4 data-translate="value_speed">Жылдамдық</h4>
+                <p data-translate="value_speed_desc">Максималды өнімділік</p>
               </div>
             </div>
             <div class="value-item">
               <div class="value-icon">🛡️</div>
               <div class="value-content">
-                <h4>Надежность</h4>
-                <p>Стабильная работа 24/7</p>
+                <h4 data-translate="value_reliability">Сенімділік</h4>
+                <p data-translate="value_reliability_desc">24/7 тұрақты жұмыс</p>
               </div>
             </div>
           </div>
         </div>
         <div class="mission-visual">
           <div class="mission-card">
-            <h3>Наши принципы</h3>
+            <h3 data-translate="principles_title">Біздің қағидаттар</h3>
             <div class="principles-list">
               <div class="principle">
                 <span class="principle-number">01</span>
                 <div class="principle-content">
-                  <h4>Клиент на первом месте</h4>
-                  <p>Все решения принимаются с учетом интересов клиента</p>
+                  <h4 data-translate="principle1_title">Клиент бірінші орында</h4>
+                  <p data-translate="principle1_desc">Барлық шешімдер клиенттің мүдделерін ескере отырып қабылданады</p>
                 </div>
               </div>
               <div class="principle">
                 <span class="principle-number">02</span>
                 <div class="principle-content">
-                  <h4>Постоянное развитие</h4>
-                  <p>Непрерывное улучшение технологий и сервисов</p>
+                  <h4 data-translate="principle2_title">Үздіксіз даму</h4>
+                  <p data-translate="principle2_desc">Технологиялар мен сервистерді үздіксіз жақсарту</p>
                 </div>
               </div>
               <div class="principle">
                 <span class="principle-number">03</span>
                 <div class="principle-content">
-                  <h4>Прозрачность</h4>
-                  <p>Честные условия и ясные тарифы</p>
+                  <h4 data-translate="principle3_title">Ашықтық</h4>
+                  <p data-translate="principle3_desc">Адал шарттар және анық тарифтер</p>
                 </div>
               </div>
             </div>
@@ -252,13 +359,13 @@
 
   <!-- 📞 CTA СЕКЦИЯ -->
   <section class="cta-section">
-    <div class="container">
+    <div class="section-content">
       <div class="cta-content">
-        <h2>Готовы начать работать с нами?</h2>
-        <p>Присоединяйтесь к тысячам довольных клиентов NextHost</p>
+        <h2 data-translate="cta_title">Бізбен жұмыс істеуге дайынсыз ба?</h2>
+        <p data-translate="cta_subtitle">NextHost-тың мыңдаған қанағаттанған клиенттеріне қосылыңыз</p>
         <div class="cta-buttons">
-          <a href="hosting.html" class="primary-btn large">Выбрать хостинг</a>
-          <a href="support.html" class="secondary-btn large">Связаться с нами</a>
+          <a href="hosting.html" class="primary-btn large" data-translate="btn_choose_hosting">Хостинг таңдау</a>
+          <a href="support.html" class="secondary-btn large" data-translate="btn_contact_us">Бізбен байланысу</a>
         </div>
       </div>
     </div>
@@ -266,26 +373,98 @@
 
   <!-- ⚙️ FOOTER -->
   <footer class="main-footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-left">
-          <div class="footer-logo">
-            <img src="images/nh.jpg" alt="NextHost Logo">
-            <span>NextHost</span>
+    <div class="footer-content">
+      <!-- Әлеуметтік белгішелер -->
+      <div class="footer-social-section">
+        <h4 data-translate="social_title">Бізді әлеуметтік желілерде қадағалаңыз</h4>
+        <div class="social-links">
+          <div class="social-item telegram">
+            <div class="social-icon" aria-label="Telegram">
+              <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.67-.52.36-.99.53-1.42.52-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.37-.48 1.02-.73 3.98-1.74 6.64-2.89 7.97-3.45 3.79-1.58 4.58-1.85 5.09-1.86.11 0 .37.03.53.17.14.12.18.27.2.38-.01.06.01.24 0 .38z"/></svg>
+            </div>
+            <div class="social-tooltip">Telegram</div>
           </div>
-          <p>Премиум хостинг для вашего успеха в цифровом мире</p>
-        </div>
-        <div class="footer-right">
-          <p>Контакты: <a href="mailto:support@nexthost.kz">support@nexthost.kz</a></p>
-          <p>Телефон: <a href="tel:+77777777777">+7 (777) 777-77-77</a></p>
+
+          <div class="social-item whatsapp">
+            <div class="social-icon" aria-label="WhatsApp">
+              <svg viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.32a8.188 8.188 0 0 1-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.65.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.39 1 2.56.14.17 1.76 2.67 4.25 3.73.59.27 1.05.42 1.41.53.59.22 1.13.19 1.56.12.48-.08 1.48-.6 1.69-1.18.21-.58.21-1.08.15-1.18-.05-.1-.21-.16-.43-.28-.23-.12-1.36-.67-1.57-.75-.21-.08-.36-.12-.52.12-.16.23-.64.75-.78.91-.15.16-.29.18-.54.06-.26-.12-1.09-.4-2.07-1.27-.77-.69-1.29-1.54-1.44-1.8-.15-.26-.02-.4.11-.53.12-.12.26-.31.39-.46.13-.16.17-.26.26-.43.09-.17.05-.32-.02-.45-.07-.13-.61-1.46-.84-2-.22-.55-.44-.48-.61-.48-.16 0-.34-.01-.53-.01z"/></svg>
+            </div>
+            <div class="social-tooltip">WhatsApp</div>
+          </div>
+
+          <div class="social-item instagram">
+            <div class="social-icon" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg>
+            </div>
+            <div class="social-tooltip">Instagram</div>
+          </div>
+
+          <div class="social-item youtube">
+            <div class="social-icon" aria-label="YouTube">
+              <svg viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg>
+            </div>
+            <div class="social-tooltip">YouTube</div>
+          </div>
         </div>
       </div>
+
+      <div class="footer-main">
+        <div class="footer-left">
+          <p data-translate="footer_tagline">Сандық әлемдегі табысыңыз үшін премиум хостинг</p>
+        </div>
+        <div class="footer-right">
+          <div class="contact-items">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </div>
+              <div class="contact-info">
+                <span class="contact-label" data-translate="contacts_email">Email</span>
+                <a href="mailto:support@nexthost.kz" class="contact-value">support@nexthost.kz</a>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+              </div>
+              <div class="contact-info">
+                <span class="contact-label" data-translate="contacts_phone">Телефон</span>
+                <a href="tel:+77778145056" class="contact-value">+7 (777) 814-50-56</a>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+              </div>
+              <div class="contact-info">
+                <span class="contact-label" data-translate="contacts_location">Орналасқан жері</span>
+                <span class="contact-value" data-translate="contacts_city">Қазақстан, Алматы</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="footer-bottom">
-        <p>© 2025 NextHost. Все права защищены.</p>
+        <p data-translate="footer_copyright">© 2025 NextHost. Барлық құқықтар қорғалған.</p>
       </div>
     </div>
   </footer>
 
+  <!-- JS -->
+  <script src="js/translations.js"></script>
+  <script src="js/lang-theme.js"></script>
+  <script src="js/global.js"></script>
   <script src="js/about.js"></script>
 </body>
 </html>
