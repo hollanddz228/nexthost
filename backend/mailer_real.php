@@ -32,7 +32,12 @@ class RealMailer {
             $mail->isHTML(true);
             $mail->Subject = '=?UTF-8?B?' . base64_encode('Тіркелуді растау - NextHost') . '?=';
             
-            $verification_url = "http://localhost/nexthost/backend/verify.php?code=" . $verification_code;
+            // === СТАРЫЙ КОД ===
+            // $verification_url = "http://localhost/nexthost/backend/verify.php?code=" . $verification_code;
+            
+            // === НОВЫЙ КОД ===
+            $base_url = getenv('SITE_URL') ?: "http://localhost/nexthost";
+            $verification_url = rtrim($base_url, '/') . "/backend/verify.php?code=" . $verification_code;
             
             $mail->Body = "
             <!DOCTYPE html>
@@ -105,7 +110,12 @@ class RealMailer {
             $mail->isHTML(true);
             $mail->Subject = '=?UTF-8?B?' . base64_encode('Құпиясөзді қалпына келтіру - NextHost') . '?=';
             
-            $reset_url = "http://localhost/nexthost/reset-password.html?token=" . $reset_token;
+            // === СТАРЫЙ КОД ===
+            // $reset_url = "http://localhost/nexthost/reset-password.html?token=" . $reset_token;
+            
+            // === НОВЫЙ КОД ===
+            $base_url = getenv('SITE_URL') ?: "http://localhost/nexthost";
+            $reset_url = rtrim($base_url, '/') . "/reset-password.html?token=" . $reset_token;
             
             $mail->Body = "
             <!DOCTYPE html>

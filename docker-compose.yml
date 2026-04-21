@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "80:80"
+    environment:
+      - DB_HOST=db
+      - DB_USER=nexthost_user
+      - DB_PASS=secretpassword
+    depends_on:
+      - db
+    volumes:
+      - .:/var/www/html/ # Подключаем папку напрямую, чтобы изменения в коде отображались сразу
+
+  db:
+    image: mariadb:10.4
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootpassword
+      - MYSQL_DATABASE=nexthost
+      - MYSQL_USER=nexthost_user
+      - MYSQL_PASSWORD=secretpassword
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+      # ВНИМАНИЕ: положи свой файл init.sql в папку database (создай её в корне)
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+volumes:
+  db_data:

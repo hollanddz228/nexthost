@@ -2,10 +2,17 @@
 header('Content-Type: application/json; charset=utf-8');
 
 // === 1. Подключение к базе данных ===
-$servername = "localhost";
-$username = "root"; // стандартно в XAMPP
-$password = "";     // пароль по умолчанию пустой
-$dbname = "nexthost";
+// === СТАРЫЙ КОД ===
+// $servername = "localhost";
+// $username = "root"; // стандартно в XAMPP
+// $password = "";     // пароль по умолчанию пустой
+// $dbname = "nexthost";
+
+// === НОВЫЙ КОД ===
+$servername = getenv('DB_HOST') ?: "localhost";
+$username = getenv('DB_USER') ?: "root"; 
+$password = getenv('DB_PASS') !== false ? getenv('DB_PASS') : "";
+$dbname = getenv('DB_NAME') ?: "nexthost";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
