@@ -1,0 +1,90 @@
+---
+- name: Комплексная защита и настройка Nexthost
+  hosts: webservers
+  become: yes
+  vars:
+    ssh_port: 2222
+    new_user: abyl_admin
+    app_port: 80  # Порт, на котором будет крутиться твой Docker-контейнер
+
+  tasks:
+    # 1. Управление пользователями
+    - name: Создание админ-пользователя
+      user:
+        name: "{{ new_user }}"
+        groups: sudo
+        shell: /bin/bash
+
+    # 2. Настройка SSH и Firewall (UFW)
+    - name: Харденинг SSH
+      lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: "{{ item.regexp }}"
+        line: "{{ item.line }}"
+      loop:
+        - { regexp: '^#?Port', line: 'Port {{ ssh_port }}' }
+        - { regexp: '^#?PermitRootLogin', line: 'PermitRootLogin no' }
+      notify: Restart SSH
+
+    - name: Настройка фаервола
+      ufw:
+        rule: allow
+        port: "{{ item }}"
+        proto: tcp
+      loop:
+        - "{{ ssh_port }}"
+        - 80
+        - 443
+
+    - name: Включение UFW
+      ufw:
+        state: enabled
+        policy: deny
+
+    # 3. Защита от атак (Fail2Ban)
+    - name: Установка Fail2Ban
+      apt:
+        name: fail2ban
+        state: present
+
+    - name: Настройка Fail2Ban для нового SSH порта
+      copy:
+        dest: /etc/fail2ban/jail.local
+        content: |
+          [sshd]
+          enabled = true
+          port = {{ ssh_port }}
+          maxretry = 3
+          bantime = 1h
+
+    # 4. Reverse Proxy (Nginx)
+    - name: Установка Nginx
+      apt:
+        name: nginx
+        state: present
+
+    - name: Конфигурация Nginx под проект Nexthost
+      template:
+        src: templates/nginx_reverse_proxy.j2
+        dest: /etc/nginx/sites-available/nexthost
+
+    - name: Активация сайта в Nginx
+      file:
+        src: /etc/nginx/sites-available/nexthost
+        dest: /etc/nginx/sites-enabled/nexthost
+        state: link
+      notify: Restart Nginx
+
+    # 5. Резервное копирование (Backup)
+    - name: Скрипт автоматического бэкапа БД и загрузок
+      cron:
+        name: "Nightly Backup"
+        hour: "3"
+        minute: "0"
+        job: "tar -czf /home/abyl/backups/nexthost_$(date +%F).tar.gz /home/abyl/nexthost/database /home/abyl/nexthost/uploads"
+
+  handlers:
+    - name: Restart SSH
+      service: name=ssh state=restarted
+    - name: Restart Nginx
+      service: name=nginx state=restarted
