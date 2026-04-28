@@ -1,0 +1,22 @@
+global:
+  scrape_interval: 15s # Как часто собирать данные (раз в 15 секунд)
+
+scrape_configs:
+  # 1. Мониторинг самого Прометеуса
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  # 2. Мониторинг твоего сайта Nexthost
+  # Примечание: если на порту 80 обычный сайт без метрик, 
+  # Прометеус будет выдавать ошибку "Down". Это нормально, 
+  # для полноценного замера нужен Nginx Exporter.
+  - job_name: 'nexthost_app'
+    static_configs:
+      - targets: ['nexthost_web:80']
+
+  # 3. МОНИТОРИНГ ЖЕЛЕЗА (Node Exporter)
+  # Именно этот блок зажжёт графики CPU/RAM в твоей Графане
+  - job_name: 'node'
+    static_configs:
+      - targets: ['host.docker.internal:9100']

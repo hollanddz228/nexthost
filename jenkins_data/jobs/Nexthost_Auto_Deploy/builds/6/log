@@ -1,0 +1,493 @@
+Started by user [8mha:////4EM+wQWI+NK5v12v8KRTzMLzWb0A1uwvH2lQzLs8tmvRAAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyZEgYu/dLi1CL9xKTKHAAzMQfCvwAAAA==[0mТабидулла Абылайхан Ерланулы
+[8mha:////4NfHOnXpOW7km6cf6eqpICd8dih+T+WJJduPBCWn5tnbAAAAoh+LCAAAAAAAAP9tjTEOwjAQBM8BClpKHuFItIiK1krDC0x8GCfWnbEdkooX8TX+gCESFVvtrLSa5wtWKcKBo5UdUu8otU4GP9jS5Mixv3geZcdn2TIl9igbHBs2eJyx4YwwR1SwULBGaj0nRzbDRnX6rmuvydanHMu2V1A5c4MHCFXMWcf8hSnC9jqYxPTz/BXAFEIGsfuclm8zQVqFvQAAAA==[0m[Pipeline] Start of Pipeline
+[8mha:////4JOgO4VOWKXkLnyZTPg6zvNXmjJPclNcKCYvLgJ3VUAoAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycohUghExsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jduZBmjwAAAAA==[0m[Pipeline] node
+Running on [8mha:////4PUJZAMxOmKiZe3B7oRlnr3iu3qg1psKBhhYLEsRbK+YAAAAoR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAz2EgZR/eT83ILSktQifY2k0sycEt3MPE19AHHxbH3KAAAA[0mJenkins in /var/jenkins_home/workspace/Nexthost_Auto_Deploy
+[8mha:////4KltClGzYXhec7+Q+NSznyj8HC6TliLO1XwZ3Dv5WEtdAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0gA0xsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jfoP95RwAAAAA==[0m[Pipeline] {
+[8mha:////4HIJhaec0H2JgLBNY8KQrEooQdDqtFvdKGHuihnMcr6HAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0gQkxsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jc09154wAAAAA==[0m[Pipeline] stage
+[8mha:////4Ofd5az9M48ZQ3mpcjCBzbLL6sQ/+Hj8RhXmuwB3lMNzAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0ggUxsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jek7ggRwAAAAA==[0m[Pipeline] { (Step 1: Build & Update Image)
+[8mha:////4GWfMJb12VSoWJgYIKFb3LCs+ChGhOhXOxVT7tDuh9bTAAAAoh+LCAAAAAAAAP9tjTEOAiEURD9rLGwtPQTbaWGsbAmNJ0AWEZb8zwLrbuWJvJp3kLiJlZNMMm+a93rDOic4UbLcG+wdZu14DKOti0+U+lugiXu6ck2YKRguzSSpM+cFJRUDS1gDKwEbgzpQdmgLbIVXD9UGhba9lFS/o4DGdQM8gYlqLiqVL8wJdvexy4Q/z18BzLEA29ce4gfg7KmOvAAAAA==[0m[Pipeline] echo
+🔨 Собираем свежий образ сайта Nexthost...
+[8mha:////4Hih/lXnw7UzJeTGAqiXH0II5BmFfe0Vrh1jJTHeO5fcAAAAoh+LCAAAAAAAAP9tjTEOAiEURD9rLGwtPQTbGRNjZUtoPAGyiLDkfxZYdytP5NW8g8RNrJxkknnTvNcb1jnBiZLl3mDvMGvHYxhtXXyi1N8CTdzTlWvCTMFwaSZJnTkvKKkYWMIaWAnYGNSBskNbYCu8eqg2KLTtpaT6HQU0rhvgCUxUc1GpfGFOsLuPXSb8ef4KYI4F2L72ED8v8DEJvAAAAA==[0m[Pipeline] sh
++ cd /var/nexthost_project
++ docker build -t nexthost_app:latest .
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 194B 0.1s done
+#1 DONE 0.1s
+
+#2 [internal] load metadata for docker.io/library/php:8.2-apache
+#2 DONE 0.7s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B 0.1s done
+#3 DONE 0.1s
+
+#4 [internal] load build context
+#4 DONE 0.0s
+
+#5 [1/5] FROM docker.io/library/php:8.2-apache@sha256:2e7c3662a44ccd94d53bdf4b0d21ba12caef2dda89c7ddc55d9709155f368647
+#5 resolve docker.io/library/php:8.2-apache@sha256:2e7c3662a44ccd94d53bdf4b0d21ba12caef2dda89c7ddc55d9709155f368647 0.0s done
+#5 DONE 0.0s
+
+#4 [internal] load build context
+#4 transferring context: 1.61MB 5.0s
+#4 transferring context: 1.92MB 10.0s
+#4 transferring context: 2.05MB 15.0s
+#4 transferring context: 2.14MB 20.0s
+#4 transferring context: 2.22MB 25.1s
+#4 transferring context: 2.30MB 30.1s
+#4 transferring context: 2.32MB 31.0s done
+#4 DONE 31.1s
+
+#6 [2/5] RUN docker-php-ext-install mysqli pdo pdo_mysql
+#6 CACHED
+
+#7 [3/5] RUN a2enmod rewrite
+#7 CACHED
+
+#8 [4/5] COPY . /var/www/html/
+#8 DONE 24.9s
+
+#9 [5/5] RUN chown -R www-data:www-data /var/www/html/
+#9 DONE 27.2s
+
+#10 exporting to image
+#10 exporting layers
+#10 exporting layers 28.4s done
+#10 exporting manifest sha256:734fb753a354c7467bbf203e90a9569e1d867d5951a9d6baa19f751006ef2e76 0.0s done
+#10 exporting config sha256:18618022811e9fed7382fc2c8cb6f3f8be0d596f1cdbe0467a583d95f54c90c8 0.0s done
+#10 exporting attestation manifest sha256:6fc4152166290fd821f5e9d5d0688d0cda65d0fdb39b57e994c45574c91aaf07 0.0s done
+#10 exporting manifest list sha256:001257bd0ecdf1994fc0621a4c1a0b399cf3eeaa97903dcb5647c4dd178f4cf2
+#10 exporting manifest list sha256:001257bd0ecdf1994fc0621a4c1a0b399cf3eeaa97903dcb5647c4dd178f4cf2 0.0s done
+#10 naming to docker.io/library/nexthost_app:latest 0.0s done
+#10 unpacking to docker.io/library/nexthost_app:latest
+#10 unpacking to docker.io/library/nexthost_app:latest 23.8s done
+#10 DONE 53.4s
+[8mha:////4HCJtFTACea22VWZcMNNucSPGYkoVpgYghk87mmSI7aTAAAAoh+LCAAAAAAAAP9tjTEOAiEURD9rLGwtPQTbmRhjZUtoPAGyiLDkfxZYdytP5NW8g8RNrJxkknnTvNcb1jnBiZLl3mDvMGvHYxhtXXyi1N8CTdzTlWvCTMFwaSZJnTkvKKkYWMIaWAnYGNSBskNbYCu8eqg2KLTtpaT6HQU0rhvgCUxUc1GpfGFOsLuPXSb8ef4KYI6xADvU7j/zqggXvAAAAA==[0m[Pipeline] }
+[8mha:////4KCvHE0ycdtL12cWLMRMwOHT8TXjYmCo4RywKnMWBTm4AAAAox+LCAAAAAAAAP9tjTESgjAQRT84FraWHiJoYeVY2WZoPEGEGAOZXUwWofJEXs07yMiMlb/67zXv9cYyRRw5OtVYaj2lyqsu9G56auDYXgMPquGLqpgSB6tKO5Rc29OMJYvFvCzHQmNlqQqcPDnBWjfmYYpgyBVniZM7aOS+vuOJTE9lMVG+MEZsbn2dmH6dvwGMXSfId1tBtv8AExtCpb0AAAA=[0m[Pipeline] // stage
+[8mha:////4P1qj8p76edLP/TwW0TTSZdd48Z0mVmxr+GmLhfC9L1cAAAAph+LCAAAAAAAAP9tjTEOwjAQBC9BKWgpeYSjSHSIitZywwtMbIwT6y7YF5KKF/E1/oAhEhVb7ay0mucLqhThQNGJzmLvMbVeDGF0uYmJYn8JNImOzqIlTBSsUHZSZOxxQUVsYUlRwkrC2mIbKHl0DBvZ6buug0ZXnzjmbS+h9OYGDyhkNrOO/IU5wvY6mkT48/wVwDwwFDuGsmk+x+oNEzd2msEAAAA=[0m[Pipeline] stage
+[8mha:////4Oh4YZIYy3H/B9/HGIXNX604UBm+1o9sn2T5c0Te+3PeAAAAph+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUZUVMrFEWThCaEJJG/7dJSjpxIq7GHWipxIQHy7ZkvdcbqhjgRMEwp7GzGFvLej+aObFMobt5yszRlbWEkbxmQmdBSp/XKihpWFWUsOGw1dh6ihZNgh138iFrL9HUlxTm7cihtGqAJxR8JicZ0rdMAfb3UUXCH+cvAKY+Qdk0ix2WZ/UBbwyqm8IAAAA=[0m[Pipeline] { (Step 2: Infrastructure Sync)
+[8mha:////4DrsdnFieRH75nNhQ0NnXnwjiN+crl+D9cEEdXG3oBerAAAAox+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIioERUaS03vMDExjix7oztkFS8iK/xBwKRqNhitbPNPF+wTBGOHC22hjpHqXEYfG+nhQPH7uJ5wJbP2DAl9galGSRrU88oORuYU5SwELAy1HhOjmyGtWjVXVVeka1OOU7fQUDp9A0eUIjJnFXMXxgjbK69Tkw/z18BjCFDud19ah/eeSmYHb4AAAA=[0m[Pipeline] echo
+🚀 Синхронизируем контейнеры через Terraform...
+[8mha:////4I0dCI1Jwkqr9j2nnvoKKPnTV+M86BKYp+4tH9i21c9JAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiEB2iSmu54QUmNsaJdWdsh6TiRXyNPxCIRMUWq51t5vmCZYpw5GixNdQ5So3D4Hs7LRw4dhfPA7Z8xoYpsTcozSBZm3pGydnAnKKEhYCVocZzcmQzrEWr7qryimx1ynH6DgJKp2/wgEJM5qxi/sIYYXPtdWL6ef4KYAwZyu3uU/vwBr6/2VK+AAAA[0m[Pipeline] sh
++ cd /var/nexthost_project
++ terraform init
+
+[0m[1mInitializing the backend...[0m
+
+[0m[1mInitializing provider plugins...[0m
+- Reusing previous version of kreuzwerker/docker from the dependency lock file
+- Installing kreuzwerker/docker v3.0.2...
+- Installed kreuzwerker/docker v3.0.2 (self-signed, key ID [0m[1mBD080C4571C6104C[0m[0m)
+
+Partner and community providers are signed by their developers.
+If you'd like to know more about provider signing, you can read about it here:
+https://www.terraform.io/docs/cli/plugins/signing.html
+
+Terraform has made some changes to the provider dependency selections recorded
+in the .terraform.lock.hcl file. Review those changes and commit them to your
+version control system if they represent changes you intended to make.
+
+[0m[1m[32mTerraform has been successfully initialized![0m[32m[0m
+[0m[32m
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.[0m
++ terraform apply -auto-approve
+[0m[1mdocker_image.app_img: Refreshing state... [id=sha256:5859b25b030148fac51b8c05a0809438f77e634ae1599a45d84598d626f08094nexthost_app:latest][0m
+[0m[1mdocker_image.jenkins_img: Refreshing state... [id=sha256:459637d9f4adf654f2226b3ca65cb6b8366ffa4d74d070143897f17259eee717nexthost_jenkins:latest][0m
+[0m[1mdocker_image.prometheus_img: Refreshing state... [id=sha256:5550dc63da361dc30f6fe02ac0e4dfc736ededfef3c8d12a634db04a67824d78prom/prometheus:latest][0m
+[0m[1mdocker_image.grafana_img: Refreshing state... [id=sha256:0f86bada30d65ef9d0183b90c1e2682ac92d53d95da8bed322b984ea78a4a73agrafana/grafana:latest][0m
+[0m[1mdocker_image.mariadb_img: Refreshing state... [id=sha256:16092512d3b105aca86586a12c704a89e8f33e369cfc164f00d11baa923504e9mariadb:10.6][0m
+[0m[1mdocker_container.prometheus: Refreshing state... [id=bd9cf9b00d8284d8036005f1f5d390d72fcccdcaa28e7015c1dd3c19911d988a][0m
+[0m[1mdocker_container.grafana: Refreshing state... [id=07d9c3bd9deebcf4d74b67b1ddb6a678d7da7cff48b26c188929b478bfb8a754][0m
+[0m[1mdocker_container.jenkins: Refreshing state... [id=ebfb0fc8d409d76de8cb2acbc7ef810c601b658c92ef499a42a2ff2a25ed9623][0m
+[0m[1mdocker_container.db_container: Refreshing state... [id=c5643554995000eaa07f872682303218d46a653d72121bc726517652caa6ebdb][0m
+[0m[1mdocker_container.app_container: Refreshing state... [id=6efbfa1b466864faf280d41d290622b5a35abb219116fa310492bdb4c1b59a9d][0m
+
+[1m[36mNote:[0m[1m Objects have changed outside of Terraform
+[0m
+Terraform detected the following changes made outside of Terraform since the
+last "terraform apply" which may have affected this plan:
+
+[1m  # docker_image.app_img[0m has changed
+[0m  [33m~[0m[0m resource "docker_image" "app_img" {
+        id           = "sha256:5859b25b030148fac51b8c05a0809438f77e634ae1599a45d84598d626f08094nexthost_app:latest"
+      [33m~[0m[0m image_id     = "sha256:5859b25b030148fac51b8c05a0809438f77e634ae1599a45d84598d626f08094" [33m->[0m[0m "sha256:001257bd0ecdf1994fc0621a4c1a0b399cf3eeaa97903dcb5647c4dd178f4cf2"
+        name         = "nexthost_app:latest"
+        [90m# (2 unchanged attributes hidden)[0m[0m
+    }
+
+
+Unless you have made equivalent changes to your configuration, or ignored the
+relevant attributes using ignore_changes, the following plan may include
+actions to undo or respond to these changes.
+[90m
+─────────────────────────────────────────────────────────────────────────────[0m
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+[31m-[0m/[32m+[0m destroy and then create replacement[0m
+
+Terraform will perform the following actions:
+
+[1m  # docker_container.app_container[0m must be [1m[31mreplaced[0m
+[0m[31m-[0m/[32m+[0m[0m resource "docker_container" "app_container" {
+      [32m+[0m[0m bridge                                      = (known after apply)
+      [33m~[0m[0m command                                     = [
+          [31m-[0m[0m "apache2-foreground",
+        ] -> (known after apply)
+      [32m+[0m[0m container_logs                              = (known after apply)
+      [31m-[0m[0m cpu_shares                                  = 0 [90m-> null[0m[0m
+      [31m-[0m[0m dns                                         = [] [90m-> null[0m[0m
+      [31m-[0m[0m dns_opts                                    = [] [90m-> null[0m[0m
+      [31m-[0m[0m dns_search                                  = [] [90m-> null[0m[0m
+      [33m~[0m[0m entrypoint                                  = [
+          [31m-[0m[0m "docker-php-entrypoint",
+        ] -> (known after apply)
+      [33m~[0m[0m env                                         = [] -> (known after apply)
+      [32m+[0m[0m exit_code                                   = (known after apply)
+      [31m-[0m[0m group_add                                   = [] [90m-> null[0m[0m
+      [33m~[0m[0m hostname                                    = "6efbfa1b4668" -> (known after apply)
+      [33m~[0m[0m id                                          = "6efbfa1b466864faf280d41d290622b5a35abb219116fa310492bdb4c1b59a9d" -> (known after apply)
+      [33m~[0m[0m image                                       = "sha256:5859b25b030148fac51b8c05a0809438f77e634ae1599a45d84598d626f08094" [33m->[0m[0m "sha256:001257bd0ecdf1994fc0621a4c1a0b399cf3eeaa97903dcb5647c4dd178f4cf2" [31m# forces replacement[0m[0m
+      [33m~[0m[0m init                                        = false -> (known after apply)
+      [33m~[0m[0m ipc_mode                                    = "private" -> (known after apply)
+      [33m~[0m[0m log_driver                                  = "json-file" -> (known after apply)
+      [31m-[0m[0m log_opts                                    = {} [90m-> null[0m[0m
+      [31m-[0m[0m max_retry_count                             = 0 [90m-> null[0m[0m
+      [31m-[0m[0m memory                                      = 0 [90m-> null[0m[0m
+      [31m-[0m[0m memory_swap                                 = 0 [90m-> null[0m[0m
+        name                                        = "nexthost_web"
+      [33m~[0m[0m network_data                                = [
+          [31m-[0m[0m {
+              [31m-[0m[0m gateway                   = "172.17.0.1"
+              [31m-[0m[0m global_ipv6_prefix_length = 0
+              [31m-[0m[0m ip_address                = "172.17.0.6"
+              [31m-[0m[0m ip_prefix_length          = 16
+              [31m-[0m[0m mac_address               = "22:80:34:c9:2a:65"
+              [31m-[0m[0m network_name              = "bridge"
+                [90m# (2 unchanged attributes hidden)[0m[0m
+            },
+        ] -> (known after apply)
+      [31m-[0m[0m network_mode                                = "bridge" [90m-> null[0m[0m [31m# forces replacement[0m[0m
+      [31m-[0m[0m privileged                                  = false [90m-> null[0m[0m
+      [31m-[0m[0m publish_all_ports                           = false [90m-> null[0m[0m
+      [33m~[0m[0m runtime                                     = "runc" -> (known after apply)
+      [33m~[0m[0m security_opts                               = [] -> (known after apply)
+      [33m~[0m[0m shm_size                                    = 64 -> (known after apply)
+      [33m~[0m[0m stop_signal                                 = "SIGWINCH" -> (known after apply)
+      [33m~[0m[0m stop_timeout                                = 1 -> (known after apply)
+      [31m-[0m[0m storage_opts                                = {} [90m-> null[0m[0m
+      [31m-[0m[0m sysctls                                     = {} [90m-> null[0m[0m
+      [31m-[0m[0m tmpfs                                       = {} [90m-> null[0m[0m
+      [31m-[0m[0m working_dir                                 = "/var/www/html" [90m-> null[0m[0m
+        [90m# (18 unchanged attributes hidden)[0m[0m
+
+        [90m# (1 unchanged block hidden)[0m[0m
+    }
+
+[1m  # docker_container.db_container[0m must be [1m[31mreplaced[0m
+[0m[31m-[0m/[32m+[0m[0m resource "docker_container" "db_container" {
+      [32m+[0m[0m bridge                                      = (known after apply)
+      [33m~[0m[0m command                                     = [
+          [31m-[0m[0m "mariadbd",
+        ] -> (known after apply)
+      [32m+[0m[0m container_logs                              = (known after apply)
+      [31m-[0m[0m cpu_shares                                  = 0 [90m-> null[0m[0m
+      [31m-[0m[0m dns                                         = [] [90m-> null[0m[0m
+      [31m-[0m[0m dns_opts                                    = [] [90m-> null[0m[0m
+      [31m-[0m[0m dns_search                                  = [] [90m-> null[0m[0m
+      [33m~[0m[0m entrypoint                                  = [
+          [31m-[0m[0m "docker-entrypoint.sh",
+        ] -> (known after apply)
+      [32m+[0m[0m exit_code                                   = (known after apply)
+      [31m-[0m[0m group_add                                   = [] [90m-> null[0m[0m
+      [33m~[0m[0m hostname                                    = "c56435549950" -> (known after apply)
+      [33m~[0m[0m id                                          = "c5643554995000eaa07f872682303218d46a653d72121bc726517652caa6ebdb" -> (known after apply)
+      [33m~[0m[0m init                                        = false -> (known after apply)
+      [33m~[0m[0m ipc_mode                                    = "private" -> (known after apply)
+      [33m~[0m[0m log_driver                                  = "json-file" -> (known after apply)
+      [31m-[0m[0m log_opts                                    = {} [90m-> null[0m[0m
+      [31m-[0m[0m max_retry_count                             = 0 [90m-> null[0m[0m
+      [31m-[0m[0m memory                                      = 0 [90m-> null[0m[0m
+      [31m-[0m[0m memory_swap                                 = 0 [90m-> null[0m[0m
+        name                                        = "nexthost_db"
+      [33m~[0m[0m network_data                                = [
+          [31m-[0m[0m {
+              [31m-[0m[0m gateway                   = "172.17.0.1"
+              [31m-[0m[0m global_ipv6_prefix_length = 0
+              [31m-[0m[0m ip_address                = "172.17.0.5"
+              [31m-[0m[0m ip_prefix_length          = 16
+              [31m-[0m[0m mac_address               = "72:cc:17:92:ea:e1"
+              [31m-[0m[0m network_name              = "bridge"
+                [90m# (2 unchanged attributes hidden)[0m[0m
+            },
+        ] -> (known after apply)
+      [31m-[0m[0m network_mode                                = "bridge" [90m-> null[0m[0m [31m# forces replacement[0m[0m
+      [31m-[0m[0m privileged                                  = false [90m-> null[0m[0m
+      [31m-[0m[0m publish_all_ports                           = false [90m-> null[0m[0m
+      [33m~[0m[0m runtime                                     = "runc" -> (known after apply)
+      [33m~[0m[0m security_opts                               = [] -> (known after apply)
+      [33m~[0m[0m shm_size                                    = 64 -> (known after apply)
+      [32m+[0m[0m stop_signal                                 = (known after apply)
+      [33m~[0m[0m stop_timeout                                = 1 -> (known after apply)
+      [31m-[0m[0m storage_opts                                = {} [90m-> null[0m[0m
+      [31m-[0m[0m sysctls                                     = {} [90m-> null[0m[0m
+      [31m-[0m[0m tmpfs                                       = {} [90m-> null[0m[0m
+        [90m# (21 unchanged attributes hidden)[0m[0m
+
+        [90m# (1 unchanged block hidden)[0m[0m
+    }
+
+[1m  # docker_container.grafana[0m must be [1m[31mreplaced[0m
+[0m[31m-[0m/[32m+[0m[0m resource "docker_container" "grafana" {
+      [32m+[0m[0m bridge                                      = (known after apply)
+      [33m~[0m[0m command                                     = [] -> (known after apply)
+      [32m+[0m[0m container_logs                              = (known after apply)
+      [31m-[0m[0m cpu_shares                                  = 0 [90m-> null[0m[0m
+      [31m-[0m[0m dns                                         = [] [90m-> null[0m[0m
+      [31m-[0m[0m dns_opts                                    = [] [90m-> null[0m[0m
+      [31m-[0m[0m dns_search                                  = [] [90m-> null[0m[0m
+      [33m~[0m[0m entrypoint                                  = [
+          [31m-[0m[0m "/run.sh",
+        ] -> (known after apply)
+      [33m~[0m[0m env                                         = [] -> (known after apply)
+      [32m+[0m[0m exit_code                                   = (known after apply)
+      [31m-[0m[0m group_add                                   = [] [90m-> null[0m[0m
+      [33m~[0m[0m hostname                                    = "07d9c3bd9dee" -> (known after apply)
+      [33m~[0m[0m id                                          = "07d9c3bd9deebcf4d74b67b1ddb6a678d7da7cff48b26c188929b478bfb8a754" -> (known after apply)
+      [33m~[0m[0m init                                        = false -> (known after apply)
+      [33m~[0m[0m ipc_mode                                    = "private" -> (known after apply)
+      [33m~[0m[0m log_driver                                  = "json-file" -> (known after apply)
+      [31m-[0m[0m log_opts                                    = {} [90m-> null[0m[0m
+      [31m-[0m[0m max_retry_count                             = 0 [90m-> null[0m[0m
+      [31m-[0m[0m memory                                      = 0 [90m-> null[0m[0m
+      [31m-[0m[0m memory_swap                                 = 0 [90m-> null[0m[0m
+        name                                        = "grafana"
+      [33m~[0m[0m network_data                                = [
+          [31m-[0m[0m {
+              [31m-[0m[0m gateway                   = "172.17.0.1"
+              [31m-[0m[0m global_ipv6_prefix_length = 0
+              [31m-[0m[0m ip_address                = "172.17.0.2"
+              [31m-[0m[0m ip_prefix_length          = 16
+              [31m-[0m[0m mac_address               = "0a:5c:99:2a:4a:e4"
+              [31m-[0m[0m network_name              = "bridge"
+                [90m# (2 unchanged attributes hidden)[0m[0m
+            },
+        ] -> (known after apply)
+      [31m-[0m[0m network_mode                                = "bridge" [90m-> null[0m[0m [31m# forces replacement[0m[0m
+      [31m-[0m[0m privileged                                  = false [90m-> null[0m[0m
+      [31m-[0m[0m publish_all_ports                           = false [90m-> null[0m[0m
+      [33m~[0m[0m runtime                                     = "runc" -> (known after apply)
+      [33m~[0m[0m security_opts                               = [] -> (known after apply)
+      [33m~[0m[0m shm_size                                    = 64 -> (known after apply)
+      [32m+[0m[0m stop_signal                                 = (known after apply)
+      [33m~[0m[0m stop_timeout                                = 1 -> (known after apply)
+      [31m-[0m[0m storage_opts                                = {} [90m-> null[0m[0m
+      [31m-[0m[0m sysctls                                     = {} [90m-> null[0m[0m
+      [31m-[0m[0m tmpfs                                       = {} [90m-> null[0m[0m
+      [31m-[0m[0m user                                        = "472" [90m-> null[0m[0m
+      [31m-[0m[0m working_dir                                 = "/usr/share/grafana" [90m-> null[0m[0m
+        [90m# (18 unchanged attributes hidden)[0m[0m
+
+      [31m-[0m[0m volumes { [31m# forces replacement[0m[0m
+          [31m-[0m[0m container_path = "/var/lib/grafana" [90m-> null[0m[0m
+          [31m-[0m[0m host_path      = "C:/xampp/htdocs/nexthost/grafana_data" [90m-> null[0m[0m
+          [31m-[0m[0m read_only      = false [90m-> null[0m[0m
+            [90m# (2 unchanged attributes hidden)[0m[0m
+        }
+      [32m+[0m[0m volumes { [31m# forces replacement[0m[0m
+          [32m+[0m[0m container_path = "/var/lib/grafana"
+          [32m+[0m[0m host_path      = "/var/nexthost_project/grafana_data"
+            [90m# (2 unchanged attributes hidden)[0m[0m
+        }
+
+        [90m# (1 unchanged block hidden)[0m[0m
+    }
+
+[1m  # docker_container.jenkins[0m must be [1m[31mreplaced[0m
+[0m[31m-[0m/[32m+[0m[0m resource "docker_container" "jenkins" {
+      [32m+[0m[0m bridge                                      = (known after apply)
+      [33m~[0m[0m command                                     = [] -> (known after apply)
+      [32m+[0m[0m container_logs                              = (known after apply)
+      [31m-[0m[0m cpu_shares                                  = 0 [90m-> null[0m[0m
+      [31m-[0m[0m dns                                         = [] [90m-> null[0m[0m
+      [31m-[0m[0m dns_opts                                    = [] [90m-> null[0m[0m
+      [31m-[0m[0m dns_search                                  = [] [90m-> null[0m[0m
+      [33m~[0m[0m entrypoint                                  = [
+          [31m-[0m[0m "/usr/bin/tini",
+          [31m-[0m[0m "--",
+          [31m-[0m[0m "/usr/local/bin/jenkins.sh",
+        ] -> (known after apply)
+      [33m~[0m[0m env                                         = [] -> (known after apply)
+      [32m+[0m[0m exit_code                                   = (known after apply)
+      [31m-[0m[0m group_add                                   = [] [90m-> null[0m[0m
+      [33m~[0m[0m hostname                                    = "ebfb0fc8d409" -> (known after apply)
+      [33m~[0m[0m id                                          = "ebfb0fc8d409d76de8cb2acbc7ef810c601b658c92ef499a42a2ff2a25ed9623" -> (known after apply)
+      [33m~[0m[0m init                                        = false -> (known after apply)
+      [33m~[0m[0m ipc_mode                                    = "private" -> (known after apply)
+      [33m~[0m[0m log_driver                                  = "json-file" -> (known after apply)
+      [31m-[0m[0m log_opts                                    = {} [90m-> null[0m[0m
+      [31m-[0m[0m max_retry_count                             = 0 [90m-> null[0m[0m
+      [31m-[0m[0m memory                                      = 0 [90m-> null[0m[0m
+      [31m-[0m[0m memory_swap                                 = 0 [90m-> null[0m[0m
+        name                                        = "jenkins_server"
+      [33m~[0m[0m network_data                                = [
+          [31m-[0m[0m {
+              [31m-[0m[0m gateway                   = "172.17.0.1"
+              [31m-[0m[0m global_ipv6_prefix_length = 0
+              [31m-[0m[0m ip_address                = "172.17.0.4"
+              [31m-[0m[0m ip_prefix_length          = 16
+              [31m-[0m[0m mac_address               = "0a:e0:3b:84:fe:bf"
+              [31m-[0m[0m network_name              = "bridge"
+                [90m# (2 unchanged attributes hidden)[0m[0m
+            },
+        ] -> (known after apply)
+      [31m-[0m[0m network_mode                                = "bridge" [90m-> null[0m[0m [31m# forces replacement[0m[0m
+      [31m-[0m[0m privileged                                  = false [90m-> null[0m[0m
+      [31m-[0m[0m publish_all_ports                           = false [90m-> null[0m[0m
+      [33m~[0m[0m runtime                                     = "runc" -> (known after apply)
+      [33m~[0m[0m security_opts                               = [] -> (known after apply)
+      [33m~[0m[0m shm_size                                    = 64 -> (known after apply)
+      [32m+[0m[0m stop_signal                                 = (known after apply)
+      [33m~[0m[0m stop_timeout                                = 1 -> (known after apply)
+      [31m-[0m[0m storage_opts                                = {} [90m-> null[0m[0m
+      [31m-[0m[0m sysctls                                     = {} [90m-> null[0m[0m
+      [31m-[0m[0m tmpfs                                       = {} [90m-> null[0m[0m
+        [90m# (20 unchanged attributes hidden)[0m[0m
+
+      [31m-[0m[0m volumes { [31m# forces replacement[0m[0m
+          [31m-[0m[0m container_path = "/var/jenkins_home" [90m-> null[0m[0m
+          [31m-[0m[0m host_path      = "C:/xampp/htdocs/nexthost/jenkins_data" [90m-> null[0m[0m
+          [31m-[0m[0m read_only      = false [90m-> null[0m[0m
+            [90m# (2 unchanged attributes hidden)[0m[0m
+        }
+      [31m-[0m[0m volumes { [31m# forces replacement[0m[0m
+          [31m-[0m[0m container_path = "/var/nexthost_project" [90m-> null[0m[0m
+          [31m-[0m[0m host_path      = "C:/xampp/htdocs/nexthost" [90m-> null[0m[0m
+          [31m-[0m[0m read_only      = false [90m-> null[0m[0m
+            [90m# (2 unchanged attributes hidden)[0m[0m
+        }
+      [31m-[0m[0m volumes { [31m# forces replacement[0m[0m
+          [31m-[0m[0m container_path = "/var/run/docker.sock" [90m-> null[0m[0m
+          [31m-[0m[0m host_path      = "/var/run/docker.sock" [90m-> null[0m[0m
+          [31m-[0m[0m read_only      = false [90m-> null[0m[0m
+            [90m# (2 unchanged attributes hidden)[0m[0m
+        }
+      [32m+[0m[0m volumes { [31m# forces replacement[0m[0m
+          [32m+[0m[0m container_path = "/var/jenkins_home"
+          [32m+[0m[0m host_path      = "/var/nexthost_project/jenkins_data"
+            [90m# (2 unchanged attributes hidden)[0m[0m
+        }
+      [32m+[0m[0m volumes { [31m# forces replacement[0m[0m
+          [32m+[0m[0m container_path = "/var/nexthost_project"
+          [32m+[0m[0m host_path      = "/var/nexthost_project"
+            [90m# (2 unchanged attributes hidden)[0m[0m
+        }
+      [32m+[0m[0m volumes { [31m# forces replacement[0m[0m
+          [32m+[0m[0m container_path = "/var/run/docker.sock"
+          [32m+[0m[0m host_path      = "/var/run/docker.sock"
+            [90m# (2 unchanged attributes hidden)[0m[0m
+        }
+
+        [90m# (2 unchanged blocks hidden)[0m[0m
+    }
+
+[1m  # docker_container.prometheus[0m must be [1m[31mreplaced[0m
+[0m[31m-[0m/[32m+[0m[0m resource "docker_container" "prometheus" {
+      [32m+[0m[0m bridge                                      = (known after apply)
+      [33m~[0m[0m command                                     = [
+          [31m-[0m[0m "--config.file=/etc/prometheus/prometheus.yml",
+          [31m-[0m[0m "--storage.tsdb.path=/prometheus",
+        ] -> (known after apply)
+      [32m+[0m[0m container_logs                              = (known after apply)
+      [31m-[0m[0m cpu_shares                                  = 0 [90m-> null[0m[0m
+      [31m-[0m[0m dns                                         = [] [90m-> null[0m[0m
+      [31m-[0m[0m dns_opts                                    = [] [90m-> null[0m[0m
+      [31m-[0m[0m dns_search                                  = [] [90m-> null[0m[0m
+      [33m~[0m[0m entrypoint                                  = [
+          [31m-[0m[0m "/bin/prometheus",
+        ] -> (known after apply)
+      [33m~[0m[0m env                                         = [] -> (known after apply)
+      [32m+[0m[0m exit_code                                   = (known after apply)
+      [31m-[0m[0m group_add                                   = [] [90m-> null[0m[0m
+      [33m~[0m[0m hostname                                    = "bd9cf9b00d82" -> (known after apply)
+      [33m~[0m[0m id                                          = "bd9cf9b00d8284d8036005f1f5d390d72fcccdcaa28e7015c1dd3c19911d988a" -> (known after apply)
+      [33m~[0m[0m init                                        = false -> (known after apply)
+      [33m~[0m[0m ipc_mode                                    = "private" -> (known after apply)
+      [33m~[0m[0m log_driver                                  = "json-file" -> (known after apply)
+      [31m-[0m[0m log_opts                                    = {} [90m-> null[0m[0m
+      [31m-[0m[0m max_retry_count                             = 0 [90m-> null[0m[0m
+      [31m-[0m[0m memory                                      = 0 [90m-> null[0m[0m
+      [31m-[0m[0m memory_swap                                 = 0 [90m-> null[0m[0m
+        name                                        = "prometheus"
+      [33m~[0m[0m network_data                                = [
+          [31m-[0m[0m {
+              [31m-[0m[0m gateway                   = "172.17.0.1"
+              [31m-[0m[0m global_ipv6_prefix_length = 0
+              [31m-[0m[0m ip_address                = "172.17.0.3"
+              [31m-[0m[0m ip_prefix_length          = 16
+              [31m-[0m[0m mac_address               = "b2:87:24:ac:ba:4f"
+              [31m-[0m[0m network_name              = "bridge"
+                [90m# (2 unchanged attributes hidden)[0m[0m
+            },
+        ] -> (known after apply)
+      [31m-[0m[0m network_mode                                = "bridge" [90m-> null[0m[0m [31m# forces replacement[0m[0m
+      [31m-[0m[0m privileged                                  = false [90m-> null[0m[0m
+      [31m-[0m[0m publish_all_ports                           = false [90m-> null[0m[0m
+      [33m~[0m[0m runtime                                     = "runc" -> (known after apply)
+      [33m~[0m[0m security_opts                               = [] -> (known after apply)
+      [33m~[0m[0m shm_size                                    = 64 -> (known after apply)
+      [32m+[0m[0m stop_signal                                 = (known after apply)
+      [33m~[0m[0m stop_timeout                                = 1 -> (known after apply)
+      [31m-[0m[0m storage_opts                                = {} [90m-> null[0m[0m
+      [31m-[0m[0m sysctls                                     = {} [90m-> null[0m[0m
+      [31m-[0m[0m tmpfs                                       = {} [90m-> null[0m[0m
+      [31m-[0m[0m user                                        = "nobody" [90m-> null[0m[0m
+      [31m-[0m[0m working_dir                                 = "/prometheus" [90m-> null[0m[0m
+        [90m# (18 unchanged attributes hidden)[0m[0m
+
+      [31m-[0m[0m volumes { [31m# forces replacement[0m[0m
+          [31m-[0m[0m container_path = "/etc/prometheus/prometheus.yml" [90m-> null[0m[0m
+          [31m-[0m[0m host_path      = "C:/xampp/htdocs/nexthost/prometheus.yml" [90m-> null[0m[0m
+          [31m-[0m[0m read_only      = false [90m-> null[0m[0m
+            [90m# (2 unchanged attributes hidden)[0m[0m
+        }
+      [32m+[0m[0m volumes { [31m# forces replacement[0m[0m
+          [32m+[0m[0m container_path = "/etc/prometheus/prometheus.yml"
+          [32m+[0m[0m host_path      = "/var/nexthost_project/prometheus.yml"
+            [90m# (2 unchanged attributes hidden)[0m[0m
+        }
+
+        [90m# (1 unchanged block hidden)[0m[0m
+    }
+
+[1mPlan:[0m 5 to add, 0 to change, 5 to destroy.
+[0m[0m[1mdocker_container.prometheus: Destroying... [id=bd9cf9b00d8284d8036005f1f5d390d72fcccdcaa28e7015c1dd3c19911d988a][0m[0m
+[0m[1mdocker_container.grafana: Destroying... [id=07d9c3bd9deebcf4d74b67b1ddb6a678d7da7cff48b26c188929b478bfb8a754][0m[0m
+[0m[1mdocker_container.jenkins: Destroying... [id=ebfb0fc8d409d76de8cb2acbc7ef810c601b658c92ef499a42a2ff2a25ed9623][0m[0m
+[0m[1mdocker_container.app_container: Destroying... [id=6efbfa1b466864faf280d41d290622b5a35abb219116fa310492bdb4c1b59a9d][0m[0m
+Resuming build at Thu Apr 23 18:53:17 UTC 2026 after Jenkins restart
+Ready to run at Thu Apr 23 18:53:17 UTC 2026
+Pausing
+Sending interrupt signal to process
+Aborted by [8mha:////4EM+wQWI+NK5v12v8KRTzMLzWb0A1uwvH2lQzLs8tmvRAAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyZEgYu/dLi1CL9xKTKHAAzMQfCvwAAAA==[0mТабидулла Абылайхан Ерланулы
+Sending interrupt signal to process
+Aborted by [8mha:////4EM+wQWI+NK5v12v8KRTzMLzWb0A1uwvH2lQzLs8tmvRAAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyZEgYu/dLi1CL9xKTKHAAzMQfCvwAAAA==[0mТабидулла Абылайхан Ерланулы
+Resuming
+[8mha:////4A1Tu/dep75ogh/MocyHH40t/ZuwD3dvULw54cUM6HEZAAAA/B+LCAAAAAAAAP9djDFOw0AQRceOoEYpER39bhpCFJQCkQKkKCCFPjJmsdcedobdWeI0HIJrQIPEFTgEF6CjpqDBkavwm//1pfdev2EneJiSL1RlXG1dyK1ijEW71Ip8fYe0UiEykxcVxHBQ1nEUdXW5uD5fs/FoXT0nMXufvfef49+vFJIZ9KJHgf6syh4zjZkr9EK8dcVJ4+GgjLeBnMrJBUKjtizDycvb5Jk/UkgvYBeNK6TsdA/wBEmL7//Dz7rewNAlSQEabocSSA4FjkoRHmuNlGdYUpDxaDAa6Ipu9Nw0snmWp1FoOTWMtNZDLcbf/wGFxpJRHAEAAA==[0mClick here to forcibly terminate running steps
+After 20s process did not stop
+[8mha:////4A1Tu/dep75ogh/MocyHH40t/ZuwD3dvULw54cUM6HEZAAAA/B+LCAAAAAAAAP9djDFOw0AQRceOoEYpER39bhpCFJQCkQKkKCCFPjJmsdcedobdWeI0HIJrQIPEFTgEF6CjpqDBkavwm//1pfdev2EneJiSL1RlXG1dyK1ijEW71Ip8fYe0UiEykxcVxHBQ1nEUdXW5uD5fs/FoXT0nMXufvfef49+vFJIZ9KJHgf6syh4zjZkr9EK8dcVJ4+GgjLeBnMrJBUKjtizDycvb5Jk/UkgvYBeNK6TsdA/wBEmL7//Dz7rewNAlSQEabocSSA4FjkoRHmuNlGdYUpDxaDAa6Ipu9Nw0snmWp1FoOTWMtNZDLcbf/wGFxpJRHAEAAA==[0mClick here to forcibly terminate running steps
+[8mha:////4Aijv8z2kAhyETav+K4jkwxoA4IjwoIgk+emCY4xqiA1AAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIikKgQVVrLDS8wsTFOrDtjOyQVL+Jr/IFAJCq2WO1sM88XLFOEI0eLraHOUWocBt/baeHAsbt4HrDlMzZMib1BaQbJ2tQzSs4G5hQlLASsDDWekyObYS1adVeVV2SrU47TdxBQOn2DBxRiMmcV8xfGCJtrrxPTz/NXAGMIGcrt/lO7NyZXKai+AAAA[0m[Pipeline] }
+[8mha:////4JJPqz9kHifnfeDfrWF0yRFpWwjCbmTzjIf2honSUZaSAAAAox+LCAAAAAAAAP9tjTESwiAURH/iWNhaeggyaWwcK1uGxhNggghh/idAJJUn8mreQTQzVm6xs2+b93zBOgY4UtDMKhwMxs4w7yZdFssUhqujzCxdWEcYySkmVBbUq9OCgpKCJVUNKw4bhZ2jaFAn2HIr77JxEnVzTqF8Bw616Ud4QMWLOcmQvjAH2N2mPhL+PH8FMHufoG73n2rfMnS0t74AAAA=[0m[Pipeline] // stage
+[8mha:////4M460G/DsMiSwVFTf61I4XT3adO1G7zVBYUtEauKn+9RAAAApB+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMIREhIFoqK10vACkxjjxLoL9oWk4kV8jT8QEYmKrXammdcbyxRx5OhUY6n1lCqvutC76amBY3sNPKiGL6piShysKu1Qcm1PM5YsFvOyHAuNlaUqcPLkBGvdmIcpgiFXnCVO7qCR+/qOJzI9lcVE+cIYsbn1dWL6df4GMHadIN/uBdnuA5X3ZWC9AAAA[0m[Pipeline] }
+[8mha:////4AUNe6WxnvSUvKld2D/bm6XFIdQOzBXXZQzTo2iNhSK8AAAApB+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMIRokFCVLRWGl5gEmOcWHfBvpBUvIiv8QciIlGx1c4083pjmSKOHJ1qLLWeUuVVF3o3PTVwbK+BB9XwRVVMiYNVpR1Kru1pxpLFYl6WY6GxslQFTp6cYK0b8zBFMOSKs8TJHTRyX9/xRKanspgoXxgjNre+Tky/zt8Axq4T5Nu9INt9AOf1UXy9AAAA[0m[Pipeline] // node
+[8mha:////4DoZ7tAjIOy5QZwDlFxaKoypn82n3BLchirJNXhssez0AAAAox+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMIRdAhR0VppeIFJjHFi3QX7QlLxIr7GH4iIRMVWO9PM641lijhydKqx1HpKlVdd6N301MCxvQYeVMMXVTElDlaVdii5tqcZSxaLeVmOhcbKUhU4eXKCtW7MwxTBkCvOEid30Mh9fccTmZ7KYqJ8YYzY3Po6Mf06fwMYu06Qb/eCbPcBwew2Nr0AAAA=[0m[Pipeline] End of Pipeline
+org.jenkinsci.plugins.workflow.actions.ErrorAction$ErrorId: 6afd9dae-2583-453c-92be-f6e9d787c386
+Finished: ABORTED

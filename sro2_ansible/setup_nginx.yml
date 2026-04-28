@@ -1,0 +1,26 @@
+---
+# 10-тапсырма: Nginx пен PHP орнатуға арналған Playbook
+- name: Клондалған машинада веб-серверді баптау
+  hosts: webservers  # inventory.ini ішіндегі топты көрсетеміз
+  become: yes        # root (sudo) атынан орындау
+
+  tasks:
+    # 9-тапсырма: Nginx орнату
+    - name: Nginx веб-серверін орнату
+      apt:
+        name: nginx
+        state: present
+        update_cache: yes  # apt-get update командасын орындау
+
+    # 9-тапсырма: PHP интерпретаторын орнату
+    - name: PHP-FPM орнату
+      apt:
+        name: php-fpm
+        state: present
+
+    # 10-тапсырма: Сервистің жұмысын баптау
+    - name: ОС қосылғанда Nginx автоматты қосылуын баптау және іске қосу
+      service:
+        name: nginx
+        state: started     # Қазір іске қосу
+        enabled: yes       # ОЖ қосылғанда автоматты қосылу (автозагрузка)

@@ -1,0 +1,47 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-definition plugin="workflow-job@1571.vb_423c255d6d9">
+  <actions>
+    <org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobAction plugin="pipeline-model-definition@2.2277.v00573e73ddf1"/>
+    <org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobPropertyTrackerAction plugin="pipeline-model-definition@2.2277.v00573e73ddf1">
+      <jobProperties/>
+      <triggers/>
+      <parameters/>
+      <options/>
+    </org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobPropertyTrackerAction>
+  </actions>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@4285.v8df38f05c3c5">
+    <script>pipeline {
+    agent any
+
+    stages {
+        stage(&apos;Step 1: Build &amp; Update Image&apos;) {
+            steps {
+                echo &apos;🔨 Собираем свежий образ сайта Nexthost...&apos;
+                sh &apos;cd /var/nexthost_project &amp;&amp; docker build -t nexthost_app:latest .&apos;
+            }
+        }
+        stage(&apos;Step 2: Infrastructure Sync&apos;) {
+            steps {
+                echo &apos;🚀 Синхронизируем контейнеры через Terraform...&apos;
+                // Добавили terraform init перед запуском!
+                sh &apos;cd /var/nexthost_project &amp;&amp; terraform init &amp;&amp; terraform apply -auto-approve&apos;
+            }
+        }
+    }
+    post {
+        success {
+            echo &apos;✅ Красава! Все ресурсы обновлены успешно.&apos;
+        }
+        failure {
+            echo &apos;❌ Ошибка! Проверь логи.&apos;
+        }
+    }
+}</script>
+    <sandbox>true</sandbox>
+  </definition>
+  <triggers/>
+  <disabled>false</disabled>
+</flow-definition>
