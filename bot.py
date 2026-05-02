@@ -1,9 +1,10 @@
 import os
 import logging
 import requests
+import re
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import (
-    Application, CommandHandler, CallbackQueryHandler, ContextTypes
+    Application, CommandHandler, CallbackQueryHandler, ContextTypes, MessageHandler, filters
 )
 
 logging.basicConfig(level=logging.INFO)
@@ -115,6 +116,41 @@ async def cmd_menu(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
         parse_mode="Markdown",
         reply_markup=main_keyboard()
     )
+
+    # ─── ЖАҢА ФУНКЦИЯ: ОПЕРАТОРДЫҢ ЧАТҚА ЖАУАБЫ (СИНХРОНДАЛҒАН) ───
+async def handle_admin_reply(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
+    if not is_admin(update): 
+        return
+    
+    if not update.message.reply_to_message: 
+        return 
+        
+    orig_text = update.message.reply_to_message.text or ""
+    
+    # Regex-ті барынша икемді қыламыз
+    match = re.search(r'Сессия:\s*([a-zA-Z0-9_]+)', orig_text)
+    if not match:
+        return 
+        
+    session_id = match.group(1)
+
+    # ❗ МАҢЫЗДЫ ТҮЗЕТУ: Егер сессияда сызықша болмаса, оны сайтпен сәйкестендіру үшін қосамыз
+    if "sess_" not in session_id and session_id.startswith("sess"):
+        session_id = session_id.replace("sess", "sess_")
+        
+    admin_text = update.message.text
+    
+    # Контейнерлер бір желіде болғандықтан, nexthost_web-ті тікелей қолданамыз
+    api_url = "http://nexthost_web/backend/chat_api.php?action=admin_send"
+    
+    try:
+        r = requests.post(api_url, data={'session_id': session_id, 'message': admin_text}, timeout=5)
+        if r.status_code == 200:
+            await update.message.reply_text(f"✅ Хабарлама жіберілді! (ID: {session_id})")
+        else:
+            await update.message.reply_text(f"❌ Қате: {r.status_code}")
+    except Exception as e:
+        await update.message.reply_text(f"❌ Қосылу қатесі: {e}")
 
 # ─── CALLBACKS ────────────────────────────────────────────────────────────────
 
@@ -250,6 +286,10 @@ def main():
     app = Application.builder().token(BOT_TOKEN).build()
     app.add_handler(CommandHandler("start", cmd_start))
     app.add_handler(CommandHandler("menu",  cmd_menu))
+
+    # МЫНА ЖОЛДЫ ҚОСАМЫЗ:
+    app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_admin_reply))
+
     app.add_handler(CallbackQueryHandler(on_callback))
     print("🤖 Bot started", flush=True)
     app.run_polling(

@@ -15,7 +15,7 @@ services:
       - .:/var/www/html/ # Подключаем папку напрямую, чтобы изменения в коде отображались сразу
 
   db:
-    image: mariadb:10.4
+    image: mariadb:10.6
     environment:
       - MYSQL_ROOT_PASSWORD=rootpassword
       - MYSQL_DATABASE=nexthost

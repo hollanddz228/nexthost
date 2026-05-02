@@ -166,7 +166,7 @@
       <div class="card chat-card">
         <h3 data-translate="support_chat_title">Чат поддержки</h3>
         <p class="muted small" data-translate="support_chat_desc">Моментальная связь с оператором. Открой окно чата в правом нижнем углу.</p>
-        <button id="open-chat" class="btn-primary" data-translate="support_open_chat">Открыть чат</button>
+        <button id="open-chat" class="btn-primary" onclick="toggleChat()" data-translate="support_open_chat">Открыть чат</button>
       </div>
 
       <!-- === КОНТАКТЫ === -->
@@ -216,6 +216,24 @@
     </aside>
   </main>
 
+  <!-- === НАШ НОВЫЙ ИИ-ВИДЖЕТ ЧАТА === -->
+  <div id="chat-widget-button" onclick="toggleChat()" title="Открыть чат с ИИ">💬</div>
+
+  <div id="chat-widget" style="display: none;">
+    <div class="chat-header">
+      Nexthost AI
+      <button onclick="toggleChat()">✕</button>
+    </div>
+    <div class="chat-body" id="chat-box">
+      <div class="bot-msg">Привет! Я ИИ-ассистент Nexthost. Чем могу помочь?</div>
+    </div>
+    <div class="chat-footer">
+      <input type="text" id="user-input" placeholder="Напишите сообщение..." onkeypress="if(event.key === 'Enter') sendMessage()">
+      <button onclick="sendMessage()">➤</button>
+    </div>
+    <button class="call-operator-btn" onclick="callOperator()">👨‍💻 Позвать оператора</button>
+  </div>
+  
   <!-- ⚙️ FOOTER -->
 <footer class="main-footer">
   <div class="container">
@@ -312,17 +330,6 @@
   <script src="js/global.js"></script>
   <script src="js/support.js"></script>
 
-  <!-- === Tawk.to === -->
-  <script type="text/javascript">
-  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-  (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/69025075b22c021953b66bef/1j8ogkjik';
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
-  })();
-  </script>
+  
 </body>
 </html>

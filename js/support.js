@@ -1,4 +1,106 @@
 /* support.js — қолдау бетінің логикасы */
+// ТВОЙ NGROK WEBHOOK ИЗ N8N
+const N8N_WEBHOOK_URL = 'https://monetize-gorged-repugnant.ngrok-free.dev/webhook/nexthost-chat';
+
+// 1. КЛИЕНТКЕ ЖЕКЕ НОМЕР (SESSION ID) БЕРУ
+let sessionId = localStorage.getItem('chat_session_id');
+if (!sessionId) {
+  sessionId = 'sess_' + Math.random().toString(36).substr(2, 9);
+  localStorage.setItem('chat_session_id', sessionId);
+}
+
+let isOperatorMode = false; // Оператор режимі қосылғанын білу үшін
+let pollingInterval = null;
+
+// === ЛОГИКА ИИ ЧАТА ===
+function toggleChat() {
+  const chat = document.getElementById('chat-widget');
+  chat.style.display = chat.style.display === 'none' ? 'flex' : 'none';
+}
+
+function appendMessage(text, sender) {
+  const chatBox = document.getElementById('chat-box');
+  const msgDiv = document.createElement('div');
+  msgDiv.className = sender + '-msg';
+  msgDiv.textContent = text;
+  chatBox.appendChild(msgDiv);
+  chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+async function sendMessage() {
+  const input = document.getElementById('user-input');
+  const message = input.value.trim();
+  if (!message) return;
+
+  appendMessage(message, 'user');
+  input.value = '';
+
+  try {
+      const response = await fetch(N8N_WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ 
+              // Оператор режимінде болса n8n-ге басқа тип жібереміз
+              type: isOperatorMode ? 'operator_chat' : 'chat', 
+              text: message,
+              session_id: sessionId // Кім жазып жатқанын ТГ-бот білуі үшін
+          })
+      });
+      const data = await response.json();
+      if (data.reply) {
+          appendMessage(data.reply, 'bot');
+      }
+  } catch (error) {
+      appendMessage('Ошибка соединения с сервером.', 'bot');
+      console.error(error);
+  }
+}
+
+async function callOperator() {
+  appendMessage('Вызываю живого оператора...', 'user');
+  
+  try {
+      const response = await fetch(N8N_WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ 
+              type: 'call_operator', 
+              text: '🚨 Клиент запрашивает связь с оператором!',
+              session_id: sessionId // Сессияны бірге жібереміз
+          })
+      });
+      const data = await response.json();
+      appendMessage(data.reply || '✅ Операторға хабарланды. Күте тұрыңыз...', 'bot');
+      
+      // ОПЕРАТОР РЕЖИМІН ҚОСУ
+      startOperatorMode();
+
+  } catch (error) {
+      appendMessage('Ошибка вызова оператора.', 'bot');
+      console.error(error);
+  }
+}
+
+// 2. POLLING: ӘР 3 СЕКУНД САЙЫН ЖАҢА ХАБАРЛАМАНЫ ТЕКСЕРУ
+function startOperatorMode() {
+  if (isOperatorMode) return;
+  isOperatorMode = true;
+  appendMessage('🔄 Оператор чатқа қосылуда...', 'bot');
+  
+  pollingInterval = setInterval(async () => {
+      try {
+          const res = await fetch(`backend/chat_api.php?action=get_new&session_id=${sessionId}`);
+          const data = await res.json();
+          if (data.success && data.messages.length > 0) {
+              data.messages.forEach(msg => {
+                  appendMessage('👨‍💻 Оператор: ' + msg.message, 'bot');
+              });
+          }
+      } catch (err) {
+          console.error("Polling қатесі:", err);
+      }
+  }, 3000);
+}
 
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('ticket-form');
@@ -87,14 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
     feedback.textContent = '';
   });
 
-  // === Tawk.to чатын ашу ===
-  openChatBtn.addEventListener('click', () => {
-    if (window.Tawk_API && typeof window.Tawk_API.toggle === 'function') {
-      window.Tawk_API.toggle();
-    } else {
-      alert('Чат қосылмаған. support.html ішіндегі Tawk.to кодын тексеріңіз');
-    }
-  });
+  
 
   // === FAQ аккордеоны ===
   document.querySelectorAll('.accordion .accordion-item').forEach(btn => {

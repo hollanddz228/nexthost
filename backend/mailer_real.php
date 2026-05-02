@@ -1,43 +1,40 @@
 <?php
+// backend/mailer_real.php
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 require 'PHPMailer/src/Exception.php';
 require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
+require_once 'config.php';
 
 class RealMailer {
     public static function sendVerificationEmail($email, $name, $verification_code) {
         $mail = new PHPMailer(true);
         
         try {
-            // Настройки SMTP
+            // Сенің түпнұсқа SMTP баптауларың (тікелей осында қалдырамыз)
             $mail->isSMTP();
-            $mail->Host = 'smtp.gmail.com';
-            $mail->SMTPAuth = true;
-            $mail->Username = 'my.nexthost222@gmail.com';
-            $mail->Password = 'nlfx dkzl dbxt kxnj';
+            $mail->Host       = 'smtp.gmail.com';
+            $mail->SMTPAuth   = true;
+            $mail->Username   = 'my.nexthost222@gmail.com';
+            $mail->Password   = 'nlfx dkzl dbxt kxnj';
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-            $mail->Port = 587;
+            $mail->Port       = 587;
 
-            // Кодировка UTF-8 для казахского языка
-            $mail->CharSet = 'UTF-8';
-            $mail->Encoding = 'base64';
+            $mail->CharSet    = 'UTF-8';
+            $mail->Encoding   = 'base64';
 
-            // Отправитель и получатель
             $mail->setFrom('my.nexthost222@gmail.com', 'NextHost');
             $mail->addAddress($email, $name);
 
-            // Письмо
             $mail->isHTML(true);
             $mail->Subject = '=?UTF-8?B?' . base64_encode('Тіркелуді растау - NextHost') . '?=';
             
-            // === СТАРЫЙ КОД ===
-            // $verification_url = "http://localhost/nexthost/backend/verify.php?code=" . $verification_code;
-            
-            // === НОВЫЙ КОД ===
-            $base_url = getenv('SITE_URL') ?: "http://localhost/nexthost";
-            $verification_url = rtrim($base_url, '/') . "/backend/verify.php?code=" . $verification_code;
+            // СІЛТЕМЕНІ ҚҰРАСТЫРУ (ДҰРЫСТАЛҒАН НҰСҚА)
+            $base_url = rtrim(Config::$site_url, '/');
+            $verification_url = $base_url . "/backend/verify.php?code=" . $verification_code;
             
             $mail->Body = "
             <!DOCTYPE html>
@@ -53,7 +50,7 @@ class RealMailer {
                     .header p { margin: 0; font-weight: 500; }
                     .content { padding: 30px; }
                     .content h2 { font-weight: 500; }
-                    .button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; margin: 20px 0; font-weight: 500; }
+                    .button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white !important; padding: 12px 30px; text-decoration: none; border-radius: 5px; margin: 20px 0; font-weight: 500; }
                     .footer { background: #f8f9fa; padding: 20px; text-align: center; color: #666; font-size: 14px; }
                 </style>
             </head>
@@ -93,16 +90,15 @@ class RealMailer {
         
         try {
             $mail->isSMTP();
-            $mail->Host = 'smtp.gmail.com';
-            $mail->SMTPAuth = true;
-            $mail->Username = 'my.nexthost222@gmail.com';
-            $mail->Password = 'nlfx dkzl dbxt kxnj';
+            $mail->Host       = 'smtp.gmail.com';
+            $mail->SMTPAuth   = true;
+            $mail->Username   = 'my.nexthost222@gmail.com';
+            $mail->Password   = 'nlfx dkzl dbxt kxnj';
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-            $mail->Port = 587;
+            $mail->Port       = 587;
 
-            // Кодировка UTF-8 для казахского языка
-            $mail->CharSet = 'UTF-8';
-            $mail->Encoding = 'base64';
+            $mail->CharSet    = 'UTF-8';
+            $mail->Encoding   = 'base64';
 
             $mail->setFrom('my.nexthost222@gmail.com', 'NextHost');
             $mail->addAddress($email);
@@ -110,12 +106,9 @@ class RealMailer {
             $mail->isHTML(true);
             $mail->Subject = '=?UTF-8?B?' . base64_encode('Құпиясөзді қалпына келтіру - NextHost') . '?=';
             
-            // === СТАРЫЙ КОД ===
-            // $reset_url = "http://localhost/nexthost/reset-password.html?token=" . $reset_token;
-            
-            // === НОВЫЙ КОД ===
-            $base_url = getenv('SITE_URL') ?: "http://localhost/nexthost";
-            $reset_url = rtrim($base_url, '/') . "/reset-password.html?token=" . $reset_token;
+            // СІЛТЕМЕНІ ҚҰРАСТЫРУ (ДҰРЫСТАЛҒАН НҰСҚА)
+            $base_url = rtrim(Config::$site_url, '/');
+            $reset_url = $base_url . "/reset-password.html?token=" . $reset_token;
             
             $mail->Body = "
             <!DOCTYPE html>
@@ -131,7 +124,7 @@ class RealMailer {
                     .header p { margin: 0; font-weight: 500; }
                     .content { padding: 30px; }
                     .content h2 { font-weight: 500; }
-                    .button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; margin: 20px 0; font-weight: 500; }
+                    .button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white !important; padding: 12px 30px; text-decoration: none; border-radius: 5px; margin: 20px 0; font-weight: 500; }
                     .warning { background: #fff3cd; border: 1px solid #ffeaa7; padding: 15px; border-radius: 5px; margin: 15px 0; }
                     .footer { background: #f8f9fa; padding: 20px; text-align: center; color: #666; font-size: 14px; }
                 </style>

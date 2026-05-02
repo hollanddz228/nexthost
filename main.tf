@@ -10,36 +10,33 @@ terraform {
 provider "docker" {}
 
 # =====================================================================
-# МЫСАЛ 1: Желіні оқшаулау (Бастапқы код: SAMPLE01-EC2-VPC)
-# AWS VPC орнына Docker жеке желісін құрамыз (Контейнерлер осыған қосылады)
+# МЫСАЛ 1: Желіні оқшаулау 
 # =====================================================================
 resource "docker_network" "nexthost_vpc" {
   name = "nexthost_private_network"
 }
 
 # =====================================================================
-# МЫСАЛ 2: Тұрақты деректерді сақтау (Бастапқы код: SAMPLE03-EBS-EFS)
-# AWS EBS дискісінің орнына Docker Volume қолданамыз (Мәліметтер базасы үшін)
+# МЫСАЛ 2: Тұрақты деректерді сақтау (База)
 # =====================================================================
 resource "docker_volume" "db_storage" {
   name = "nexthost_db_data"
 }
 
-# Образ для базы данных
 resource "docker_image" "mariadb_img" {
   name = "mariadb:10.6"
 }
 
-# Контейнер базы данных
+# База контейнері
 resource "docker_container" "db_container" {
   name  = "nexthost_db"
   image = docker_image.mariadb_img.image_id
   
   env = [
-    "MYSQL_ROOT_PASSWORD=root_password",
-    "MYSQL_DATABASE=nexthost_db",
-    "MYSQL_USER=user",
-    "MYSQL_PASSWORD=password"
+    "MYSQL_ROOT_PASSWORD=rootpassword",
+    "MYSQL_DATABASE=nexthost",
+    "MYSQL_USER=nexthost_user",
+    "MYSQL_PASSWORD=secretpassword"
   ]
 
   ports {
@@ -47,19 +44,24 @@ resource "docker_container" "db_container" {
     external = 3306
   }
 
-  # Қосылған: Желіге және Volume-ге қосу
   networks_advanced {
     name = docker_network.nexthost_vpc.name
   }
+  
   volumes {
     volume_name    = docker_volume.db_storage.name
     container_path = "/var/lib/mysql"
   }
+  
+  # Прокидываем ЦЕЛИКОМ ПАПКУ database, а не файл
+  volumes {
+    host_path      = "${abspath(path.module)}/database" 
+    container_path = "/docker-entrypoint-initdb.d"
+  }
 }
 
 # =====================================================================
-# МЫСАЛ 3: Статикалық веб-сайт хостингі (Бастапқы код: SAMPLE08-S3-CloudFront)
-# AWS S3 бакетінің орнына біз өз сайтыңды (nexthost_app) көтереміз
+# МЫСАЛ 3: Статикалық веб-сайт хостингі
 # =====================================================================
 resource "docker_image" "app_img" {
   name         = "nexthost_app:latest"
@@ -69,6 +71,14 @@ resource "docker_image" "app_img" {
 resource "docker_container" "app_container" {
   name  = "nexthost_web"
   image = docker_image.app_img.image_id
+
+  # ОСЫ ЕКІ АЙНЫМАЛЫНЫ ҚОС:
+  env = [
+    "DB_HOST=nexthost_db",
+    "DB_NAME=nexthost",
+    "DB_USER=nexthost_user",
+    "DB_PASS=secretpassword"
+  ]
   
   ports {
     internal = 80
@@ -79,10 +89,17 @@ resource "docker_container" "app_container" {
     name = docker_network.nexthost_vpc.name
   }
 
+  volumes {
+    host_path      = "C:/xampp/htdocs/nexthost"
+    container_path = "/var/www/html"
+  }
+
   depends_on = [docker_container.db_container]
 }
 
-# Образ для Prometheus
+# =====================================================================
+# ПРОМЕТЕЙ МЕН ГРАФАНА (Мониторинг)
+# =====================================================================
 resource "docker_image" "prometheus_img" {
   name = "prom/prometheus:latest"
 }
@@ -118,8 +135,7 @@ resource "docker_container" "grafana" {
 }
 
 # =====================================================================
-# МЫСАЛ 4: Контейнерлерді басқару (Бастапқы код: SAMPLE04-ECS-ELB)
-# AWS ECS кластерінің орнына Docker микросервистерін (Jenkins CI/CD) іске қосамыз
+# МЫСАЛ 4: Jenkins CI/CD
 # =====================================================================
 resource "docker_image" "jenkins_img" {
   name         = "nexthost_jenkins:latest"
@@ -156,8 +172,7 @@ resource "docker_container" "jenkins" {
 }
 
 # =====================================================================
-# МЫСАЛ 5: API Gateway / Webhook (Бастапқы код: SAMPLE02-Lambda-API-Gateway)
-# n8n арқылы сырттан келетін сұраныстарды қабылдайтын API шлюзін (Webhook) ашамыз
+# МЫСАЛ 5: n8n (ИИ-Ассистент)
 # =====================================================================
 resource "docker_image" "n8n_img" {
   name = "docker.n8n.io/n8nio/n8n:latest"
@@ -168,7 +183,8 @@ resource "docker_container" "n8n" {
   image = docker_image.n8n_img.image_id
 
   env = [
-    "WEBHOOK_URL=https://lwtsn-84-240-216-182.run.pinggy-free.link"
+    "WEBHOOK_URL=https://monetize-gorged-repugnant.ngrok-free.dev",
+    "N8N_CORS_ALLOWED_ORIGINS=*"
   ]
 
   ports {
@@ -205,6 +221,10 @@ resource "docker_container" "tgbot" {
   name  = "tgbot_server"
   image = docker_image.tgbot_img.image_id
 
+  networks_advanced {
+    name = docker_network.nexthost_vpc.name
+  }
+
   env = [
     "BOT_TOKEN=${var.bot_token}",
     "ADMIN_CHAT_ID=${var.admin_chat_id}",
@@ -222,9 +242,7 @@ resource "docker_container" "tgbot" {
 }
 
 # =====================================================================
-# МЫСАЛ 6: CI/CD және Автоматтандыру (Бастапқы код: SAMPLE07-CodeCommit-Pipeline)
-# AWS CodePipeline орнына local-exec арқылы скрипттерді автоматты орындаймыз
-# Бұл СРО 2-дегі Ansible үшін дайындық!
+# МЫСАЛ 6: CI/CD және Автоматтандыру 
 # =====================================================================
 resource "null_resource" "trigger_pipeline" {
   depends_on = [
